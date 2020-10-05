@@ -1,0 +1,250 @@
+Fonte:  https://www.iso.org/obp/ui/#iso:code:3166:BR;;;;;;;;;;;;
+ID;NUMERIC-CODE;CODE-ISO-3166-2;CODE-ISO-3166-3;NAME;SHORT-NAME;LANGUAGE-CODE;REGION;SUB-REGION;INTERMEDIATE-REGION;REGION-CODE;SUB-REGION-CODE;INTERMEDIATE-REGION-CODE
+1;4;AF;AFG;Afghanistan;Afghanistan;fa, ps;Asia;Southern Asia;;142;34;
+2;248;AX;ALA;Åland Islands;Åland Islands;sv;Europe;Northern Europe;;150;154;
+3;8;AL;ALB;Albania;Albania;sq;Europe;Southern Europe;;150;39;
+4;12;DZ;DZA;Algeria;Algeria;ar;Africa;Northern Africa;;2;15;
+5;16;AS;ASM;American Samoa;American Samoa;en, sm;Oceania;Polynesia;;9;61;
+6;20;AD;AND;Andorra;Andorra;ca;Europe;Southern Europe;;150;39;
+7;24;AO;AGO;Angola;Angola;pt;Africa;Sub-Saharan Africa;Middle Africa;2;202;17
+8;660;AI;AIA;Anguilla;Anguilla;en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+10;28;AG;ATG;Antigua and Barbuda;Antigua and Barbuda;en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+11;32;AR;ARG;Argentina;Argentina;es;Americas;Latin America and the Caribbean;South America;19;419;5
+12;;AM;ARM;Armenia;Armenia;hy;Asia;Western Asia;;142;145;
+13;;AW;ABW;Aruba;Aruba;nl, pap;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+14;;AU;AUS;Australia;Australia;en;Oceania;Australia and New Zealand;;9;53;
+15;;AT;AUT;Austria;Austria;de;Europe;Western Europe;;150;155;
+16;;AZ;AZE;Azerbaijan;Azerbaijan;az;Asia;Western Asia;;142;145;
+17;;BS;BHS;Bahamas;Bahamas;en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+18;;BH;BHR;Bahrain;Bahrain;ar;Asia;Western Asia;;142;145;
+19;;BD;BGD;Bangladesh;Bangladesh;bn;Asia;Southern Asia;;142;34;
+20;;BB;BRB;Barbados;Barbados;en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+21;;BY;BLR;Belarus;Belarus;be, ru;Europe;Eastern Europe;;150;151;
+22;;BE;BEL;Belgium;Belgium;nl, fr, de;Europe;Western Europe;;150;155;
+23;;BZ;BLZ;Belize;Belize;en;Americas;Latin America and the Caribbean;Central America;19;419;13
+24;;BJ;BEN;Benin;Benin;fr;Africa;Sub-Saharan Africa;Western Africa;2;202;11
+25;;BM;BMU;Bermuda;Bermuda;en;Americas;Northern America;;19;21;
+26;;BT;BTN;Bhutan;Bhutan;dz;Asia;Southern Asia;;142;34;
+27;;BO;BOL;Bolivia (Plurinational State of);Bolivia;es, qu, gn, ay;Americas;Latin America and the Caribbean;South America;19;419;5
+28;;BQ;BES;Bonaire, Sint Eustatius and Saba;onaire, Sint Eustatius and Saba;nl;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+29;;BA;BIH;Bosnia and Herzegovina;Bosnia and Herzegovina;bs, hr, sr;Europe;Southern Europe;;150;39;
+30;;BW;BWA;Botswana;Botswana;en, tn;Africa;Sub-Saharan Africa;Southern Africa;2;202;18
+31;;BV;BVT;Bouvet Island;Bouvet Island;no;Americas;Latin America and the Caribbean;South America;19;419;5
+32;;BR;BRA;Brazil;Brazil;pt;Americas;Latin America and the Caribbean;South America;19;419;5
+33;;IO;IOT;British Indian Ocean Territory;British Indian Ocean Territory;en;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+34;;BN;BRN;Brunei Darussalam;Brunei Darussalam;ms;Asia;South-eastern Asia;;142;35;
+35;;BG;BGR;Bulgaria;Bulgaria;bg;Europe;Eastern Europe;;150;151;
+36;;BF;BFA;Burkina Faso;Burkina Faso;fr;Africa;Sub-Saharan Africa;Western Africa;2;202;11
+37;;BI;BDI;Burundi;Burundi;fr;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+38;;CV;CPV;Cabo Verde;Cabo Verde;pt;Africa;Sub-Saharan Africa;Western Africa;2;202;11
+39;;KH;KHM;Cambodia;Cambodia;km;Asia;South-eastern Asia;;142;35;
+40;;CM;CMR;Cameroon;Cameroon;fr, en;Africa;Sub-Saharan Africa;Middle Africa;2;202;17
+41;;CA;CAN;Canada;Canada;en, fr;Americas;Northern America;;19;21;
+42;;KY;CYM;Cayman Islands;Cayman Islands;en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+43;;CF;CAF;Central African Republic;Central African Republic;fr, sg;Africa;Sub-Saharan Africa;Middle Africa;2;202;17
+44;;TD;TCD;Chad;Chad;fr, ar;Africa;Sub-Saharan Africa;Middle Africa;2;202;17
+45;;CL;CHL;Chile;Chile;es;Americas;Latin America and the Caribbean;South America;19;419;5
+46;;CN;CHN;China;China;zh-hans;Asia;Eastern Asia;;142;30;
+47;;CX;CXR;Christmas Island;Christmas Island;en;Oceania;Australia and New Zealand;;9;53;
+48;;CC;CCK;Cocos (Keeling) Islands;Cocos Islands;en;Oceania;Australia and New Zealand;;9;53;
+49;;CO;COL;Colombia;Colombia;es;Americas;Latin America and the Caribbean;South America;19;419;5
+50;;KM;COM;Comoros;Comoros;ar, fr, sw;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+51;;CG;COG;Congo;Congo;fr;Africa;Sub-Saharan Africa;Middle Africa;2;202;17
+52;;CD;COD;Congo, Democratic Republic of the;Congo;fr;Africa;Sub-Saharan Africa;Middle Africa;2;202;17
+53;;CK;COK;Cook Islands;Cook Islands;en, rar;Oceania;Polynesia;;9;61;
+54;;CR;CRI;Costa Rica;Costa Rica;es;Americas;Latin America and the Caribbean;Central America;19;419;13
+55;;CI;CIV;Côte d'Ivoire;Côte d'Ivoire;fr;Africa;Sub-Saharan Africa;Western Africa;2;202;11
+56;;HR;HRV;Croatia;Croatia;hr;Europe;Southern Europe;;150;39;
+57;;CU;CUB;Cuba;Cuba;es;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+58;;CW;CUW;Curaçao;Curaçao;nl, en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+59;;CY;CYP;Cyprus;Cyprus;el, tr;Asia;Western Asia;;142;145;
+60;;CZ;CZE;Czechia;Czechia;cs;Europe;Eastern Europe;;150;151;
+61;;DK;DNK;Denmark;Denmark;da;Europe;Northern Europe;;150;154;
+62;;DJ;DJI;Djibouti;Djibouti;fr, ar, so, aa;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+63;;DM;DMA;Dominica;Dominica;en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+64;;DO;DOM;Dominican Republic;Dominican Republic;es;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+65;;EC;ECU;Ecuador;Ecuador;es;Americas;Latin America and the Caribbean;South America;19;419;5
+66;;EG;EGY;Egypt;Egypt;ar;Africa;Northern Africa;;2;15;
+67;;SV;SLV;El Salvador;El Salvador;es;Americas;Latin America and the Caribbean;Central America;19;419;13
+68;;GQ;GNQ;Equatorial Guinea;Equatorial Guinea;es, fr, pt;Africa;Sub-Saharan Africa;Middle Africa;2;202;17
+69;;ER;ERI;Eritrea;Eritrea;ti, ar, en;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+70;;EE;EST;Estonia;Estonia;et;Europe;Northern Europe;;150;154;
+71;;SZ;SWZ;Eswatini;Eswatini;en, ss;Africa;Sub-Saharan Africa;Southern Africa;2;202;18
+72;;ET;ETH;Ethiopia;Ethiopia;am, om;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+73;;FK;FLK;Falkland Islands (Malvinas);Falkland Islands;en;Americas;Latin America and the Caribbean;South America;19;419;5
+74;;FO;FRO;Faroe Islands;Faroe Islands;fo, da;Europe;Northern Europe;;150;154;
+75;;FJ;FJI;Fiji;Fiji;en;Oceania;Melanesia;;9;54;
+76;;FI;FIN;Finland;Finland;fi, sv, se;Europe;Northern Europe;;150;154;
+77;;FR;FRA;France;France;fr;Europe;Western Europe;;150;155;
+78;;GF;GUF;French Guiana;French Guiana;fr;Americas;Latin America and the Caribbean;South America;19;419;5
+79;;PF;PYF;French Polynesia;French Polynesia;fr;Oceania;Polynesia;;9;61;
+80;;TF;ATF;French Southern Territories;French Southern Territories;fr;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+81;;GA;GAB;Gabon;Gabon;fr;Africa;Sub-Saharan Africa;Middle Africa;2;202;17
+82;;GM;GMB;Gambia;Gambia;en;Africa;Sub-Saharan Africa;Western Africa;2;202;11
+83;;GE;GEO;Georgia;Georgia;ka;Asia;Western Asia;;142;145;
+84;;DE;DEU;Germany;Germany;de;Europe;Western Europe;;150;155;
+85;;GH;GHA;Ghana;Ghana;en;Africa;Sub-Saharan Africa;Western Africa;2;202;11
+86;;GI;GIB;Gibraltar;Gibraltar;en;Europe;Southern Europe;;150;39;
+87;;GR;GRC;Greece;Greece;el;Europe;Southern Europe;;150;39;
+88;;GL;GRL;Greenland;Greenland;kl, da;Americas;Northern America;;19;21;
+89;;GD;GRD;Grenada;Grenada;en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+90;;GP;GLP;Guadeloupe;Guadeloupe;fr;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+91;;GU;GUM;Guam;Guam;en, ch;Oceania;Micronesia;;9;57;
+92;;GT;GTM;Guatemala;Guatemala;es;Americas;Latin America and the Caribbean;Central America;19;419;13
+93;;GG;GGY;Guernsey;Guernsey;en;Europe;Northern Europe;Channel Islands;150;154;830
+94;;GN;GIN;Guinea;Guinea;fr;Africa;Sub-Saharan Africa;Western Africa;2;202;11
+95;;GW;GNB;Guinea-Bissau;Guinea-Bissau;pt;Africa;Sub-Saharan Africa;Western Africa;2;202;11
+96;;GY;GUY;Guyana;Guyana;en;Americas;Latin America and the Caribbean;South America;19;419;5
+97;;HT;HTI;Haiti;Haiti;fr, ht;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+98;;HM;HMD;Heard Island and McDonald Islands;Heard Island and McDonald Islands;en;Oceania;Australia and New Zealand;;9;53;
+99;;VA;VAT;Holy See;Holy See;it;Europe;Southern Europe;;150;39;
+100;;HN;HND;Honduras;Honduras;es;Americas;Latin America and the Caribbean;Central America;19;419;13
+101;;HK;HKG;Hong Kong;Hong Kong;zh-hant, en;Asia;Eastern Asia;;142;30;
+102;;HU;HUN;Hungary;Hungary;hu;Europe;Eastern Europe;;150;151;
+103;;IS;ISL;Iceland;Iceland;is;Europe;Northern Europe;;150;154;
+104;;IN;IND;India;India;hi, en;Asia;Southern Asia;;142;34;
+105;;ID;IDN;Indonesia;Indonesia;id;Asia;South-eastern Asia;;142;35;
+106;;IR;IRN;Iran (Islamic Republic of);Iran;fa;Asia;Southern Asia;;142;34;
+107;;IQ;IRQ;Iraq;Iraq;ar, ku;Asia;Western Asia;;142;145;
+108;;IE;IRL;Ireland;Ireland;en, ga;Europe;Northern Europe;;150;154;
+109;;IM;IMN;Isle of Man;Isle of Man;en;Europe;Northern Europe;;150;154;
+110;;IL;ISR;Israel;Israel;he;Asia;Western Asia;;142;145;
+111;;IT;ITA;Italy;Italy;it, de, fr;Europe;Southern Europe;;150;39;
+112;;JM;JAM;Jamaica;Jamaica;en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+113;;JP;JPN;Japan;Japan;ja;Asia;Eastern Asia;;142;30;
+114;;JE;JEY;Jersey;Jersey;en;Europe;Northern Europe;Channel Islands;150;154;830
+115;;JO;JOR;Jordan;Jordan;ar;Asia;Western Asia;;142;145;
+116;;KZ;KAZ;Kazakhstan;Kazakhstan;kk, ru;Asia;Central Asia;;142;143;
+117;;KE;KEN;Kenya;Kenya;sw, en;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+118;;KI;KIR;Kiribati;Kiribati;en;Oceania;Micronesia;;9;57;
+119;;KP;PRK;Korea (Democratic People's Republic of);North Korea;ko;Asia;Eastern Asia;;142;30;
+120;;KR;KOR;Korea, Republic of;South Korea;ko, en;Asia;Eastern Asia;;142;30;
+121;;KW;KWT;Kuwait;Kuwait;ar;Asia;Western Asia;;142;145;
+122;;KG;KGZ;Kyrgyzstan;Kyrgyzstan;ky, ru;Asia;Central Asia;;142;143;
+123;;LA;LAO;Lao People's Democratic Republic;Lao People's Democratic Republic;lo;Asia;South-eastern Asia;;142;35;
+124;;LV;LVA;Latvia;Latvia;lv;Europe;Northern Europe;;150;154;
+125;;LB;LBN;Lebanon;Lebanon;ar, fr;Asia;Western Asia;;142;145;
+126;;LS;LSO;Lesotho;Lesotho;en, st;Africa;Sub-Saharan Africa;Southern Africa;2;202;18
+127;;LR;LBR;Liberia;Liberia;en;Africa;Sub-Saharan Africa;Western Africa;2;202;11
+128;;LY;LBY;Libya;Libya;ar;Africa;Northern Africa;;2;15;
+129;;LI;LIE;Liechtenstein;Liechtenstein;de;Europe;Western Europe;;150;155;
+130;;LT;LTU;Lithuania;Lithuania;lt;Europe;Northern Europe;;150;154;
+131;;LU;LUX;Luxembourg;Luxembourg;lb, fr, de;Europe;Western Europe;;150;155;
+132;;MO;MAC;Macao;Macao;zh-hant, pt;Asia;Eastern Asia;;142;30;
+133;;MG;MDG;Madagascar;Madagascar;mg, fr;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+134;;MW;MWI;Malawi;Malawi;en, ny;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+135;;MY;MYS;Malaysia;Malaysia;ms;Asia;South-eastern Asia;;142;35;
+136;;MV;MDV;Maldives;Maldives;dv;Asia;Southern Asia;;142;34;
+137;;ML;MLI;Mali;Mali;fr;Africa;Sub-Saharan Africa;Western Africa;2;202;11
+138;;MT;MLT;Malta;Malta;mt, en;Europe;Southern Europe;;150;39;
+139;;MH;MHL;Marshall Islands;Marshall Islands;en, mh;Oceania;Micronesia;;9;57;
+140;;MQ;MTQ;Martinique;Martinique;fr;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+141;;MR;MRT;Mauritania;Mauritania;ar, fr;Africa;Sub-Saharan Africa;Western Africa;2;202;11
+142;;MU;MUS;Mauritius;Mauritius;mfe, fr, en;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+143;;YT;MYT;Mayotte;Mayotte;fr;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+144;;MX;MEX;Mexico;Mexico;es;Americas;Latin America and the Caribbean;Central America;19;419;13
+145;;FM;FSM;Micronesia (Federated States of);Micronesia;en;Oceania;Micronesia;;9;57;
+146;;MD;MDA;Moldova, Republic of;Moldova;ro, ru, uk;Europe;Eastern Europe;;150;151;
+147;;MC;MCO;Monaco;Monaco;fr;Europe;Western Europe;;150;155;
+148;;MN;MNG;Mongolia;Mongolia;mn;Asia;Eastern Asia;;142;30;
+149;;ME;MNE;Montenegro;Montenegro;srp, sr, hr, bs, sq;Europe;Southern Europe;;150;39;
+150;;MS;MSR;Montserrat;Montserrat;en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+151;;MA;MAR;Morocco;Morocco;fr, zgh, ar;Africa;Northern Africa;;2;15;
+152;;MZ;MOZ;Mozambique;Mozambique;pt;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+153;;MM;MMR;Myanmar;Myanmar;my;Asia;South-eastern Asia;;142;35;
+154;;NA;NAM;Namibia;Namibia;en, sf, de;Africa;Sub-Saharan Africa;Southern Africa;2;202;18
+155;;NR;NRU;Nauru;Nauru;na, en;Oceania;Micronesia;;9;57;
+156;;NP;NPL;Nepal;Nepal;ne;Asia;Southern Asia;;142;34;
+157;;NL;NLD;Netherlands;Netherlands;nl;Europe;Western Europe;;150;155;
+158;;NC;NCL;New Caledonia;New Caledonia;fr;Oceania;Melanesia;;9;54;
+159;;NZ;NZL;New Zealand;New Zealand;mi, en;Oceania;Australia and New Zealand;;9;53;
+160;;NI;NIC;Nicaragua;Nicaragua;es;Americas;Latin America and the Caribbean;Central America;19;419;13
+161;;NE;NER;Niger;Niger;fr;Africa;Sub-Saharan Africa;Western Africa;2;202;11
+162;;NG;NGA;Nigeria;Nigeria;en;Africa;Sub-Saharan Africa;Western Africa;2;202;11
+163;;NU;NIU;Niue;Niue;niu, en;Oceania;Polynesia;;9;61;
+164;;NF;NFK;Norfolk Island;Norfolk Island;en, pih;Oceania;Australia and New Zealand;;9;53;
+165;;MK;MKD;North Macedonia;North Macedonia;mk;Europe;Southern Europe;;150;39;
+166;;MP;MNP;Northern Mariana Islands;Northern Mariana Islands;en, ch;Oceania;Micronesia;;9;57;
+167;;NO;NOR;Norway;Norway;nb, nn, no, se;Europe;Northern Europe;;150;154;
+168;;OM;OMN;Oman;Oman;ar;Asia;Western Asia;;142;145;
+169;;PK;PAK;Pakistan;Pakistan;en, ur;Asia;Southern Asia;;142;34;
+170;;PW;PLW;Palau;Palau;en, pau, ja, sov, tox;Oceania;Micronesia;;9;57;
+171;;PS;PSE;Palestine, State of;Palestine;ar, he;Asia;Western Asia;;142;145;
+172;;PA;PAN;Panama;Panama;es;Americas;Latin America and the Caribbean;Central America;19;419;13
+173;;PG;PNG;Papua New Guinea;Papua New Guinea;en, tpi, ho;Oceania;Melanesia;;9;54;
+174;;PY;PRY;Paraguay;Paraguay;es, gn;Americas;Latin America and the Caribbean;South America;19;419;5
+175;;PE;PER;Peru;Peru;es;Americas;Latin America and the Caribbean;South America;19;419;5
+176;;PH;PHL;Philippines;Philippines;en, tl;Asia;South-eastern Asia;;142;35;
+177;;PN;PCN;Pitcairn;Pitcairn;en, pih;Oceania;Polynesia;;9;61;
+178;;PL;POL;Poland;Poland;pl;Europe;Eastern Europe;;150;151;
+179;;PT;PRT;Portugal;Portugal;pt;Europe;Southern Europe;;150;39;
+180;;PR;PRI;Puerto Rico;Puerto Rico;es, en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+181;;QA;QAT;Qatar;Qatar;ar;Asia;Western Asia;;142;145;
+182;;RE;REU;Réunion;Réunion;fr;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+183;;RO;ROU;Romania;Romania;ro;Europe;Eastern Europe;;150;151;
+184;;RU;RUS;Russian Federation;Russian Federation;ru;Europe;Eastern Europe;;150;151;
+185;;RW;RWA;Rwanda;Rwanda;rw, fr, en;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+186;;BL;BLM;Saint Barthélemy;Saint Barthélemy;fr;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+187;;SH;SHN;Saint Helena, Ascension and Tristan da Cunha;Saint Helena;en;Africa;Sub-Saharan Africa;Western Africa;2;202;11
+188;;KN;KNA;Saint Kitts and Nevis;Saint Kitts and Nevis;en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+189;;LC;LCA;Saint Lucia;Saint Lucia;en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+190;;MF;MAF;Saint Martin (French part);Saint Martin;fr;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+191;;PM;SPM;Saint Pierre and Miquelon;Saint Pierre and Miquelon;fr;Americas;Northern America;;19;21;
+192;;VC;VCT;Saint Vincent and the Grenadines;Saint Vincent and the Grenadines;en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+193;;WS;WSM;Samoa;Samoa;sm, en;Oceania;Polynesia;;9;61;
+194;;SM;SMR;San Marino;San Marino;it;Europe;Southern Europe;;150;39;
+195;;ST;STP;Sao Tome and Principe;Sao Tome and Principe;pt;Africa;Sub-Saharan Africa;Middle Africa;2;202;17
+196;;SA;SAU;Saudi Arabia;Saudi Arabia;ar;Asia;Western Asia;;142;145;
+197;;SN;SEN;Senegal;Senegal;fr;Africa;Sub-Saharan Africa;Western Africa;2;202;11
+198;;RS;SRB;Serbia;Serbia;sr, sr-Latn;Europe;Southern Europe;;150;39;
+199;;SC;SYC;Seychelles;Seychelles;fr, en, crs;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+200;;SL;SLE;Sierra Leone;Sierra Leone;en;Africa;Sub-Saharan Africa;Western Africa;2;202;11
+201;;SG;SGP;Singapore;Singapore;zh-hans, en, ms, ta;Asia;South-eastern Asia;;142;35;
+202;;SX;SXM;Sint Maarten (Dutch part);Sint Maarten;nl, en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+203;;SK;SVK;Slovakia;Slovakia;sk;Europe;Eastern Europe;;150;151;
+204;;SI;SVN;Slovenia;Slovenia;sl;Europe;Southern Europe;;150;39;
+205;;SB;SLB;Solomon Islands;Solomon Islands;en;Oceania;Melanesia;;9;54;
+206;;SO;SOM;Somalia;Somalia;so, ar;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+207;;ZA;ZAF;South Africa;South Africa;en, af, st, tn, xh, zu;Africa;Sub-Saharan Africa;Southern Africa;2;202;18
+208;;GS;SGS;South Georgia and the South Sandwich Islands;South Georgia and the South Sandwich Islands;en;Americas;Latin America and the Caribbean;South America;19;419;5
+209;;SS;SSD;South Sudan;South Sudan;en;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+210;;ES;ESP;Spain;Spain;ast, ca, es, eu, gl;Europe;Southern Europe;;150;39;
+211;;LK;LKA;Sri Lanka;Sri Lanka;si, ta;Asia;Southern Asia;;142;34;
+212;;SD;SDN;Sudan;Sudan;ar, en;Africa;Northern Africa;;2;15;
+213;;SR;SUR;Suriname;Suriname;nl;Americas;Latin America and the Caribbean;South America;19;419;5
+214;;SJ;SJM;Svalbard and Jan Mayen;Svalbard and Jan Mayen;no;Europe;Northern Europe;;150;154;
+215;;SE;SWE;Sweden;Sweden;sv;Europe;Northern Europe;;150;154;
+216;;CH;CHE;Switzerland;Switzerland;de, fr, it, rm;Europe;Western Europe;;150;155;
+217;;SY;SYR;Syrian Arab Republic;Syrian Arab Republic;ar;Asia;Western Asia;;142;145;
+218;;TW;TWN;Taiwan, Province of China;Taiwan, Province of China;zh-hant;Asia;Eastern Asia;;142;30;
+219;;TJ;TJK;Tajikistan;Tajikistan;tg, ru;Asia;Central Asia;;142;143;
+220;;TZ;TZA;Tanzania, United Republic of;Tanzania;sw, en;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+221;;TH;THA;Thailand;Thailand;th;Asia;South-eastern Asia;;142;35;
+222;;TL;TLS;Timor-Leste;Timor-Leste;pt, tet;Asia;South-eastern Asia;;142;35;
+223;;TG;TGO;Togo;Togo;fr;Africa;Sub-Saharan Africa;Western Africa;2;202;11
+224;;TK;TKL;Tokelau;Tokelau;tkl, en, sm;Oceania;Polynesia;;9;61;
+225;;TO;TON;Tonga;Tonga;en;Oceania;Polynesia;;9;61;
+226;;TT;TTO;Trinidad and Tobago;Trinidad and Tobago;en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+227;;TN;TUN;Tunisia;Tunisia;ar, fr;Africa;Northern Africa;;2;15;
+228;;TR;TUR;Turkey;Turkey;tr;Asia;Western Asia;;142;145;
+229;;TM;TKM;Turkmenistan;Turkmenistan;tk;Asia;Central Asia;;142;143;
+230;;TC;TCA;Turks and Caicos Islands;Turks and Caicos Islands;en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+231;;TV;TUV;Tuvalu;Tuvalu;en;Oceania;Polynesia;;9;61;
+232;;UG;UGA;Uganda;Uganda;en, sw;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+233;;UA;UKR;Ukraine;Ukraine;uk;Europe;Eastern Europe;;150;151;
+234;;AE;ARE;United Arab Emirates;United Arab Emirates;ar;Asia;Western Asia;;142;145;
+235;;GB;GBR;United Kingdom of Great Britain and Northern Ireland;United Kingdom of Great Britain and Northern Ireland;en, ga, cy, gd, kw;Europe;Northern Europe;;150;154;
+236;;US;USA;United States of America;United States;en;Americas;Northern America;;19;21;
+237;;UM;UMI;United States Minor Outlying Islands;United States Minor Outlying Islands;en;Oceania;Micronesia;;9;57;
+238;;UY;URY;Uruguay;Uruguay;es;Americas;Latin America and the Caribbean;South America;19;419;5
+239;;UZ;UZB;Uzbekistan;Uzbekistan;uz, kaa;Asia;Central Asia;;142;143;
+240;;VU;VUT;Vanuatu;Vanuatu;bi, en, fr;Oceania;Melanesia;;9;54;
+241;;VE;VEN;Venezuela (Bolivarian Republic of);Venezuela;es;Americas;Latin America and the Caribbean;South America;19;419;5
+242;;VN;VNM;Viet Nam;Viet Nam;vi;Asia;South-eastern Asia;;142;35;
+243;;VG;VGB;Virgin Islands (British);Virgin Islands;en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+244;;VI;VIR;Virgin Islands (U.S.);Virgin Islands;en;Americas;Latin America and the Caribbean;Caribbean;19;419;29
+245;;WF;WLF;Wallis and Futuna;Wallis and Futuna;fr;Oceania;Polynesia;;9;61;
+246;;EH;ESH;Western Sahara;Western Sahara;ar, es, fr;Africa;Northern Africa;;2;15;
+247;;YE;YEM;Yemen;Yemen;ar;Asia;Western Asia;;142;145;
+248;;ZM;ZMB;Zambia;Zambia;en;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14
+249;;ZW;ZWE;Zimbabwe;Zimbabwe;en, sn, nd;Africa;Sub-Saharan Africa;Eastern Africa;2;202;14

@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\shared\Bigai.Holidays.Shared.Domain\Bigai.Holidays.Shared.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
