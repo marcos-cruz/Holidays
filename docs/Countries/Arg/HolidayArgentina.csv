@@ -1,0 +1,20 @@
+ID;CONTRY;STATE-NAME;STATE-CODE;MONTH;DAY;HOLIDAY-NAME;ALTERNATIVE-HOLIDAY-NAME;HOLIDAY-TYPE;CITY-NAME;CITY-CODE;OPTIONAL;BUSSINESS-RULE;COMMENTS
+1;ARG;;;Jan;1;Año Nuevo;New Year's Day;National Holiday;;;;;
+2;ARG;;;Mar;4;Lunes de Carnaval;Carnival Monday;National Holiday;;;;Carnival Monday;Monday before Ash Wednesday
+3;ARG;;;Mar;5;Martes de Carnaval;Carnival Tuesday;National Holiday;;;;Carnival Tuesday;Tuesday before Ash Wednesday
+4;ARG;;;Mar;24;Día Nacional por la Verdad y la Justicia;Truth and Justice Memorial Day;National Holiday;;;;;
+5;ARG;;;Apr;2;Día del Veterano y de los caídos en la Guerra de Malvinas;Malvinas Day;National Holiday;;;;;Veteran's Day
+6;ARG;;;Apr;18;Jueves Santo;Maundy Thursday;Not A Public Holiday;;;TRUE;Maundy Thursday;International Catholic holiday
+7;ARG;;;Apr;19;Viernes Santo;Holy Friday;National Holiday;;;;goodfriday;International Catholic holiday
+8;ARG;;;May;1;Día del Trabajador;Labour Day;National Holiday;;;;;International Workers' Day
+9;ARG;;;May;25;Día de la Revolución de Mayo;May Day Revolution;National Holiday;;;;;
+10;ARG;;;Jun;17;Paso a la Inmortalidad del Gral. Güemes;Martin Miguel de Guemes Day;National Holiday;;;;;Celebrated since 2016
+11;ARG;;;Jun;20;Día Paso a la Inmortalidad del General Manuel Belgrano;National Flag Day;National Holiday;;;;3,Monday,June;Third Monday in June
+12;ARG;;;Jun;16;Día de los Padres;Father's Day;Not A Public Holiday;;;TRUE;3,Sunday,June;3rd Sunday in June. Not a public holiday
+13;ARG;;;Jul;9;Día de la Independencia;Independence Day;National Holiday;;;;;
+14;ARG;;;Aug;19;Paso a la Inmortalidad del Gral. José de San Martín;San Martin's Day;National Holiday;;;;3,Monday,August;Third Monday in August
+15;ARG;;;Oct;14;Día del Respeto a la Diversidad Cultural;Day of respect for cultural diversity;National Holiday;;;;;
+16;ARG;;;Oct;20;Día de la Madre;Mother's Day;Not A Public Holiday;;;TRUE;3,Sunday,October;3rd Sunday in October
+17;ARG;;;Nov;18;Día de la Soberanía Nacional;Day of National Sovereignty;National Holiday;;;;4,Monday,November;Fourth Monday in November
+18;ARG;;;Dec;8;Día de Inmaculada Concepción de María;Immaculate Conception Day;National Holiday;;;;;Also known as Virgins Day
+19;ARG;;;Dec;25;Navidad;Christmas Day;National Holiday;;;;;

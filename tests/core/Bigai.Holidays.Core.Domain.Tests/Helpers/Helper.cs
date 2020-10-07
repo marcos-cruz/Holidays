@@ -15,6 +15,9 @@ using Bigai.Holidays.Core.Infra.Data.Repositories.States;
 using Bigai.Holidays.Core.Infra.Data.UnitOfWork;
 using Bigai.Holidays.Shared.Domain.Interfaces.Notifications;
 using Bigai.Holidays.Shared.Domain.Notifications;
+using Bigai.Holidays.Shared.Infra.CrossCutting.Interfaces;
+using Bigai.Holidays.Shared.Infra.CrossCutting.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.IO;
@@ -36,6 +39,7 @@ namespace Bigai.Holidays.Core.Domain.Tests.Helpers
         private static IAddCountryService _addCountryService = null;
         private static IAddStateService _addStateService = null;
         private static IAddRuleHolidayService _addRuleHolidayService = null;
+        private static IUserLogged _userLogged = null;
 
         public static string GetFilePath(string fileName)
         {
@@ -46,14 +50,25 @@ namespace Bigai.Holidays.Core.Domain.Tests.Helpers
             return file;
         }
 
+        private static IUserLogged GetUserLogged()
+        {
+            if (_userLogged == null)
+            {
+                IHttpContextAccessor httpContextAccessor = new HttpContextAccessor();
+                _userLogged = new UserLogged(httpContextAccessor);
+            }
+            return _userLogged;
+        }
+
         public static IAddCountryService GetAddCountryService()
         {
             if (_addCountryService == null)
             {
                 var notificationHandler = GetNotificationHandler();
                 var unitOfWork = GetUnitOfWorkCore();
+                var userLogged = GetUserLogged();
 
-                _addCountryService = new AddCountryService(notificationHandler, unitOfWork);
+                _addCountryService = new AddCountryService(notificationHandler, unitOfWork, userLogged);
             }
             return _addCountryService;
         }
@@ -64,8 +79,9 @@ namespace Bigai.Holidays.Core.Domain.Tests.Helpers
             {
                 var notificationHandler = GetNotificationHandler();
                 var unitOfWork = GetUnitOfWorkCore();
+                var userLogged = GetUserLogged();
 
-                _addStateService = new AddStateService(notificationHandler, unitOfWork);
+                _addStateService = new AddStateService(notificationHandler, unitOfWork, userLogged);
             }
             return _addStateService;
         }
@@ -76,8 +92,9 @@ namespace Bigai.Holidays.Core.Domain.Tests.Helpers
             {
                 var notificationHandler = GetNotificationHandler();
                 var unitOfWork = GetUnitOfWorkCore();
+                var userLogged = GetUserLogged();
 
-                _addRuleHolidayService = new AddRuleHolidayService(notificationHandler, unitOfWork);
+                _addRuleHolidayService = new AddRuleHolidayService(notificationHandler, unitOfWork, userLogged);
             }
             return _addRuleHolidayService;
         }
@@ -89,8 +106,9 @@ namespace Bigai.Holidays.Core.Domain.Tests.Helpers
                 var notificationHandler = GetNotificationHandler();
                 var unitOfWork = GetUnitOfWorkCore();
                 var addCountryService = GetAddCountryService();
+                var userLogged = GetUserLogged();
 
-                _importCountryService = new ImportCountryService(notificationHandler, unitOfWork, addCountryService);
+                _importCountryService = new ImportCountryService(notificationHandler, unitOfWork, userLogged, addCountryService);
             }
 
             return _importCountryService;
@@ -103,8 +121,9 @@ namespace Bigai.Holidays.Core.Domain.Tests.Helpers
                 var notificationHandler = GetNotificationHandler();
                 var unitOfWork = GetUnitOfWorkCore();
                 var addStateService = GetAddStateService();
+                var userLogged = GetUserLogged();
 
-                _importStateService = new ImportStateService(notificationHandler, unitOfWork, addStateService);
+                _importStateService = new ImportStateService(notificationHandler, unitOfWork, userLogged, addStateService);
             }
 
             return _importStateService;
@@ -117,8 +136,9 @@ namespace Bigai.Holidays.Core.Domain.Tests.Helpers
                 var notificationHandler = GetNotificationHandler();
                 var unitOfWork = GetUnitOfWorkCore();
                 var addRuleHolidayService = GetAddRuleHolidayService();
+                var userLogged = GetUserLogged();
 
-                _importRuleHolidayService = new ImportRuleHolidayService(notificationHandler, unitOfWork, addRuleHolidayService);
+                _importRuleHolidayService = new ImportRuleHolidayService(notificationHandler, unitOfWork, userLogged, addRuleHolidayService);
             }
 
             return _importRuleHolidayService;
@@ -131,7 +151,7 @@ namespace Bigai.Holidays.Core.Domain.Tests.Helpers
                 HolidaysContext dbContext = GetInMemoryContext();
 
                 //
-                // TODO: Melhoar
+                // TODO: Melhorar
                 //
                 ICountryRepository countryRepository = GetCountryRepository(dbContext);
                 IStateRepository stateRepository = GetStateRepository(dbContext);

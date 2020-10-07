@@ -1,0 +1,326 @@
+ID;CONTRY;STATE-NAME;STATE-CODE;MONTH;DAY;HOLIDAY-NAME;ALTERNATIVE-HOLIDAY-NAME;HOLIDAY-TYPE;CITY-NAME;CITY-CODE;OPTIONAL;BUSSINESS-RULE;COMMENTS
+1;PRT;;;January;1;Dia de Ano Novo;New Year's Day;National Holiday;;;;;
+2;PRT;Leiria;LE;January;11;Dia da Tomada de Óbidos aos Mouros;Day of the Taking of Óbidos to the Mouros;Regional Holiday;Óbidos;;;;
+3;PRT;Lisboa;LI;January;13;Restauração do Município;Restoration of the Municipality;Regional Holiday;Cadaval;;;;
+4;PRT;Vila Real;VR;January;13;Restauração do Município;Restoration of the Municipality;Regional Holiday;Santa Marta de Penaguião;;;;
+5;PRT;Évora;EV;January;13;Restauração do Município;Restoration of the Municipality;Regional Holiday;Viana do Alentejo;;;;
+6;PRT;Coimbra;CO;January;13;Restauração do Município;Restoration of the Municipality;Regional Holiday;Vila Nova de Poiares;;;;
+7;PRT;Portalegre;PA;January;14;Comemoração da Vitória na Batalha das Linhas de Elvas entre Portugueses e Espanhóis;Celebration of victory in the Battle of the Lines of Elvas between Portuguese and Spanish;Regional Holiday;Elvas;;;;
+8;PRT;Madeira;MA;January;15;Festa de Santo Amaro;Feast of Santo Amaro;Regional Holiday;Santa Cruz;;;;
+9;PRT;Aveiro;AV;January;20;Dia de São Sebastião;St. Sebastian's Day;Regional Holiday;Santa Maria da Feira;;;;
+10;PRT;Madeira;MA;January;22;Festa de São Vicente;Feast of Saint Vincent;Regional Holiday;São Vicente;;;;
+11;PRT;Faro;FA;January;22;Festa de São Vicente;Feast of Saint Vincent;Regional Holiday;Vila do Bispo;;;;
+12;PRT;Évora;EV;February;2;Festa de Nossa Senhora das Candeias;Feast of Our Lady of Candeias;Regional Holiday;Mourão;;;;
+13;PRT;Guarda;GU;February;10;Feriado Municipal;Municipal Holiday;Regional Holiday;Aguiar da Beira;;;;
+14;PRT;Viana do Castelo;VC;February;18;Festa de São Teotónio;Feast of São Teotónio;Regional Holiday;Valença;;;;
+15;PRT;;;February;25;Carnaval;Carnival Tuesday;Not A Public Holiday;;;;;Holiday for Banks and Civil Servants
+16;PRT;Santarém;SA;March;1;Aniversário da Construção do Castelo de Tomar;Anniversary of the Construction of Tomar Castle;Regional Holiday;Tomar;;;;
+17;PRT;Viseu;VI;March;2;Feriado Municipal;Municipal Holiday;Regional Holiday;Vila Nova de Paiva;;;;
+18;PRT;Guarda;GU;March;4;Feriado Municipal;Municipal Holiday;Regional Holiday;Manteigas;;;;
+19;PRT;Beja;BE;March;5;Dia da Criação do Concelho;County Creation Day;Regional Holiday;Ferreira do Alentejo;;;;
+20;PRT;Évora;EV;March;8;Festa de São João de Deus;Feast of Saint John of God;Regional Holiday;Montemor-o-Novo;;;;
+21;PRT;Viana do Castelo;VC;March;12;Data da Atribuição do Foral;Date of Charter Assignment;Regional Holiday;Monção;;;;
+22;PRT;Braga;BR;March;19;Dia de São José;St. Joseph's Day;Regional Holiday;Póvoa de Lanhoso;;;;
+23;PRT;Santarém;SA;March;19;Dia de São José;St. Joseph's Day;Regional Holiday;Santarém;;;;
+24;PRT;Bragança;BA;March;19;Dia de São José;St. Joseph's Day;Regional Holiday;Torre de Moncorvo;;;;
+25;PRT;Braga;BR;March;19;Dia da Criação do Município;Day of the Creation of the Municipality;Regional Holiday;Vizela;;;;
+26;PRT;;;March;19;Dia de São José;St. Joseph's Day;Not A Public Holiday;;;;;Celebrated on Saint Joseph's Day. Not a public holiday
+27;PRT;Santarém;SA;April;2;Data de Criação do Município;Date of Creation of the Municipality;Regional Holiday;Alpiarça;;;;
+28;PRT;Portalegre;PA;April;6;Dia da Batalha dos Atoleiros, entre Portugueses e Espanhóis;Day of the Battle of Atoleiros, between Portuguese and Spanish;Regional Holiday;Fronteira;;;;
+29;PRT;Coimbra;CO;April;10;Data da Restauração dos Títulos de Vila Isenta;Date of Restoration of Vila Exempt Titles;Regional Holiday;Pampilhosa da Serra;;;;
+30;PRT;Coimbra;CO;April;10;Restauração da Comarca;County Restoration;Regional Holiday;Tábua;;;;
+31;PRT;;;April;10;Sexta-feira Santa;Good Friday;National Holiday;;;;Good Friday;
+32;PRT;Açores;AC;April;11;Data de Criação do Município;Municipality Creation Date;Regional Holiday;Lagoa;;;;
+33;PRT;;;April;12;Páscoa;Easter;National Holiday;;;;Easter;
+34;PRT;Portalegre;PA;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Avis;;;Easter Monday;Monday after Easter Sunday
+35;PRT;Évora;EV;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Borba;;;Easter Monday;Monday after Easter Sunday
+36;PRT;Viana do Castelo;VC;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Caminha;;;Easter Monday;Monday after Easter Sunday
+37;PRT;Portalegre;PA;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Campo Maior;;;Easter Monday;Monday after Easter Sunday
+38;PRT;Portalegre;PA;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Castelo de Vide;;;Easter Monday;Monday after Easter Sunday
+39;PRT;Santarém;SA;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Constância;;;Easter Monday;Monday after Easter Sunday
+40;PRT;Portalegre;PA;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Crato;;;Easter Monday;Monday after Easter Sunday
+41;PRT;Beja;BE;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Cuba;;;Easter Monday;Monday after Easter Sunday
+42;PRT;Bragança;BA;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Freixo de Espada à Cinta;;;Easter Monday;Monday after Easter Sunday
+43;PRT;Aveiro;AV;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Ílhavo;;;Easter Monday;Monday after Easter Sunday
+44;PRT;Santarém;SA;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Mação;;;Easter Monday;Monday after Easter Sunday
+45;PRT;Évora;EV;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Mora;;;Easter Monday;Monday after Easter Sunday
+46;PRT;Portalegre;PA;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Nisa;;;Easter Monday;Monday after Easter Sunday
+47;PRT;Castelo Branco;CB;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Penamacor;;;Easter Monday;Monday after Easter Sunday
+48;PRT;Portalegre;PA;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Ponte de Sôr;;;Easter Monday;Monday after Easter Sunday
+49;PRT;Évora;EV;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Portel;;;Easter Monday;Monday after Easter Sunday
+50;PRT;Évora;EV;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Redondo;;;Easter Monday;Monday after Easter Sunday
+51;PRT;Portalegre;PA;April;13;Segunda-feira de Páscoa;Municipal Holiday;Regional Holiday;Sousel;;;Easter Monday;Monday after Easter Sunday
+52;PRT;Beja;BE;April;14;Terça-feira de Páscoa;Municipal Holiday;Regional Holiday;Serpa;;;Easter Tuesday;Tuesday after Easter Sunday
+53;PRT;Évora;EV;April;20;Segunda-feira de Pascoela;Municipal Holiday;Regional Holiday;Alandroal;;;2,Monday,After,Easter;2nd Monday After Easter
+54;PRT;Portalegre;PA;April;20;Segunda-feira de Pascoela;Municipal Holiday;Regional Holiday;Monforte;;;2,Monday,After,Easter;2nd Monday After Easter
+55;PRT;Guarda;GU;April;20;Segunda-feira de Pascoela;Municipal Holiday;Regional Holiday;Sabugal;;;2,Monday,After,Easter;2nd Monday After Easter
+56;PRT;Açores;AC;April;22;Feriado Municipal;Municipal Holiday;Regional Holiday;Ponta Delgada;;;Pentecost Monday;Monday of the Holy Spirit
+57;PRT;Açores;AC;April;23;Dia de São Jorge;St. George's Day;Regional Holiday;Velas;;;;
+58;PRT;;;April;25;Dia da Liberdade;Freedom Day;National Holiday;;;;;Liberation Day
+59;PRT;Castelo Branco;CB;April;26;Celebração da Primeira Missa no Brasil;Celebration of the first Mass in Brazil;Regional Holiday;Belmonte;;;;
+60;PRT;Castelo Branco;CB;April;27;Festa da Nossa Senhora do Almortão;Feast of Our Lady of Almortão;Regional Holiday;Idanha-a-Nova;;;3,Monday,after,Easter;3rd Monday after Easter
+61;PRT;Castelo Branco;CB;April;28;Nossa Senhora de Mércoles;Our Lady of Mércoles;Regional Holiday;Castelo Branco;;;3,Tuesday,after,Easter;3rd Tuesday after Easter
+62;PRT;;;May;1;Dia do Trabalhador;Labour Day;National Holiday;;;;;May Day
+63;PRT;Aveiro;AV;May;2;Festa da Rainha Santa Mafalda;Feast of Queen Saint Mafalda;Regional Holiday;Arouca;;;;
+64;PRT;Braga;BR;May;3;Festa da Santa Cruz;Feast of the Holy Cross;Regional Holiday;Barcelos;;;;
+65;PRT;Viseu;VI;May;3;Festa de Nossa Senhora de ao Pé da Cruz;Feast of Our Lady of at the Foot of the Cross;Regional Holiday;Sernancelhe;;;;
+66;PRT;;;May;3;Dia das Mães;Mother's Day;Not A Public Holiday;;;;1,Sunday,May;1st Sunday in May. Not a public holiday
+67;PRT;Setúbal;SE;May;4;Festa de Nosso Senhor Jesus das Chagas;Feast of Our Lord Jesus das Chagas;Regional Holiday;Sesimbra;;;;
+68;PRT;Vila Real;VR;May;8;Dia da criação do município;Day the municipality was created;Regional Holiday;Murça;;;;
+69;PRT;Aveiro;AV;May;12;Dia de Santa Joana Princesa;Saint Joan Day Princess;Regional Holiday;Aveiro;;;;
+70;PRT;Faro;FA;May;13;Feriado Municipal;Municipal Holiday;Regional Holiday;Vila Real de Santo António;;;;
+71;PRT;Viseu;VI;May;14;Festa de São Frei Gil;Feast of São Frei Gil;Regional Holiday;Vouzela;;;;
+72;PRT;Leiria;LE;May;15;Fundação da localidade pela rainha D. Leonor no séc. XV;Foundation of the locality by Queen D. Leonor in the century. XV;Regional Holiday;Caldas da Rainha;;;;
+73;PRT;Braga;BR;May;16;Dia das Feiras Francas;Municipal Holiday;Regional Holiday;Fafe;;;;
+74;PRT;Açores;AC;May;18;Senhor Santo Cristo dos Milagres;Lord Holy Christ of Miracles;Regional Holiday;Ponta Delgada;;;6,Monday,after,Easter;6th Monday after Easter
+75;PRT;Bragança;BA;May;20;Dia da Outorgação do Foral Manuelino;Day of Granting the Manueline Charter;Regional Holiday;Vinhais;;;;
+76;PRT;Santarém;SA;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Alcanena;;;Ascension Day;Ascension Thursday
+77;PRT;Lisboa;LI;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Alenquer;;;Ascension Day;Ascension Thursday
+78;PRT;Santarém;SA;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Almeirim;;;Ascension Day;Ascension Thursday
+79;PRT;Portalegre;PA;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Alter do Chão;;;Ascension Day;Ascension Thursday
+80;PRT;Beja;BE;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Alvito;;;Ascension Day;Ascension Thursday
+81;PRT;Aveiro;AV;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Anadia;;;Ascension Day;Ascension Thursday
+82;PRT;Leiria;LE;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Ansião;;;Ascension Day;Ascension Thursday
+83;PRT;Évora;EV;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Arraiolos;;;Ascension Day;Ascension Thursday
+84;PRT;Lisboa;LI;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Arruda dos Vinhos;;;Ascension Day;Ascension Thursday
+85;PRT;Lisboa;LI;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Azambuja;;;Ascension Day;Ascension Thursday
+86;PRT;Beja;BE;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Beja;;;Ascension Day;Ascension Thursday
+87;PRT;Santarém;SA;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Benavente;;;Ascension Day;Ascension Thursday
+88;PRT;Santarém;SA;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Cartaxo;;;Ascension Day;Ascension Thursday
+89;PRT;Santarém;SA;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Chamusca;;;Ascension Day;Ascension Thursday
+90;PRT;Évora;EV;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Estremoz;;;Ascension Day;Ascension Thursday
+91;PRT;Santarém;SA;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Golegã;;;Ascension Day;Ascension Thursday
+92;PRT;Faro;FA;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Loulé;;;Ascension Day;Ascension Thursday
+93;PRT;Lisboa;LI;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Mafra;;;Ascension Day;Ascension Thursday
+94;PRT;Leiria;LE;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Marinha Grande;;;Ascension Day;Ascension Thursday
+95;PRT;Aveiro;AV;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Mealhada;;;Ascension Day;Ascension Thursday
+96;PRT;Viana do Castelo;VC;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Melgaço;;;Ascension Day;Ascension Thursday
+97;PRT;Faro;FA;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Monchique;;;Ascension Day;Ascension Thursday
+98;PRT;Viseu;VI;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Mortágua;;;Ascension Day;Ascension Thursday
+99;PRT;Aveiro;AV;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Oliveira do Bairro;;;Ascension Day;Ascension Thursday
+100;PRT;Santarém;SA;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Salvaterra de Magos;;;Ascension Day;Ascension Thursday
+101;PRT;Viseu;VI;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Santa Comba Dão;;;Ascension Day;Ascension Thursday
+102;PRT;Lisboa;LI;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Sobral de Monte Agraço;;;Ascension Day;Ascension Thursday
+103;PRT;Santarém;SA;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Torres Novas;;;Ascension Day;Ascension Thursday
+104;PRT;Beja;BE;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Vidigueira;;;Ascension Day;Ascension Thursday
+105;PRT;Lisboa;LI;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Vila Franca de Xira;;;Ascension Day;Ascension Thursday
+106;PRT;Guarda;GU;May;21;Quinta-feira da Ascensão;Municipal Holiday;Regional Holiday;Vila Nova de Foz Côa;;;Ascension Day;Ascension Thursday
+107;PRT;Leiria;LE;May;22;Elevação a Cidade e Criação da Diocese;Elevation to the City and Creation of the Diocese;Regional Holiday;Leiria;;;;
+108;PRT;Guarda;GU;May;23;Nascimento de Sacadura Cabral;Birth of Sacadura Cabral;Regional Holiday;Celorico da Beira;;;;
+109;PRT;Portalegre;PA;May;23;Dia de Elevação a Cidade;Elevation day the city;Regional Holiday;Portalegre;;;;
+110;PRT;Bragança;BA;May;25;Dia do Foral de D. Afonso III;D. Afonso III Charter Day;Regional Holiday;Mirandela;;;;
+111;PRT;Madeira;MA;May;25;Dia de criação do município;Creation day of the municipality;Regional Holiday;Santana;;;;
+112;PRT;Guarda;GU;May;29;Batalha de São Marcos;Battle of Saint Mark;Regional Holiday;Trancoso;;;;
+113;PRT;Aveiro;AV;June;1;Segunda-feira de Pentecostes;Pentecost Monday;Regional Holiday;Águeda;;;Pentecost Monday;Monday after Pentecost Sunday
+114;PRT;Coimbra;CO;June;1;Nascimento de José Falcão;Birth of José Falcão;Regional Holiday;Miranda do Corvo;;;;
+115;PRT;Setúbal;SE;June;1;Atribuição do Foral Manuelino;Allocation of the Manueline Charter;Regional Holiday;Palmela;;;;
+116;PRT;Faro;FA;June;1;Dia de Elevação a Município;Dia de Elevação a Município;Regional Holiday;São Brás de Alportel;;;;
+117;PRT;Aveiro;AV;June;1;Segunda-feira de Pentecostes;Pentecost Monday;Regional Holiday;Vagos;;;Pentecost Monday;Monday after Pentecost Sunday
+118;PRT;Porto;PO;June;2;Terça-feira de Pentecostes;Pentecost Tuesday;Regional Holiday;Matosinhos;;;Pentecost Tuesday;Tuesday after Pentecost Sunday
+119;PRT;Lisboa;LI;June;7;Dia da Criação do Município;Day the municipality was created;Regional Holiday;Oeiras;;;;
+120;PRT;Vila Real;VR;June;9;Atribuição do Foral por D. Afonso III;Attribution of the charter by D. Afonso III;Regional Holiday;Montalegre;;;;
+121;PRT;;;June;10;Dia de Portugal;Portugal Day;National Holiday;;;;;National Day
+122;PRT;;;June;11;Corpo de Deus;Corpus Christi;National Holiday;;;;Corpus Christi;Second Thursday after Whitsun
+123;PRT;Beja;BE;June;13;Dia de Santo António;Saint Anthony's Day;Regional Holiday;Aljustrel;;;;
+124;PRT;Leiria;LE;June;13;Dia de Santo António;Saint Anthony's Day;Regional Holiday;Alvaiázere;;;;
+125;PRT;Braga;BR;June;13;Dia de Santo António;Saint Anthony's Day;Regional Holiday;Amares;;;;
+126;PRT;Lisboa;LI;June;13;Dia de Santo António;Saint Anthony's Day;Regional Holiday;Cascais;;;;
+127;PRT;Aveiro;AV;June;13;Dia de Santo António;Saint Anthony's Day;Regional Holiday;Estarreja;;;;
+128;PRT;Santarém;SA;June;13;Dia de Santo António;Saint Anthony's Day;Regional Holiday;Ferreira do Zêzere;;;;
+129;PRT;Lisboa;LI;June;13;Dia de Santo António;Saint Anthony's Day;Regional Holiday;Lisboa;;;;
+130;PRT;Castelo Branco;CB;June;13;Dia de Santo António;Saint Anthony's Day;Regional Holiday;Proença-a-Nova;;;;
+131;PRT;Évora;EV;June;13;Dia de Santo António;Saint Anthony's Day;Regional Holiday;Reguengos de Monsaraz;;;;
+132;PRT;Aveiro;AV;June;13;Dia de Santo António;Saint Anthony's Day;Regional Holiday;Vale de Cambra;;;;
+133;PRT;Santarém;SA;June;13;Dia de Santo António;Saint Anthony's Day;Regional Holiday;Vila Nova da Barquinha;;;;
+134;PRT;Braga;BR;June;13;Dia de Santo António;Saint Anthony's Day;Regional Holiday;Vila Nova de Famalicão;;;;
+135;PRT;Vila Real;VR;June;13;Dia de Santo António;Saint Anthony's Day;Regional Holiday;Vila Real;;;;
+136;PRT;Braga;BR;June;13;Dia de Santo António;Saint Anthony's Day;Regional Holiday;Vila Verde;;;;
+137;PRT;Santarém;SA;June;14;Elevação a Cidade;Elevation to city;Regional Holiday;Abrantes;;;;
+138;PRT;Açores;AC;June;15;Corpo de Deus;Corpus Christi;Regional Holiday;Povoação;;;Corpus Christi;
+139;PRT;Aveiro;AV;June;16;Data de Elevação a Cidade;Date of Elevation to City;Regional Holiday;Espinho;;;;
+140;PRT;Faro;FA;June;16;Data da Revolta de Olhão contra os Franceses;Date of the Olhão Uprising against the French;Regional Holiday;Olhão;;;;
+141;PRT;Leiria;LE;June;17;17 de junho de 1914;June 17, 1914;Regional Holiday;Castanheira de Pera;;;;
+142;PRT;Açores;AC;June;20;Elevação a vila e sede de concelho;Elevation to village and county seat;Regional Holiday;Corvo;;;;
+143;PRT;Santarém;SA;June;20;Data de elevação a cidade;Date of elevation to city;Regional Holiday;Ourém;;;;
+144;PRT;Vila Real;VR;June;22;Data do foral de D. Manuel I;Date of the charter of D. Manuel I;Regional Holiday;Vila Pouca de Aguiar;;;;
+145;PRT;Setúbal;SE;June;24;Dia de São João;Saint John's day;Regional Holiday;Alcácer do Sal;;;;
+146;PRT;Setúbal;SE;June;24;Dia de São João;Saint John's day;Regional Holiday;Alcochete;;;;
+147;PRT;Setúbal;SE;June;24;Dia de São João;Saint John's day;Regional Holiday;Almada;;;;
+148;PRT;Beja;BE;June;24;Dia de São João;Saint John's day;Regional Holiday;Almodôvar;;;;
+149;PRT;Açores;AC;June;24;Dia de São João;Saint John's day;Regional Holiday;Angra do Heroísmo;;;;
+150;PRT;Viseu;VI;June;24;Dia de São João;Saint John's day;Regional Holiday;Armamar;;;;
+151;PRT;Portalegre;PA;June;24;Dia de São João;Saint John's day;Regional Holiday;Arronches;;;;
+152;PRT;Braga;BR;June;24;Dia de São João;Saint John's day;Regional Holiday;Braga;;;;
+153;PRT;Madeira;MA;June;24;Dia de São João;Saint John's day;Regional Holiday;Calheta;;;;
+154;PRT;Aveiro;AV;June;24;Dia de São João;Saint John's day;Regional Holiday;Castelo de Paiva;;;;
+155;PRT;Faro;FA;June;24;Dia de São João;Saint John's day;Regional Holiday;Castro Marim;;;;
+156;PRT;Viseu;VI;June;24;Dia de São João;Saint John's day;Regional Holiday;Cinfães;;;;
+157;PRT;Coimbra;CO;June;24;Dia de São João;Saint John's day;Regional Holiday;Figueira da Foz;;;;
+158;PRT;Leiria;LE;June;24;Dia de São João;Saint John's day;Regional Holiday;Figueiró dos Vinhos;;;;
+159;PRT;Braga;BR;June;24;Dia de São João;Saint John's day;Regional Holiday;Guimarães;;;;
+160;PRT;Açores;AC;June;24;Dia de São João;Saint John's day;Regional Holiday;Horta;;;;
+161;PRT;Lisboa;LI;June;24;Dia de São João;Saint John's day;Regional Holiday;Lourinhã;;;;
+162;PRT;Coimbra;CO;June;24;Dia de São João;Saint John's day;Regional Holiday;Lousã;;;;
+163;PRT;Beja;BE;June;24;Dia de São João;Saint John's day;Regional Holiday;Mértola;;;;
+164;PRT;Viseu;VI;June;24;Dia de São João;Saint John's day;Regional Holiday;Moimenta da Beira;;;;
+165;PRT;Beja;BE;June;24;Dia de São João;Saint John's day;Regional Holiday;Moura;;;;
+166;PRT;Viseu;VI;June;24;Dia de São João;Saint John's day;Regional Holiday;Nelas;;;;
+167;PRT;Porto;PO;June;24;Dia de São João;Saint John's day;Regional Holiday;Porto;;;;
+168;PRT;Madeira;MA;June;24;Dia de São João;Saint John's day;Regional Holiday;Porto Santo;;;;
+169;PRT;Açores;AC;June;24;Dia de São João;Saint John's day;Regional Holiday;Santa Cruz das Flores;;;;
+170;PRT;Viseu;VI;June;24;Dia de São João;Saint John's day;Regional Holiday;São João da Pesqueira;;;;
+171;PRT;Castelo Branco;CB;June;24;Nascimento de São Nuno de Santa Maria, orago da freguesia sede do concelho;Birth of São Nuno de Santa Maria, orago of the parish seat of the municipality;Regional Holiday;Sertã;;;;
+172;PRT;Viseu;VI;June;24;Dia de São João;Saint John's day;Regional Holiday;Tabuaço;;;;
+173;PRT;Faro;FA;June;24;Dia de São João;Saint John's day;Regional Holiday;Tavira;;;;
+174;PRT;Porto;PO;June;24;Dia de São João;Saint John's day;Regional Holiday;Valongo;;;;
+175;PRT;Porto;PO;June;24;Dia de São João;Saint John's day;Regional Holiday;Vila do Conde;;;;
+176;PRT;Açores;AC;June;24;Dia de São João;Saint John's day;Regional Holiday;Vila do Porto;;;;
+177;PRT;Açores;AC;June;24;Dia de São João;Saint John's day;Regional Holiday;Vila Franca do Campo;;;;
+178;PRT;Porto;PO;June;24;Dia de São João;Saint John's day;Regional Holiday;Vila Nova de Gaia;;;;
+179;PRT;Setúbal;SE;June;28;Dia de Elevação a Cidade;Elevation day the city;Regional Holiday;Barreiro;;;;
+180;PRT;Bragança;BA;June;29;Dia de São Pedro;St. Peter's Day;Regional Holiday;Alfândega da Fé;;;;
+181;PRT;Leiria;LE;June;29;Dia de São Pedro;St. Peter's Day;Regional Holiday;Bombarral;;;;
+182;PRT;Viseu;VI;June;29;Dia de São Pedro;St. Peter's Day;Regional Holiday;Castro Daire;;;;
+183;PRT;Beja;BE;June;29;Dia de São Pedro;St. Peter's Day;Regional Holiday;Castro Verde;;;;
+184;PRT;Évora;EV;June;29;Dia de São Pedro;St. Peter's Day;Regional Holiday;Évora;;;;
+185;PRT;Porto;PO;June;29;Dia de São Pedro;St. Peter's Day;Regional Holiday;Felgueiras;;;;
+186;PRT;Açores;AC;June;29;Dia de São Pedro;St. Peter's Day;Regional Holiday;Lajes do Pico;;;;
+187;PRT;Bragança;BA;June;29;Dia de São Pedro;St. Peter's Day;Regional Holiday;Macedo de Cavaleiros;;;;
+188;PRT;Setúbal;SE;June;29;Dia de São Pedro;St. Peter's Day;Regional Holiday;Montijo;;;;
+189;PRT;Viseu;VI;June;29;Dia de São Pedro;St. Peter's Day;Regional Holiday;Penedono;;;;
+190;PRT;Leiria;LE;June;29;Dia de São Pedro;St. Peter's Day;Regional Holiday;Porto de Mós;;;;
+191;PRT;Porto;PO;June;29;Dia de São Pedro;St. Peter's Day;Regional Holiday;Póvoa de Varzim;;;;
+192;PRT;Madeira;MA;June;29;Dia de São Pedro;St. Peter's Day;Regional Holiday;Ribeira Brava;;;;
+193;PRT;Açores;AC;June;29;Dia de São Pedro;St. Peter's Day;Regional Holiday;Ribeira Grande;;;;
+194;PRT;Viseu;VI;June;29;Dia de São Pedro;St. Peter's Day;Regional Holiday;São Pedro do Sul;;;;
+195;PRT;Setúbal;SE;June;29;Dia de São Pedro;St. Peter's Day;Regional Holiday;Seixal;;;;
+196;PRT;Lisboa;LI;June;29;Dia de São Pedro;St. Peter's Day;Regional Holiday;Sintra;;;;
+197;PRT;Guarda;GU;July;2;Comemoração da Batalha do Côa;Commemoration of the Battle of Côa;Regional Holiday;Almeida;;;;
+198;PRT;Guarda;GU;July;3;Decreto de Elevação de Seia a Cidade;Seia City Elevation Decree;Regional Holiday;Seia;;;;
+199;PRT;Leiria;LE;July;4;Data da Inauguração do Concelho;Inauguration date of the municipality;Regional Holiday;Castanheira de Pera;;;;
+200;PRT;Coimbra;CO;July;4;Festa da Rainha Santa Isabel;Feast of Queen Saint Isabel;Regional Holiday;Coimbra;;;;
+201;PRT;Guarda;GU;July;7;Aniversário da Batalha da Salgadela;Anniversary of the Battle of Salgadela;Regional Holiday;Figueira de Castelo Rodrigo;;;;
+202;PRT;Porto;PO;July;8;Data de aprovação da lei para elevação a cidade;Date of approval of the law to upgrade the city;Regional Holiday;Amarante;;;;
+203;PRT;Vila Real;VR;July;8;Combate entre as forças republicanas (Defensores de Chaves) e as de Paiva Couceiro;Combat between the republican forces (Defensores de Chaves) and those of Paiva Couceiro;Regional Holiday;Chaves;;;;
+204;PRT;Bragança;BA;July;10;Dia de elevação a cidade;Elevation day the city;Regional Holiday;Miranda do Douro;;;;
+205;PRT;Viana do Castelo;VC;July;11;Festa de São Bento;Feast of Saint Benedict;Regional Holiday;Arcos de Valdevez;;;;
+206;PRT;Porto;PO;July;11;Feriado Municipal;Municipal Holiday;Regional Holiday;Santo Tirso;;;;
+207;PRT;Porto;PO;July;13;Festa da Nossa Senhora do Bom Despacho;Feast of Nossa Senhora do Bom Despacho;Regional Holiday;Maia;;;2,Monday,July;2nd Monday July
+208;PRT;Coimbra;CO;July;17;Dia de nascimento de António José de Almeida;Birth day of António José de Almeida;Regional Holiday;Penacova;;;;
+209;PRT;Açores;AC;July;18;Data da elevação a vila;Date of elevation to village;Regional Holiday;Nordeste;;;;
+210;PRT;Viseu;VI;July;20;Festa do Divino Salvador;Feast of the Divine Savior;Regional Holiday;Carregal do Sal;;;3,Monday,July;3rd Monday July
+211;PRT;Açores;AC;July;20;Festa do Divino Salvador;Feast of the Divine Savior;Regional Holiday;Lajes das Flores;;;3,Monday,July;Monday after the third Sunday in July
+212;PRT;Porto;PO;July;20;Festa do Divino Salvador;Feast of the Divine Savior;Regional Holiday;Paredes;;;3,Monday,July;Monday after the third Sunday in July
+213;PRT;Açores;AC;July;22;Festa de Santa Maria Madalena;Feast of Saint Mary Magdalene;Regional Holiday;Madalena;;;;
+214;PRT;Madeira;MA;July;22;Festa de Santa Maria Madalena;Feast of Saint Mary Magdalene;Regional Holiday;Porto Moniz;;;;
+215;PRT;Coimbra;CO;July;24;Festa de Santa Cristina;Feast of Saint Cristina;Regional Holiday;Condeixa-a-Nova;;;;
+216;PRT;Leiria;LE;July;24;Dia da criação do município;Day the municipality was created;Regional Holiday;Pedrogão Grande;;;;
+217;PRT;Coimbra;CO;July;25;Festa de São Tiago;Feast of Saint James;Regional Holiday;Cantanhede;;;;
+218;PRT;Braga;BR;July;25;Festa de São Tiago;Feast of Saint James;Regional Holiday;Celorico de Basto;;;;
+219;PRT;Coimbra;CO;July;25;Festa de São Tomé;Feast of São Tomé;Regional Holiday;Mira;;;;
+220;PRT;Vila Real;VR;July;25;Festa de São Tiago;Feast of Saint James;Regional Holiday;Mondim de Basto;;;;
+221;PRT;Aveiro;AV;July;25;Feriado Municipal;Municipal Holiday;Regional Holiday;Ovar;;;;
+222;PRT;Setúbal;SE;July;25;Feriado Municipal;Municipal Holiday;Regional Holiday;Santiago do Cacém;;;;
+223;PRT;Lisboa;LI;July;26;Dia da Criação do Concelho;county creation day;Regional Holiday;Loures;;;;
+224;PRT;Porto;PO;July;27;Festa de Nosso Senhor dos Aflitos;Feast of Our Lord of the Afflicted;Regional Holiday;Lousada;;;4,Monday,July;Monday after the last Sunday in July
+225;PRT;Leiria;LE;August;3;Festa da Nossa Senhora da Boa Viagem;Feast of Our Lady of Boa Viagem;Regional Holiday;Peniche;;;1,Monday,August;Monday after 1st Sunday of August
+226;PRT;Guarda;GU;August;10;Festa de Nosso Senhor do Calvário;Feast of Our Lord of Calvary;Regional Holiday;Gouveia;;;2,Monday,August;Monday after the second Sunday in August
+227;PRT;Castelo Branco;CB;August;10;Festa de Santa Margarida;Feast of Saint Margaret;Regional Holiday;Oleiros;;;2,Monday,August;Monday after the second Sunday in August
+228;PRT;Aveiro;AV;August;10;Festa de Nossa Senhora de La Salette;Feast of Our Lady of La Salette;Regional Holiday;Oliveira de Azeméis;;;2,Monday,August;Monday after the second Sunday in August
+229;PRT;Viana do Castelo;VC;August;10;Festa de São Lourenço;Feast of St. Lawrence;Regional Holiday;Paredes de Coura;;;;
+230;PRT;Açores;AC;August;10;Senhor Santo Cristo dos Milagres;Lord Holy Christ of Miracles;Regional Holiday;Santa Cruz da Graciosa;;;2,Monday,August;Monday after the second Sunday in August
+231;PRT;Bragança;BA;August;10;Festa de São Lourenço;Feast of St. Lawrence;Regional Holiday;Vimioso;;;;
+232;PRT;Açores;AC;August;11;Feriado Municipal;Municipal Holiday;Regional Holiday;Praia da Vitória;;;;
+233;PRT;Coimbra;CO;August;13;D. Teresa e seu filho D. Afonso Henriques doam Góis a Anaia Vestrares;D. Teresa and her son D. Afonso Henriques donate Gois to Anaia Vestrares;Regional Holiday;Góis;;;;
+234;PRT;Leiria;LE;August;14;Dia da Batalha de Aljubarrota;Day of the Battle of Aljubarrota;Regional Holiday;Batalha;;;;
+235;PRT;;;August;15;Assunção de Nossa Senhora;Assumption Day;National Holiday;;;;;
+236;PRT;Vila Real;VR;August;16;Festa de Nossa Senhora do Socorro;Feast of Our Lady of Help;Regional Holiday;Peso da Régua;;;;
+237;PRT;Vila Real;VR;August;16;Festa de Nossa Senhora do Socorro;Feast of Our Lady of Help;Regional Holiday;Ribeira de Pena;;;;
+238;PRT;Açores;AC;August;16;Festa de São Roque;Feast of San Roque;Regional Holiday;São Roque do Pico;;;;
+239;PRT;Évora;EV;August;16;Feriado Municipal;Municipal Holiday;Regional Holiday;Vila Viçosa;;;;
+240;PRT;Aveiro;AV;August;17;Festa da Senhora do Socorro;Feast of Senhora do Socorro;Regional Holiday;Albergaria-a-Velha;;;3,Monday,August;Monday after the third Sunday in August
+241;PRT;Santarém;SA;August;17;Festa de Nossa Senhora do Castelo;Feast of Our Lady of the Castle;Regional Holiday;Coruche;;;;
+242;PRT;Braga;BR;August;19;Dia da elevação à categoria de vila por D. Sebastião;Day of the elevation to the category of village by D. Sebastião;Regional Holiday;Esposende;;;;
+243;PRT;Faro;FA;August;20;Criação do concelho;County creation;Regional Holiday;Albufeira;;;;
+244;PRT;Leiria;LE;August;20;Festa de São Bernardo;Feast of Saint Bernard;Regional Holiday;Alcobaça;;;;
+245;PRT;Viseu;VI;August;20;Dia de São Bernardo;St. Bernard's Day;Regional Holiday;Sátão;;;;
+246;PRT;Viana do Castelo;VC;August;20;Festa de Nossa Senhora da Agonia;Feast of Our Lady of Agony;Regional Holiday;Viana do Castelo;;;;
+247;PRT;Madeira;MA;August;21;Dia de elevação a cidade;Elevation day the city;Regional Holiday;Funchal;;;;
+248;PRT;Bragança;BA;August;22;Festa de Nossa Senhora das Graças;Feast of Our Lady of Graces;Regional Holiday;Bragança;;;;
+249;PRT;Porto;PO;August;24;Dia de São Bartolomeu;St. Bartholomew's Day;Regional Holiday;Baião;;;;
+250;PRT;Viana do Castelo;VC;August;24;Dia de São Bartolomeu;St. Bartholomew's Day;Regional Holiday;Ponte da Barca;;;;
+251;PRT;Bragança;BA;August;24;Festa de São Bartolomeu;Feast of St. Bartholomew;Regional Holiday;Vila Flor;;;;
+252;PRT;Castelo Branco;CB;August;24;Nossa Senhora da Alagada;Our Lady of Alagada;Regional Holiday;Vila Velha de Ródão;;;4,Monday,August;Monday after the fourth Sunday in August
+253;PRT;Viseu;VI;August;25;Festa de São Genésio;Feast of St. Genesis;Regional Holiday;Penalva do Castelo;;;;
+254;PRT;Guarda;GU;August;25;Data de elevação a cidade;Date of elevation to city;Regional Holiday;Pinhel;;;;
+255;PRT;Beja;BE;August;28;Festa de Nossa Senhora da Conceição;Feast of Our Lady of Conception;Regional Holiday;Barrancos;;;;
+256;PRT;Bragança;BA;August;28;Festa de Nossa Senhora da Conceição;Feast of Our Lady of Conception;Regional Holiday;Carrazeda de Ansiães;;;4,Friday,August;last friday of august
+257;PRT;Faro;FA;August;29;Tradição do Banho Santo, banhos no mar;Tradition of the Holy Bath, bathing in the sea;Regional Holiday;Aljezur;;;;
+258;PRT;Faro;FA;September;3;Conquista da Cidade aos Mouros;Conquest of the city from the Mouros;Regional Holiday;Silves;;;;
+259;PRT;Coimbra;CO;September;7;Feriado Municipal;Municipal Holiday;Regional Holiday;Arganil;;;;
+260;PRT;Faro;FA;September;7;Data de elevação a cidade;Date of elevation to city;Regional Holiday;Faro;;;;
+261;PRT;Évora;EV;September;7;Data de elevação a município;Date of elevation to municipality;Regional Holiday;Vendas Novas;;;;
+262;PRT;Faro;FA;September;8;Festa de Nossa Senhora da Luz;Feast of Our Lady of Light;Regional Holiday;Lagoa;;;;
+263;PRT;Viseu;VI;September;8;Festa de Nossa Senhora dos Remédios;Feast of Our Lady of Remedies;Regional Holiday;Lamego;;;;
+264;PRT;Viseu;VI;September;8;Festa de Nossa Senhora do Castelo;Feast of Our Lady of the Castle;Regional Holiday;Mangualde;;;;
+265;PRT;Porto;PO;September;8;Festa de Nossa Senhora do Castelinho;Feast of Our Lady of Castelinho;Regional Holiday;Marco de Canaveses;;;;
+266;PRT;Portalegre;PA;September;8;Festa de Nossa Senhora da Estrela;Feast of Our Lady of the Star;Regional Holiday;Marvão;;;;
+267;PRT;Coimbra;CO;September;8;Festa de Nossa Senhora da Vitória;Feast of Our Lady of Victory;Regional Holiday;Montemor-o-Velho;;;;
+268;PRT;Aveiro;AV;September;8;Festa de Santa Maria;Feast of Saint Mary;Regional Holiday;Murtosa;;;;
+269;PRT;Leiria;LE;September;8;Festa de Nossa Senhora das Areias;Feast of Our Lady of the Sands;Regional Holiday;Nazaré;;;;
+270;PRT;Beja;BE;September;8;Festa de Nossa Senhora da Piedade;Feast of Our Lady of Piety;Regional Holiday;Odemira;;;;
+271;PRT;Beja;BE;September;8;Festa de Nossa Senhora da Cola;Feast of Our Lady of Cola;Regional Holiday;Ourique;;;;
+272;PRT;Madeira;MA;September;8;Festa de Nossa Senhora da Luz;Feast of Our Lady of Light;Regional Holiday;Ponta do Sol;;;;
+273;PRT;Vila Real;VR;September;8;Festa de Nossa Senhora do Rosário;Feast of Our Lady of the Rosary;Regional Holiday;Sabrosa;;;;
+274;PRT;Faro;FA;September;11;Feriado Municipal;Municipal Holiday;Regional Holiday;Alcoutim;;;2,Friday,September ;second Friday of September
+275;PRT;Lisboa;LI;September;11;Dia de criação do Município;Creation day of the Municipality;Regional Holiday;Amadora;;;;
+276;PRT;Castelo Branco;CB;September;15;Festa de Santa Luzia;Feast of Santa Luzia;Regional Holiday;Fundão;;;;
+277;PRT;Setúbal;SE;September;15;Festas a Nossa Senhora da Boa Viagem;parties to Our Lady of Boa Viagem;Regional Holiday;Moita;;;2,Tuesday,September ;Tuesday after the second Sunday in September
+278;PRT;Setúbal;SE;September;15;Dia de nascimento de Bocage;Bocage's birth day;Regional Holiday;Setúbal;;;;
+279;PRT;Viseu;VI;September;16;Festa de Santa Eufémia;Feast of Santa Eufémia;Regional Holiday;Tondela;;;;
+280;PRT;Castelo Branco;CB;September;19;Dia do recebimento do foral de D. Dinis;Day of receipt of the charter of D. Dinis;Regional Holiday;Vila de Rei;;;;
+281;PRT;Viana do Castelo;VC;September;20;Festa de Nossa Senhora das Dores;Feast of Our Lady of Sorrows;Regional Holiday;Ponte de Lima;;;;
+282;PRT;Aveiro;AV;September;21;Festa de São Mateus;Feast of St. Matthew;Regional Holiday;Sever do Vouga;;;;
+283;PRT;Coimbra;CO;September;21;Festa de São Mateus;Feast of St. Matthew;Regional Holiday;Soure;;;;
+284;PRT;Viseu;VI;September;21;Dia de São Mateus;St. Matthew's Day;Regional Holiday;Viseu;;;;
+285;PRT;Santarém;SA;September;22;Dia de elevação à categoria de vila;Day of elevation to the category of village;Regional Holiday;Sardoal;;;;
+286;PRT;Braga;BR;September;29;Festa de São Miguel Arcanjo;Feast of Saint Michael the Archangel;Regional Holiday;Cabeceiras de Basto;;;;
+287;PRT;Guarda;GU;September;29;Festa de São Miguel Arcanjo;Feast of Saint Michael the Archangel;Regional Holiday;Fornos de Algodres;;;;
+288;PRT;Coimbra;CO;September;29;Festa de São Miguel Arcanjo;Feast of Saint Michael the Archangel;Regional Holiday;Penela;;;;
+289;PRT;Viseu;VI;September;29;Festa de São Miguel Arcanjo;Feast of Saint Michael the Archangel;Regional Holiday;Resende;;;;
+290;PRT;Viseu;VI;September;29;Festa de São Miguel Arcanjo;Feast of Saint Michael the Archangel;Regional Holiday;Tarouca;;;;
+291;PRT;Viana do Castelo;VC;October;1;Data do recebimento do foral manuelino;Date of receipt of the Manueline Charter;Regional Holiday;Vila Nova de Cerveira;;;;
+292;PRT;Braga;BR;October;5;Feriado Municipal;Municipal Holiday;Regional Holiday;Vieira do Minho;;;2,Monday,October;Monday after the first Saturday in October
+293;PRT;;;October;5;Implantação da República;Republic Day;National Holiday;;;;;
+294;PRT;Viseu;VI;October;7;Restauração do município;Restoration of the municipality;Regional Holiday;Oliveira de Frades;;;;
+295;PRT;Coimbra;CO;October;7;Dia da proclamação da República em Oliveira do Hospital, 7 de outubro de 1910;Day of the proclamation of the Republic in Oliveira do Hospital, October 7, 1910;Regional Holiday;Oliveira do Hospital;;;;
+296;PRT;Madeira;MA;October;9;Festa de Nosso Senhor dos Milagres;Feast of Our Lord of Miracles;Regional Holiday;Machico;;;;
+297;PRT;Aveiro;AV;October;11;Data de criação do concelho;County creation date;Regional Holiday;São João da Madeira;;;;
+298;PRT;Bragança;BA;October;15;Feriado Municipal;Municipal Holiday;Regional Holiday;Mogadouro;;;;
+299;PRT;Madeira;MA;October;16;Criação do município;Creation of the municipality;Regional Holiday;Câmara de Lobos;;;;
+300;PRT;Castelo Branco;CB;October;20;Dia de elevação a cidade;Elevation day the city;Regional Holiday;Covilhã;;;;
+301;PRT;Braga;BR;October;20;Data do Foral de D. Manuel I;Date of the Charter of D. Manuel I;Regional Holiday;Terras de Bouro;;;;
+302;PRT;Setúbal;SE;October;22;Foral de D. João III;Charter of D. João III;Regional Holiday;Grândola;;;;
+303;PRT;Faro;FA;October;27;Festa de São Gonçalo de Lagos;Festival of São Gonçalo de Lagos;Regional Holiday;Lagos;;;;
+304;PRT;;;November;1;Dia de Todos os Santos;All Saints' Day;National Holiday;;;;;
+305;PRT;Vila Real;VR;November;6;Dia da criação do município;Day the municipality was created;Regional Holiday;Boticas;;;;
+306;PRT;Porto;PO;November;6;Dia da criação do município;Day the municipality was created;Regional Holiday;Paços de Ferreira;;;;
+307;PRT;Santarém;SA;November;6;Dia da criação do município;Day the municipality was created;Regional Holiday;Rio Maior;;;;
+308;PRT;Vila Real;VR;November;6;Dia da criação do município;Day the municipality was created;Regional Holiday;Valpaços;;;;
+309;PRT;Vila Real;VR;November;11;Dia de São Martinho;S. Martin days;Regional Holiday;Alijó;;;;
+310;PRT;Guarda;GU;November;11;Festa de São Martinho;Feast of Saint Martin;Regional Holiday;Mêda;;;;
+311;PRT;Porto;PO;November;11;Dia de São Martinho;S. Martin days;Regional Holiday;Penafiel;;;;
+312;PRT;Leiria;LE;November;11;Dia de São Martinho;S. Martin days;Regional Holiday;Pombal;;;;
+313;PRT;Lisboa;LI;November;11;Dia de São Martinho;S. Martin days;Regional Holiday;Torres Vedras;;;;
+314;PRT;Lisboa;LI;November;19;Dia da criação do município;Day the municipality was created;Regional Holiday;Odivelas;;;;
+315;PRT;Porto;PO;November;19;Dia da criação do município;Day the municipality was created;Regional Holiday;Trofa;;;;
+316;PRT;Portalegre;PA;November;23;Pelo foral manuelino;by the Manueline charter;Regional Holiday;Gavião;;;;
+317;PRT;Santarém;SA;November;24;Dia da criação do município;Day the municipality was created;Regional Holiday;Entroncamento;;;;
+318;PRT;Setúbal;SE;November;24;Dia de elevação a vila;Elevation day the village;Regional Holiday;Sines;;;;
+319;PRT;Açores;AC;November;25;Festa de Santa Catarina;Feast of Santa Catarina;Regional Holiday;Calheta;;;;
+320;PRT;Guarda;GU;November;27;Dia da criação do concelho;County creation day;Regional Holiday;Guarda;;;;
+321;PRT;Vila Real;VR;November;30;Festa de Santo André;Feast of St. Andrew;Regional Holiday;Mesão Frio;;;;
+322;PRT;;;December;1;Restauração da Independência;Restoration of Independence;National Holiday;;;;;
+323;PRT;;;December;8;Dia da Imaculada Conceição;Immaculate Conception Day;National Holiday;;;;;
+324;PRT;Faro;FA;December;11;Feriado Municipal;Municipal Holiday;Regional Holiday;Portimão;;;;
+325;PRT;;;December;25;Natal;Christmas Day;National Holiday;;;;;

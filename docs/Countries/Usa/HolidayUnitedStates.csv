@@ -1,0 +1,224 @@
+;;;;;;When federal holidays fall on Saturday, Federal Reserve Banks and Branches will be open the preceding Friday.;;;;;;;
+;;;;;;When federal holidays fall on Sunday, Federal Reserve Banks and Branches will be closed the following Monday.;;;;;;;
+ID;CONTRY;STATE-NAME;STATE-CODE;MONTH;DAY;HOLIDAY-NAME;ALTERNATIVE-HOLIDAY-NAME;HOLIDAY-TYPE;CITY-NAME;CITY-CODE;OPTIONAL;BUSSINESS-RULE;COMMENTS
+1;USA;;;Jan;1;New Year's Day;New Year's Day;Federal Holiday;;;;;
+2;USA;;;Jan;;Martin Luther King Jr. Day;Martin Luther King Jr. Day;Federal Holiday;;;;3,Monday,January;3rd Monday in January
+3;USA;;;Feb;;President's Day;President's Day;Federal Holiday;;;;3,Monday,February;3rd Monday in February
+4;USA;Alaska;AK;Mar;;Seward's Day;Seward's Day;Government Holiday;;;;4,Monday,March;Last Monday in March
+5;USA;;;May;;Mother's Day;Mother's Day;Not A Public Holiday;;;;2,Sunday,May;2nd Sunday in May. Not a public holiday
+6;USA;;;May;;Memorial Day;Memorial Day;Federal Holiday;;;;4,Monday,May;Last Monday in May
+7;USA;;;Jun;;Father's Day;Father's Day;Not A Public Holiday;;;;3,Sunday,June;3rd Sunday in June. Not a public holiday
+8;USA;Alaska;AK;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+9;USA;Alaska;AK;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+10;USA;;;Jul;4;Independence Day;Independence Day;Federal Holiday;;;;;
+11;USA;;;Sep;;Labor Day;Labor Day;Federal Holiday;;;;1,Monday,September;1st Monday in September
+12;USA;Alaska;AK;Oct;;Alaska Day;Alaska Day;Government Holiday;;;;18,October,nearest;18 October or nearest weekday
+13;USA;;;Nov;11;Veterans Day;Veterans Day;Federal Holiday;;;;;
+14;USA;;;Nov;;Thanksgiving;Thanksgiving;Federal Holiday;;;;4,Thursday,November;4th Thursday in November
+15;USA;;;Dec;25;Christmas Day;Christmas Day;Federal Holiday;;;;;
+16;USA;Alabama;AL;Jan;;Robert E. Lee's Birthday;Robert E. Lee's Birthday;Government Holiday;;;;3,Monday,January;Alabama, Mississippi. Third Monday in January
+17;USA;Alabama;AL;Feb;;George Washington/Thomas Jefferson Birthday;George Washington/Thomas Jefferson Birthday;Federal Holiday;;;;3,Monday,February;3rd Monday in February
+18;USA;Alabama;AL;Feb;25;Mardi Gras;Mardi Gras;Government Holiday;;;;;Alabama, Louisiana only.
+19;USA;Alabama;AL;Apr;;Confederate Memorial Day;Confederate Memorial Day;Government Holiday;;;;4,Monday,April;Alabama, Mississippi. Last Monday in April
+20;USA;Alabama;AL;Jun;;Jefferson Davis' Birthday;Jefferson Davis' Birthday;Government Holiday;;;;1,Monday,June;First Monday in June
+21;USA;Alabama;AL;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+22;USA;Alabama;AL;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+23;USA;;;Oct;;Columbus Day;Columbus Day;Federal Holiday;;;;2,Monday,October;2nd Monday in October
+24;USA;Arkansas;AR;Feb;;George Washington's Birthday & Daisy Gatson Bates Day;George Washington's Birthday & Daisy Gatson Bates Day;Federal Holiday;;;;3,Monday,February;3rd Monday in February
+25;USA;Arkansas;AR;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+26;USA;Arkansas;AR;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+27;USA;Arkansas;AR;Dec;24;Christmas Eve;Christmas Eve;Government Holiday;;;;;AR, KS, KY, MI, NC, OK, SC, TX, VA, WI
+28;USA;Arizona;AZ;Jan;;Civil Rights Day;Civil Rights Day;Government Holiday;;;;3,Monday,January;Arizona, New Hampshire. 3rd Monday in January
+29;USA;Arizona;AZ;Feb;;Lincoln/Washington/Presidents' Day;Lincoln/Washington/Presidents' Day;Federal Holiday;;;;3,Monday,February;3rd Monday in February
+30;USA;Arizona;AZ;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+31;USA;Arizona;AZ;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+32;USA;California;CA;Mar;31;Cesar Chavez Day;Cesar Chavez Day;Government Holiday;;;;;State holiday in California
+33;USA;California;CA;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+34;USA;California;CA;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+35;USA;California;CA;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+36;USA;Colorado;CO;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+37;USA;Colorado;CO;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+38;USA;Colorado;CO;Oct;;Cabrini Day;Cabrini Day;Regional Holiday;;;;1,Monday,October;First Monday in October
+39;USA;Connecticut;CT;Feb;12;Lincoln's Birthday;Lincoln's Birthday;Government Holiday;;;;;Connecticut, Illinois, Missouri, New York.
+40;USA;Connecticut;CT;Apr;;Good Friday;Good Friday;Government Holiday;;;;GoodFriday;11 states
+41;USA;Connecticut;CT;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+42;USA;Connecticut;CT;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+43;USA;Columbia;DC;Apr;16;Emancipation Day;Emancipation Day;Government Holiday;;;;;Washington DC
+44;USA;Columbia;DC;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+45;USA;Columbia;DC;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+46;USA;Delaware;DE;Apr;;Good Friday;Good Friday;Government Holiday;;;;GoodFriday;11 states
+47;USA;Delaware;DE;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+48;USA;Delaware;DE;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+49;USA;Delaware;DE;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+50;USA;Florida;FL;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+51;USA;Florida;FL;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+52;USA;Florida;FL;Nov;;Friday after Thanksgiving;Friday after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+53;USA;Georgia;GA;Apr;10;State Holiday;State Holiday;Government Holiday;;;;;11 states
+54;USA;Georgia;GA;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+55;USA;Georgia;GA;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+56;USA;Georgia;GA;Nov;;State Holiday;State Holiday;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+57;USA;Georgia;GA;Dec;24;Washington's Birthday Holiday;Washington's Birthday Holiday;Government Holiday;;;;;Georgia, Indiana
+58;USA;Hawaii;HI;Mar;;Prince Kuhio Day;Prince Kuhio Day;Government Holiday;;;;26,March,nearest;26 March or nearest weekday
+59;USA;Hawaii;HI;Apr;;Good Friday;Good Friday;Government Holiday;;;;GoodFriday;11 states
+60;USA;Hawaii;HI;Jun;;King Kamehameha I Day;King Kamehameha I Day;Government Holiday;;;;11,June,nearest;11 June or nearest weekday
+61;USA;Hawaii;HI;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+62;USA;Hawaii;HI;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+63;USA;Hawaii;HI;Aug;;Statehood Day;Statehood Day;Government Holiday;;;;3,Friday,August;3rd Friday in August
+64;USA;Iowa;IA;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+65;USA;Iowa;IA;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+66;USA;Iowa;IA;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+67;USA;Idaho;ID;Mar;4;Idaho Day;Idaho Day;Not A Public Holiday;;;;;Idaho only
+68;USA;Idaho;ID;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+69;USA;Idaho;ID;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+70;USA;Illinois;IL;Feb;12;Lincoln's Birthday;Lincoln's Birthday;Government Holiday;;;;;Connecticut, Illinois, Missouri, New York.
+71;USA;Illinois;IL;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+72;USA;Illinois;IL;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+73;USA;Illinois;IL;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+74;USA;Indiana;IN;Apr;;Good Friday;Good Friday;Government Holiday;;;;GoodFriday;11 states
+75;USA;Indiana;IN;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+76;USA;Indiana;IN;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+77;USA;Indiana;IN;Nov;27;Lincoln's Birthday (observed);Lincoln's Birthday (observed);Government Holiday;;;;;Indiana
+78;USA;Indiana;IN;Dec;24;Washington's Birthday Holiday;Washington's Birthday Holiday;Government Holiday;;;;;Georgia, Indiana
+79;USA;Kansas;KS;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+80;USA;Kansas;KS;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+81;USA;Kansas;KS;Dec;24;Christmas Eve;Christmas Eve;Government Holiday;;;;;AR, KS, KY, MI, NC, OK, SC, TX, VA, WI
+82;USA;Kentucky;KY;Apr;;Good Friday;Good Friday;Government Holiday;;;;GoodFriday;11 states
+83;USA;Kentucky;KY;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+84;USA;Kentucky;KY;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+85;USA;Kentucky;KY;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+86;USA;Kentucky;KY;Dec;24;Christmas Eve;Christmas Eve;Government Holiday;;;;;AR, KS, KY, MI, NC, OK, SC, TX, VA, WI
+87;USA;Kentucky;KY;Dec;31;New Year's Eve;New Year's Eve;Government Holiday;;;;;Kentucky, Michigan, Wisconsin only
+88;USA;Louisiana;LA;Feb;25;Mardi Gras;Mardi Gras;Government Holiday;;;;;Alabama, Louisiana only.
+89;USA;Louisiana;LA;Apr;;Good Friday;Good Friday;Government Holiday;;;;GoodFriday;11 states
+90;USA;Louisiana;LA;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+91;USA;Louisiana;LA;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+92;USA;Massachusetts;MA;Feb;;Washington's Birthday;Washington's Birthday;Federal Holiday;;;;3,Monday,February;3rd Monday in February
+93;USA;Massachusetts;MA;Apr;;Patriot's Day;Patriot's Day;Government Holiday;;;;3,Monday,April;Maine, Massachusetts. 3rd Monday in April
+94;USA;Massachusetts;MA;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+95;USA;Maryland;MD;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+96;USA;Maryland;MD;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+97;USA;Maryland;MD;Nov;;American Indian Heritage Day;American Indian Heritage Day;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+98;USA;Maine;ME;Feb;;Washington's Birthday/President's Day;Washington's Birthday/President's Day;Federal Holiday;;;;3,Monday,February;3rd Monday in February
+99;USA;Maine;ME;Apr;;Patriot's Day;Patriot's Day;Government Holiday;;;;3,Monday,April;Maine, Massachusetts. 3rd Monday in April
+100;USA;Maine;ME;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+101;USA;Maine;ME;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+102;USA;Maine;ME;Oct;12;Indigenous Peoples' Day;Indigenous Peoples' Day;Regional Holiday;;;;;
+103;USA;Maine;ME;Nov;;Thanksgiving Friday;Thanksgiving Friday;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+104;USA;Michigan;MI;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+105;USA;Michigan;MI;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+106;USA;Michigan;MI;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+107;USA;Michigan;MI;Dec;24;Christmas Eve;Christmas Eve;Government Holiday;;;;;AR, KS, KY, MI, NC, OK, SC, TX, VA, WI
+108;USA;Michigan;MI;Dec;31;New Year's Eve;New Year's Eve;Government Holiday;;;;;Kentucky, Michigan, Wisconsin only.
+109;USA;Minnesota;MN;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+110;USA;Minnesota;MN;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+111;USA;Minnesota;MN;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+112;USA;Missouri;MO;Feb;12;Lincoln's Birthday;Lincoln's Birthday;Government Holiday;;;;;Connecticut, Illinois, Missouri, New York.
+113;USA;Missouri;MO;May;;Truman Day;Truman Day;Government Holiday;;;;8,May,nearest;8 May or nearest weekday
+114;USA;Missouri;MO;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+115;USA;Missouri;MO;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+116;USA;Mississippi;MS;Jan;;Robert E. Lee's Birthday;Robert E. Lee's Birthday;Government Holiday;;;;3,Monday,January;Alabama, Mississippi. Third Monday in January
+117;USA;Mississippi;MS;Apr;;Confederate Memorial Day;Confederate Memorial Day;Government Holiday;;;;4,Monday,April;Alabama, Mississippi. Last Monday in April
+118;USA;Mississippi;MS;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+119;USA;Mississippi;MS;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+120;USA;Montana;MT;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+121;USA;Montana;MT;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+122;USA;North Carolina;NC;Apr;;Good Friday;Good Friday;Government Holiday;;;;GoodFriday;11 states
+123;USA;North Carolina;NC;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+124;USA;North Carolina;NC;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+125;USA;North Carolina;NC;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+126;USA;North Carolina;NC;Dec;24;Christmas Eve;Christmas Eve;Government Holiday;;;;;AR, KS, KY, MI, NC, OK, SC, TX, VA, WI
+127;USA;North Carolina;NC;Dec;;Day after Christmas;Day after Christmas;Government Holiday;;;;25,December,workday;North Carolina, South Carolina, Texas
+128;USA;North Dakota;ND;Apr;;Good Friday;Good Friday;Government Holiday;;;;GoodFriday;11 states
+129;USA;North Dakota;ND;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+130;USA;North Dakota;ND;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+131;USA;Nebraska;NE;Apr;;Arbor Day;Arbor Day;Government Holiday;;;;4,Friday,April;Nebraska. Last Friday in April
+132;USA;Nebraska;NE;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+133;USA;Nebraska;NE;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+134;USA;Nebraska;NE;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+135;USA;New Hampshire;NH;Jan;;Civil Rights Day;Civil Rights Day;Government Holiday;;;;3,Monday,January;Arizona, New Hampshire. 3rd Monday in January
+136;USA;New Hampshire;NH;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+137;USA;New Hampshire;NH;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+138;USA;New Hampshire;NH;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+139;USA;New Jersey;NJ;Apr;;Good Friday;Good Friday;Government Holiday;;;;GoodFriday;11 states
+140;USA;New Jersey;NJ;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+141;USA;New Jersey;NJ;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+142;USA;New Mexico;NM;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+143;USA;New Mexico;NM;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+144;USA;New Mexico;NM;Oct;12;Indigenous Peoples' Day;Indigenous Peoples' Day;Regional Holiday;;;;;
+145;USA;New Mexico;NM;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+146;USA;Nevada;NV;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+147;USA;Nevada;NV;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+148;USA;Nevada;NV;Oct;;Nevada Day;Nevada Day;Government Holiday;;;;4,Friday,October;Nevada only. Last Friday in October
+149;USA;Nevada;NV;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+150;USA;New York;NY;Feb;12;Lincoln's Birthday;Lincoln's Birthday;Government Holiday;;;;;Connecticut, Illinois, Missouri, New York.
+151;USA;New York;NY;Feb;;Washington's Birthday (Observed);Washington's Birthday (Observed);Federal Holiday;;;;3,Monday,February;3rd Monday in February
+152;USA;New York;NY;Jun;19;Juneteenth;Juneteenth;Government Holiday;;;;;Emancipation Day
+153;USA;New York;NY;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+154;USA;Ohio;OH;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+155;USA;Ohio;OH;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+156;USA;Oklahoma;OK;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+157;USA;Oklahoma;OK;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+158;USA;Oklahoma;OK;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+159;USA;Oklahoma;OK;Dec;24;Christmas Eve;Christmas Eve;Government Holiday;;;;;AR, KS, KY, MI, NC, OK, SC, TX, VA, WI
+160;USA;Oregon;OR;Feb;24;Edward Dickinson Baker Day;Edward Dickinson Baker Day;Not A Public Holiday;;;;;Always celebrated on 24 February
+161;USA;Oregon;OR;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+162;USA;Oregon;OR;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+163;USA;Oregon;OR;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+164;USA;Pennsylvania;PA;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+165;USA;Pennsylvania;PA;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+166;USA;Pennsylvania;PA;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+167;USA;Rhode Island;RI;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+168;USA;Rhode Island;RI;Jul;6;Independence Day (in lieu);Independence Day (in lieu);Regional Holiday;;;;;
+169;USA;Rhode Island;RI;Aug;;Victory Day;Victory Day;Government Holiday;;;;2,Monday,August;2nd Monday in August
+170;USA;South Carolina;SC;May;;Confederate Memorial Day;Confederate Memorial Day;Government Holiday;;;;10,May,nearest;10 May or nearest weekday
+171;USA;South Carolina;SC;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+172;USA;South Carolina;SC;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+173;USA;South Carolina;SC;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+174;USA;South Carolina;SC;Dec;24;Christmas Eve;Christmas Eve;Government Holiday;;;;;AR, KS, KY, MI, NC, OK, SC, TX, VA, WI
+175;USA;South Carolina;SC;Dec;26;Day after Christmas;Day after Christmas;Government Holiday;;;;;North Carolina, South Carolina, Texas
+176;USA;South Dakota;SD;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+177;USA;South Dakota;SD;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+178;USA;South Dakota;SD;Oct;12;Native American's Day;Native American's Day;Regional Holiday;;;;;
+179;USA;Tennessee;TN;Apr;;Good Friday;Good Friday;Government Holiday;;;;GoodFriday;11 states
+180;USA;Tennessee;TN;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+181;USA;Tennessee;TN;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+182;USA;Tennessee;TN;Nov;;Friday after Thanksgiving;Friday after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+183;USA;Tennessee;TN;Dec;24;Christmas Eve;Christmas Eve;Regional Holiday;;;;;
+184;USA;Tennessee;TN;Dec;31;New Year's Eve;New Year's Eve;Regional Holiday;;;;;
+185;USA;Texas;TX;Jan;19;Confederate Heroes' Day;Confederate Heroes' Day;Government Holiday;;;;;Texas
+186;USA;Texas;TX;Mar;2;Texas Independence Day;Texas Independence Day;Government Holiday;;;;;Always celebrated on 2 March
+187;USA;Texas;TX;Mar;31;Cesar Chavez Day;Cesar Chavez Day;Government Holiday;;;;;State holiday in Texas
+188;USA;Texas;TX;Apr;21;San Jacinto Day;San Jacinto Day;Government Holiday;;;;;Always celebrated on 21 April
+189;USA;Texas;TX;Jun;19;Juneteenth;Juneteenth;Government Holiday;;;;;Emancipation Day
+190;USA;Texas;TX;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+191;USA;Texas;TX;Aug;27;Lyndon Baines Johnson Day;Lyndon Baines Johnson Day;Government Holiday;;;;;Always celebrated on 27 August
+192;USA;Texas;TX;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+193;USA;Texas;TX;Dec;24;Christmas Eve;Christmas Eve;Government Holiday;;;;;AR, KS, KY, MI, NC, OK, SC, TX, VA, WI
+194;USA;Texas;TX;Dec;26;Day after Christmas;Day after Christmas;Government Holiday;;;;;North Carolina, South Carolina, Texas
+195;USA;Utah;UT;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+196;USA;Utah;UT;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+197;USA;Utah;UT;Jul;24;Pioneer Day;Pioneer Day;Government Holiday;;;;;Utah
+198;USA;Virginia;VA;Jan;;Lee-Jackson Day;Lee-Jackson Day;Government Holiday;;;;2,Friday,January;Virginia. Friday before 3rd Monday in January
+199;USA;Virginia;VA;Feb;;George Washington Day;George Washington Day;Federal Holiday;;;;3,Monday,February;3rd Monday in February
+200;USA;Virginia;VA;Jun;19;Juneteenth;Juneteenth;Government Holiday;;;;;Emancipation Day
+201;USA;Virginia;VA;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+202;USA;Virginia;VA;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+203;USA;Virginia;VA;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+204;USA;Virginia;VA;Dec;24;Christmas Eve;Christmas Eve;Government Holiday;;;;;AR, KS, KY, MI, NC, OK, SC, TX, VA, WI
+205;USA;Vermont;VT;Mar;;Town Meeting Day;Town Meeting Day;Government Holiday;;;;1,Tuesday,March;1st Tuesday in March
+206;USA;Vermont;VT;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+207;USA;Vermont;VT;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+208;USA;Vermont;VT;Aug;;Bennington Battle Day;Bennington Battle Day;Government Holiday;;;;16,August,nearest;16 August or nearest weekday
+209;USA;Washington;WA;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+210;USA;Washington;WA;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+211;USA;Washington;WA;Nov;;Native American Heritage Day;Native American Heritage Day;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+212;USA;Wisconsin;WI;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+213;USA;Wisconsin;WI;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+214;USA;Wisconsin;WI;Dec;24;Christmas Eve;Christmas Eve;Government Holiday;;;;;AR, KS, KY, MI, NC, OK, SC, TX, VA, WI
+215;USA;Wisconsin;WI;Dec;31;New Year's Eve;New Year's Eve;Government Holiday;;;;;Kentucky, Michigan, Wisconsin only.
+216;USA;West Virginia;WV;Jun;19;West Virginia Day (in lieu);West Virginia Day (in lieu);Government Holiday;;;;;West Virginia
+217;USA;West Virginia;WV;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+218;USA;West Virginia;WV;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;
+219;USA;West Virginia;WV;Nov;;Day after Thanksgiving;Day after Thanksgiving;Regional Holiday;;;;4,Friday,November;Day after 4th Thursday in November
+220;USA;Wyoming;WY;Jul;3;Independence Day Holiday (in lieu);Independence Day Holiday (in lieu);Regional Holiday;;;;;
+221;USA;Wyoming;WY;Jul;3;Independence Day (in lieu);Independence Day (in lieu);Federal Holiday;;;;;

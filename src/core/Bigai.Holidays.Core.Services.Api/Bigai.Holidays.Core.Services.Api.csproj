@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <Folder Include="Configurations\" />
+    <Folder Include="Resources\Data\" />
   </ItemGroup>
 
   <ItemGroup>

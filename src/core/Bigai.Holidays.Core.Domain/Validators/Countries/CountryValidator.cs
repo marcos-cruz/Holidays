@@ -1,7 +1,6 @@
 ﻿using Bigai.Holidays.Core.Domain.Interfaces.Repositories.Countries;
 using Bigai.Holidays.Core.Domain.Models.Countries;
 using Bigai.Holidays.Core.Domain.Models.States;
-using Bigai.Holidays.Core.Domain.Validators.States;
 using Bigai.Holidays.Shared.Domain.Enums.Entities;
 using Bigai.Holidays.Shared.Domain.Validators;
 using Bigai.Holidays.Shared.Infra.CrossCutting.Helpers;
@@ -12,9 +11,9 @@ using System.Linq;
 namespace Bigai.Holidays.Core.Domain.Validators.Countries
 {
     /// <summary>
-    /// This class provides support for validating <see cref="Country"/>.
+    /// This class provides support for common <see cref="Country"/> validations.
     /// </summary>
-    public class CountryValidator : EntityValidatorError<Country>
+    public abstract class CountryValidator : EntityValidatorError<Country>
     {
         #region Constructor
 
@@ -27,7 +26,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.Countries
 
         #region Validations
 
-        protected void CommonValidations()
+        private void CommonValidations()
         {
             ValidateNumericCode();
             ValidateAlphaIsoCode2();
@@ -48,7 +47,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.Countries
             When(country => country.NumericCode.HasValue(), () =>
             {
                 RuleFor(country => country.NumericCode)
-                    .Must(BePositiveInteger).WithMessage("Código numérico do país não é válido.")
+                    .Must(BePositiveInteger).WithMessage("{PropertyValue} não é um código numérico de país não é válido.")
                     .MaximumLength(int.MaxValue.ToString().Length).WithMessage($"Código numérico deve ter no máximo { int.MaxValue.ToString().Length} caracteres.");
             });
         }
@@ -174,15 +173,6 @@ namespace Bigai.Holidays.Core.Domain.Validators.Countries
                 {
                     RuleFor(country => country.States)
                         .Must(BeUnique).WithMessage("Não podem existir estados duplicados.");
-                });
-
-                //
-                // Test if states are valid.
-                //
-                When(country => country.States.Count > 0, () =>
-                {
-                    RuleForEach(country => country.States)
-                        .SetValidator(new StateValidator());
                 });
             });
         }

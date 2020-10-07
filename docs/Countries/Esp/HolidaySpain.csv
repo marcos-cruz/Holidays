@@ -1,0 +1,100 @@
+ID;CONTRY;STATE-NAME;STATE-CODE;MONTH;DAY;HOLIDAY-NAME;ALTERNATIVE-HOLIDAY-NAME;HOLIDAY-TYPE;CITY-NAME;CITY-CODE;OPTIONAL;BUSSINESS-RULE;COMMENTS
+1;ESP;;;Jan;1;Día de Año Nuevo;New Year's Day;Public Holiday;;;;;
+2;ESP;;;Jan;6;Epifanía;Epiphany;Public Holiday;;;;;
+3;ESP;Comunidad Valenciana;VC;Jan;22;San Vicente el mártir;Saint Vincent the Martyr;Regional Holiday;;;;;Valencia only
+4;ESP;Andalucía;AN;Feb;28;Día de Andalucía;Andalucía Day;Regional Holiday;;;;;Andalucía
+5;ESP;Islas Baleares;IB;Mar;1;Día Balear;Balearic Day;Regional Holiday;;;;;Balearic Islands
+6;ESP;País Vasco;PV;Mar;19;Dia de San Jose;St. Joseph's Day;Regional Holiday;;;;;Several regions
+7;ESP;Castilla-La Mancha;CM;Mar;19;Dia de San Jose;St. Joseph's Day;Regional Holiday;;;;;Several regions
+8;ESP;Galicia;GA;Mar;19;Dia de San Jose;St. Joseph's Day;Regional Holiday;;;;;Several regions
+9;ESP;Región de Murcia;MC;Mar;19;Dia de San Jose;St. Joseph's Day;Regional Holiday;;;;;Several regions
+10;ESP;Comunidad Foral de Navarra;NC;Mar;19;Dia de San Jose;St. Joseph's Day;Regional Holiday;;;;;Several regions
+11;ESP;Comunidad Valenciana;VC;Mar;19;Dia de San Jose;St. Joseph's Day;Regional Holiday;;;;;Several regions
+12;ESP;;;Mar;19;Dia del padre;Father's Day;Not A Public Holiday;;;;;Celebrated on Saint Joseph's Day. Not a public holiday
+13;ESP;Andalucía;AN;Apr;9;Jueves Santo;Holy Thursday;Regional Holiday;;;;Holy Thursday;Most communities
+14;ESP;Aragón;AR;Apr;9;Jueves Santo;Holy Thursday;Regional Holiday;;;;Holy Thursday;Most communities
+15;ESP;Principado de Asturias;AS;Apr;9;Jueves Santo;Holy Thursday;Regional Holiday;;;;Holy Thursday;Most communities
+16;ESP;Islas Baleares;IB;Apr;9;Jueves Santo;Holy Thursday;Regional Holiday;;;;Holy Thursday;Most communities
+17;ESP;País Vasco;PV;Apr;9;Jueves Santo;Holy Thursday;Regional Holiday;;;;Holy Thursday;Most communities
+18;ESP;Islas Canarias;CN;Apr;9;Jueves Santo;Holy Thursday;Regional Holiday;;;;Holy Thursday;Most communities
+19;ESP;Cantabria;CB;Apr;9;Jueves Santo;Holy Thursday;Regional Holiday;;;;Holy Thursday;Most communities
+20;ESP;Castilla y León;CL;Apr;9;Jueves Santo;Holy Thursday;Regional Holiday;;;;Holy Thursday;Most communities
+21;ESP;Castilla-La Mancha;CM;Apr;9;Jueves Santo;Holy Thursday;Regional Holiday;;;;Holy Thursday;Most communities
+22;ESP;Ceuta;CE;Apr;9;Jueves Santo;Holy Thursday;Regional Holiday;;;;Holy Thursday;Most communities
+23;ESP;Extremadura;EX;Apr;9;Jueves Santo;Holy Thursday;Regional Holiday;;;;Holy Thursday;Most communities
+24;ESP;Galicia;GA;Apr;9;Jueves Santo;Holy Thursday;Regional Holiday;;;;Holy Thursday;Most communities
+25;ESP;La Rioja;RI;Apr;9;Jueves Santo;Holy Thursday;Regional Holiday;;;;Holy Thursday;Most communities
+26;ESP;Comunidad de Madrid;MD;Apr;9;Jueves Santo;Holy Thursday;Regional Holiday;;;;Holy Thursday;Most communities
+27;ESP;Melilla;ML;Apr;9;Jueves Santo;Holy Thursday;Regional Holiday;;;;Holy Thursday;Most communities
+28;ESP;Región de Murcia;MC;Apr;9;Jueves Santo;Holy Thursday;Regional Holiday;;;;Holy Thursday;Most communities
+29;ESP;Comunidad Foral de Navarra;NC;Apr;9;Jueves Santo;Holy Thursday;Regional Holiday;;;;Holy Thursday;Most communities
+30;ESP;;;Apr;10;Buen viernes;Good Friday;Public Holiday;;;;Good Friday;
+31;ESP;Islas Baleares;IB;Apr;13;Lunes de Pascua;Easter Monday;Regional Holiday;;;;Easter Monday;Several regions
+32;ESP;País Vasco;PV;Apr;13;Lunes de Pascua;Easter Monday;Regional Holiday;;;;Easter Monday;Several regions
+33;ESP;Cantabria;CB;Apr;13;Lunes de Pascua;Easter Monday;Regional Holiday;;;;Easter Monday;Several regions
+34;ESP;Castilla-La Mancha;CM;Apr;13;Lunes de Pascua;Easter Monday;Regional Holiday;;;;Easter Monday;Several regions
+35;ESP;Cataluña;CT;Apr;13;Lunes de Pascua;Easter Monday;Regional Holiday;;;;Easter Monday;Several regions
+36;ESP;La Rioja;RI;Apr;13;Lunes de Pascua;Easter Monday;Regional Holiday;;;;Easter Monday;Several regions
+37;ESP;Comunidad Foral de Navarra;NC;Apr;13;Lunes de Pascua;Easter Monday;Regional Holiday;;;;Easter Monday;Several regions
+38;ESP;Comunidad Valenciana;VC;Apr;13;Lunes de Pascua;Easter Monday;Regional Holiday;;;;Easter Monday;Several regions
+39;ESP;Comunidad Valenciana;VC;Apr;20;Fiesta de San Vicente Ferrer;Feast of San Vincent Ferrer;Regional Holiday;;;;;Valencia only
+40;ESP;Castilla y León;CL;Apr;23;Día de la Comunidad de Castilla y León;Castile and León Community Day;Regional Holiday;;;;;Castile and León
+41;ESP;Aragón;AR;Apr;23;Día de San Jorge;St. George's Day;Regional Holiday;;;;;National day of Aragon
+42;ESP;;;May;1;Día del Trabajo;Labour Day;Public Holiday;;;;;International Workers' Day
+43;ESP;Comunidad de Madrid;MD;May;2;Festival Comunitario de Madrid;Community Festival of Madrid;Regional Holiday;;;;;Madrid only
+44;ESP;;;May;3;Día de la Madre;Mother's Day;Not A Public Holiday;;;;1, Sunday,May;1st Sunday in May. Not a public holiday
+45;ESP;Castilla y León;CL;May;13;San Pedro de Regalado;Saint Peter de Regalado;Regional Holiday;;;;;Valladolid
+46;ESP;Comunidad de Madrid;MD;May;15;Fiesta de San Isidro;Feast of St. Isidro;Regional Holiday;;;;;City of Madrid only. Patron Saint of Madrid
+47;ESP;Galicia;GA;May;17;Día de la Literatura Gallega;Galician Literature Day;Regional Holiday;;;;;Galicia only
+48;ESP;Islas Canarias;CN;May;30;Día de Canarias;Canary Islands Day;Regional Holiday;;;;;
+49;ESP;Castilla-La Mancha;CM;May;31;Día de Castilla-La Mancha;Castilla-La Mancha Day;Regional Holiday;;;;;
+50;ESP;Cataluña;CT;Jun;1;Lunes de Pentecostés;Whit Monday;Regional Holiday;;;;;Barcelona only
+51;ESP;La Rioja;RI;Jun;9;Día de La Rioja;La Rioja Day;Regional Holiday;;;;;
+52;ESP;Región de Murcia;MC;Jun;9;Dia de Murcia;Day of Murcia;Regional Holiday;;;;;
+53;ESP;Castilla-La Mancha;CM;Jun;11;Corpus Christi;Corpus Christi;Regional Holiday;;;;;Castilla-La Mancha
+54;ESP;Ceuta;CE;Jun;13;Fiesta de San Antonio;Feast of St. Anthony;Regional Holiday;;;;;Ceuta only
+55;ESP;Cataluña;CT;Jun;24;Fiesta de San Juan Bautista;Feast of St. John the Baptist;Regional Holiday;;;;;Some regions
+56;ESP;Galicia;GA;Jun;24;Fiesta de San Juan Bautista;Feast of St. John the Baptist;Regional Holiday;;;;;Some regions
+57;ESP;Comunidad Valenciana;VC;Jun;24;Fiesta de San Juan Bautista;Feast of St. John the Baptist;Regional Holiday;;;;;Some regions
+58;ESP;Galicia;GA;Jul;25;Día de Santiago;St. James' Day;Regional Holiday;;;;;Patron saint of Spain
+59;ESP;Cantabria;CB;Jul;28;Día de las Instituciones de Cantabria;Day of Cantabria Institutions;Regional Holiday;;;;;Cantabria only
+60;ESP;Ceuta;CE;Jul;31;Eid El Kebir;Eid El Kebir;Regional Holiday;;;;;Ceuta, Melilla only. Feast of Sacrifice
+61;ESP;Melilla;ML;Jul;31;Eid El Kebir;Eid El Kebir;Regional Holiday;;;;;Ceuta, Melilla only. Feast of Sacrifice
+62;ESP;Ceuta;CE;Aug;5;Nuestra Señora de Africa;Our Lady of Africa;Regional Holiday;;;;;Ceuta only
+63;ESP;;;Aug;15;Asunción de la virgen;Assumption of the Virgin;Public Holiday;;;;;
+64;ESP;Ceuta;CE;Sep;2;Día de Ceuta;Ceuta Day;Regional Holiday;;;;;
+65;ESP;Castilla y León;CL;Sep;8;Nuestra Señora de San Lorenzo;Our Lady of San Lorenzo;Regional Holiday;;;;;Valladolid
+66;ESP;Principado de Asturias;AS;Sep;8;Fiesta de Nuestra Señora de las Victorias;Feast of Our Lady of Victories;Regional Holiday;;;;;
+67;ESP;Extremadura;EX;Sep;8;Fiesta de Nuestra Señora de las Victorias;Feast of Our Lady of Victories;Regional Holiday;;;;;
+68;ESP;Cataluña;CT;Sep;11;Fiesta Nacional de Cataluña;National Day of Catalonia;Regional Holiday;;;;;
+69;ESP;Cantabria;CB;Sep;15;Señora de Aparecida;Lady of Aparecida;Regional Holiday;;;;;The Patron saint of Cantabria
+70;ESP;Melilla;ML;Sep;17;Día de Melilla;Day of Melilla;Regional Holiday;;;;;Melilla
+71;ESP;Cataluña;CT;Sep;24;La Mercè;La Mercè;Regional Holiday;;;;;Barcelona only
+72;ESP;Comunidad Valenciana;VC;Oct;9;Día de la Comunidad Valenciana;Valencian Community Day;Regional Holiday;;;;;
+73;ESP;;;Oct;12;Dia hispano;Hispanic Day;Public Holiday;;;;;National Day
+74;ESP;;;Nov;1;Todos los Santos;All Saints' Day;Public Holiday;;;;;
+75;ESP;Andalucía;AN;Nov;2;Día de Todos los Santos (en lugar);All Saints' Day (in lieu);Regional Holiday;;;;;Several communities
+76;ESP;Aragón;AR;Nov;2;Día de Todos los Santos (en lugar);All Saints' Day (in lieu);Regional Holiday;;;;;Several communities
+77;ESP;Castilla y León;CL;Nov;2;Día de Todos los Santos (en lugar);All Saints' Day (in lieu);Regional Holiday;;;;;Several communities
+78;ESP;Extremadura;EX;Nov;2;Día de Todos los Santos (en lugar);All Saints' Day (in lieu);Regional Holiday;;;;;Several communities
+79;ESP;Comunidad de Madrid;MD;Nov;2;Día de Todos los Santos (en lugar);All Saints' Day (in lieu);Regional Holiday;;;;;Several communities
+80;ESP;Comunidad de Madrid;MD;Nov;9;Nuestra Señora de la Almudena;Our Lady of the Almudena;Regional Holiday;;;;;City of Madrid Only
+81;ESP;Comunidad Foral de Navarra;NC;Dec;3;Fiesta de San Francisco Javier;Feast of St. Francis Xavier;Regional Holiday;;;;;
+82;ESP;;;Dec;6;Día de la Constitución;Constitution Day;Public Holiday;;;;;
+83;ESP;Andalucía;AN;Dec;7;Día de la Constitución (en lugar);Constitution Day (in lieu);Regional Holiday;;;;;Most communities
+84;ESP;Aragón;AR;Dec;7;Día de la Constitución (en lugar);Constitution Day (in lieu);Regional Holiday;;;;;Most communities
+85;ESP;Principado de Asturias;AS;Dec;7;Día de la Constitución (en lugar);Constitution Day (in lieu);Regional Holiday;;;;;Most communities
+86;ESP;Islas Baleares;IB;Dec;7;Día de la Constitución (en lugar);Constitution Day (in lieu);Regional Holiday;;;;;Most communities
+87;ESP;Islas Canarias;CN;Dec;7;Día de la Constitución (en lugar);Constitution Day (in lieu);Regional Holiday;;;;;Most communities
+88;ESP;Castilla y León;CL;Dec;7;Día de la Constitución (en lugar);Constitution Day (in lieu);Regional Holiday;;;;;Most communities
+89;ESP;Ceuta;CE;Dec;7;Día de la Constitución (en lugar);Constitution Day (in lieu);Regional Holiday;;;;;Most communities
+90;ESP;Extremadura;EX;Dec;7;Día de la Constitución (en lugar);Constitution Day (in lieu);Regional Holiday;;;;;Most communities
+91;ESP;La Rioja;RI;Dec;7;Día de la Constitución (en lugar);Constitution Day (in lieu);Regional Holiday;;;;;Most communities
+92;ESP;Comunidad de Madrid;MD;Dec;7;Día de la Constitución (en lugar);Constitution Day (in lieu);Regional Holiday;;;;;Most communities
+93;ESP;Melilla;ML;Dec;7;Día de la Constitución (en lugar);Constitution Day (in lieu);Regional Holiday;;;;;Most communities
+94;ESP;Región de Murcia;MC;Dec;7;Día de la Constitución (en lugar);Constitution Day (in lieu);Regional Holiday;;;;;Most communities
+95;ESP;Comunidad Foral de Navarra;NC;Dec;7;Día de la Constitución (en lugar);Constitution Day (in lieu);Regional Holiday;;;;;Most communities
+96;ESP;;;Dec;8;Día de la Inmaculada Concepción;Immaculate Conception Day;Public Holiday;;;;;
+97;ESP;;;Dec;25;Día de Navidad;Christmas Day;Public Holiday;;;;;
+98;ESP;Cataluña;CT;Dec;26;Día de San Esteban;St. Stephen's Day;Regional Holiday;;;;;Catalonia
+99;ESP;Islas Baleares;IB;Dec;26;Navidad;Christmas Holiday;Regional Holiday;;;;;Balearic islands

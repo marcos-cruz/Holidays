@@ -122,6 +122,74 @@
             <param name="services">Collection of application services to add versioning control.</param>
             <returns>The same service collection so that multiple calls can be chained.</returns>
         </member>
+        <member name="T:Bigai.Holidays.Core.Services.Api.Controllers.Abstracts.MainController">
+            <summary>
+            <see cref="T:Bigai.Holidays.Core.Services.Api.Controllers.Abstracts.MainController"/> provides support for controllers.
+            </summary>
+        </member>
+        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.Abstracts.MainController.FormatResponse(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)">
+            <summary>
+            This method determines a standard response for a request that contains errors in the request parameters.
+            </summary>
+            <param name="modelState">Model State informed in the request.</param>
+            <returns>Response to request.</returns>
+        </member>
+        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.Abstracts.MainController.FormatResponse(Bigai.Holidays.Shared.Domain.Commands.CommandResult)">
+            <summary>
+            This method determines the response to the request processed by the business layer of the domain.
+            </summary>
+            <param name="commandResult">Result of the action returned by the business layer.</param>
+            <returns>Response to request.</returns>
+        </member>
+        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.Abstracts.MainController.NotifyError(System.String,System.String)">
+            <summary>
+            Notifies the occurrence of an error.
+            </summary>
+            <param name="propertyName">Who the message refers to.</param>
+            <param name="errorMessage">Message text.</param>
+        </member>
+        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.Abstracts.MainController.UploadCsv">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.Abstracts.MainController.NotifyError(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Notifies the occurrence of an error.
+            </summary>
+            <param name="modelState">A collection of errors.</param>
+        </member>
+        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.ImportsController.#ctor(Bigai.Holidays.Shared.Domain.Interfaces.Notifications.INotificationHandler,Bigai.Holidays.Core.Domain.Interfaces.Services.Countries.IImportCountryService,Bigai.Holidays.Core.Domain.Interfaces.Services.States.IImportStateService,Bigai.Holidays.Core.Domain.Interfaces.Services.Holidays.IImportRuleHolidayService)">
+            <summary>
+            Return a instance of <see cref="T:Bigai.Holidays.Core.Services.Api.Controllers.V1.ImportsController"/>.
+            </summary>
+            <param name="notificationHandler">For handling error notification messages.</param>
+            <param name="importCountryService">To import countries to database.</param>
+            <param name="importStateService">To import states to database.</param>
+            <param name="importRuleHolidayService">To import rules holidays to database.</param>
+        </member>
+        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.ImportsController.Country(System.Guid)">
+            <summary>
+            This method uploads a file in CSV format, containing country information, and inserts it in the database.
+            </summary>
+            <param name="token">Authorization key.</param>
+            <returns>Returns a CommandResponse containing the result of executing the command.</returns>
+        </member>
+        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.ImportsController.State(System.Guid)">
+            <summary>
+            This method uploads a file in CSV format, containing state information, and inserts it in the database.
+            </summary>
+            <param name="token">Authorization key.</param>
+            <returns>Returns a CommandResponse containing the result of executing the command.</returns>
+        </member>
+        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.ImportsController.RuleHoliday(System.Guid)">
+            <summary>
+            This method uploads a file in CSV format, containing rule holiday information, and inserts it in the database.
+            </summary>
+            <param name="token">Authorization key.</param>
+            <returns>Returns a CommandResponse containing the result of executing the command.</returns>
+        </member>
         <member name="T:Bigai.Holidays.Core.Services.Api.Startup">
             <summary>
             <see cref="T:Bigai.Holidays.Core.Services.Api.Startup"/> provides support for specifying application startup methods.

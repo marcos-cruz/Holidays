@@ -1,0 +1,23 @@
+ID;CONTRY;STATE-NAME;STATE-CODE;MONTH;DAY;HOLIDAY-NAME;ALTERNATIVE-HOLIDAY-NAME;HOLIDAY-TYPE;CITY-NAME;CITY-CODE;OPTIONAL;BUSSINESS-RULE;COMMENTS
+1;BOL;;;Jan;1;Año Nuevo;New Year's Day;National Holiday;;;;;
+2;BOL;;;Jan;22;Día de la Fundación del Estado Plurinacional de Bolivia;Plurinational State Foundation Day;National Holiday;;;;;
+3;BOL;Oruro;BO-O;Feb;10;Día del departamento de Oruro;Oruro department day;Regional Holiday;;;;;Oruro only
+4;BOL;;;Feb;24;Carnaval;Carnival Monday;National Holiday;;;;Carnival Monday;Monday before Ash Wednesday
+5;BOL;;;Feb;25;Carnaval;Carnival Tuesday;National Holiday;;;;Carnival Tuesday;Tuesday before Ash Wednesday
+6;BOL;;;Mar;19;Día del Padre;Father's day;Not A Public Holiday;;;;;
+7;BOL;;;Apr;10;Viernes Santo;Good Friday;National Holiday;;;;Good Friday;
+8;BOL;Tarija;BO-T;Apr;15;Día del departamento de Tarija;Tarija department day;Regional Holiday;;;;;Tarija
+9;BOL;;;May;1;Día del Trabajador;Labour Day;National Holiday;;;;;International Workers' Day
+10;BOL;Chuquisaca;BO-H;May;25;Día del departamento de Chuquisaca;Chuquisaca Day;Regional Holiday;;;;;Chuquisaca
+11;BOL;;;May;27;Día de la madre;Mother's Day;Not A Public Holiday;;;;;Chuquisaca
+12;BOL;;;Jun;11;Corpus Christi;Corpus Christi;National Holiday;;;;Corpus Christi;Second Thursday after Whitsun
+13;BOL;;;Jun;21;Año nuevo Aymara;Aymara New Year;National Holiday;;;;;Winter Solstice in Southern Hemisphere
+14;BOL;La Paz;BO-L;Jul;16;Día del departamento de La Paz;La Paz day;Regional Holiday;;;;;La Paz
+15;BOL;;;Aug;6;Día de la independencia de Bolivia;Independence Day;National Holiday;;;;;National Day
+16;BOL;Cochabamba;BO-C;Sep;14;Día del departamento de Cochabamba;Cochabamba Day;Regional Holiday;;;;;Cochabamba
+17;BOL;Pando;BO-N;Sep;24;Día del departamento de Pando;Pando Day;Regional Holiday;;;;;Santa Cruz only
+18;BOL;Santa Cruz;BO-S;Sep;24;Día del departamento de Santa Cruz;Santa Cruz Day;Regional Holiday;;;;;Santa Cruz only
+19;BOL;;;Nov;2;Día de los Difuntos;All Souls' Day;National Holiday;;;;;
+20;BOL;Potosí;BO-P;Nov;10;Día del departamento de Potosí;Day of the department of Potosí;Regional Holiday;;;;;Potosí only
+21;BOL;Beni;BO-B;Nov;18;Día del departamento de Beni;Day of the department of Beni;Regional Holiday;;;;;Beni only
+22;BOL;;;Dec;25;Navidad;Christmas Day;National Holiday;;;;;

@@ -12,9 +12,9 @@ using System.Linq;
 namespace Bigai.Holidays.Core.Domain.Validators.States
 {
     /// <summary>
-    /// This class provides support for validating <see cref="State"/>.
+    /// This class provides support for common <see cref="State"/> validations.
     /// </summary>
-    public class StateValidator : EntityValidatorError<State>
+    public abstract class StateValidator : EntityValidatorError<State>
     {
         #region Constructor
 
@@ -27,7 +27,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.States
 
         #region Validations
 
-        protected void CommonValidations()
+        private void CommonValidations()
         {
             ValidateCountryId();
             ValidateCountryIsoCode();
@@ -85,7 +85,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.States
                 record = null;
             }
 
-            return record == null;
+            return record != null;
         }
 
         protected bool StateIsoCodeMustBeUnique(State state, IStateRepository stateRepository)

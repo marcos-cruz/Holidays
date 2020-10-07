@@ -1,0 +1,12 @@
+ID;CONTRY;STATE-NAME;STATE-CODE;MONTH;DAY;HOLIDAY-NAME;ALTERNATIVE-HOLIDAY-NAME;HOLIDAY-TYPE;CITY-NAME;CITY-CODE;OPTIONAL;BUSSINESS-RULE;COMMENTS
+1;PER;;;Jan;1;Año Nuevo;New Year's Day;National Holiday;;;;;
+2;PER;;;Apr;9;Jueves Santo;Maundy Thursday;National Holiday;;;;Maundy Thursday;The Thursday before Easter Sunday
+3;PER;;;Apr;10;Viernes Santo;Good Friday;National Holiday;;;;Good Friday;
+4;PER;;;May;1;Día de Trabajo;Labour Day;National Holiday;;;;;International Workers' Day
+5;PER;;;Jun;29;Día de San Pedro y San Pablo;Saint Peter and Saint Paul;National Holiday;;;;;Feast of Saints Peter and Paul
+6;PER;;;Jul;28;Independencia del Perú;Independence Day;National Holiday;;;;;National Day
+7;PER;;;Aug;30;Santa Rosa de Lima;Santa Rosa de Lima;National Holiday;;;;;Patron saint of Lima
+8;PER;;;Oct;8;Combate de Angamos;Battle of Angamos;National Holiday;;;;;
+9;PER;;;Nov;1;Día de Todos los Santos;All Saints' Day;National Holiday;;;;;
+10;PER;;;Dec;8;Día de la Inmaculada Concepción;Immaculate Conception Day;National Holiday;;;;;
+11;PER;;;Dec;25;Navidad;Christmas Day;National Holiday;;;;;Navidad

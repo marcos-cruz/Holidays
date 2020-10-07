@@ -36,7 +36,6 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
             _stateRepository = stateRepository ?? throw new ArgumentNullException(nameof(stateRepository));
             _holidayRepository = holidayRepository ?? throw new ArgumentNullException(nameof(holidayRepository));
 
-            CommonValidations();
             ValidateComposeKey();
             ValidateCountryId();
             ValidateStateId();

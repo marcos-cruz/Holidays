@@ -11,14 +11,17 @@ using System;
 
 namespace Bigai.Holidays.Core.Domain.Validators.Holidays
 {
-    public class HolidayValidator : EntityValidatorError<Holiday>
+    /// <summary>
+    /// This class provides support for common <see cref="Holiday"/> validations.
+    /// </summary>
+    public abstract class HolidayValidator : EntityValidatorError<Holiday>
     {
         public HolidayValidator()
         {
             CommonValidations();
         }
 
-        protected void CommonValidations()
+        private void CommonValidations()
         {
             ValidateCountryId();
             ValidateCityId();
@@ -74,7 +77,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
         private void ValidateHolidayType()
         {
             RuleFor(ruleHoliday => ruleHoliday.HolidayType)
-                .Must(BeHolidayType).WithMessage("Tipo de feriado não é válido.");
+                .Must(BeHolidayType).WithMessage("{PropertyValue} não é um tipo de feriado válido.");
         }
 
         private void ValidateNativeDescription()

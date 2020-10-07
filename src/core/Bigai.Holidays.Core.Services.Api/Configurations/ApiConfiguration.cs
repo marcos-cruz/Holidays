@@ -1,6 +1,7 @@
 ﻿using Bigai.Holidays.Core.Services.Api.Configurations.Swagger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,6 +29,16 @@ namespace Bigai.Holidays.Core.Services.Api.Configurations
 
             services.AddCorsConfiguration();
 
+            //
+            // To avoid the MultiPartBodyLength error because size of files...
+            //
+            services.Configure<FormOptions>(options =>
+            {
+                options.ValueLengthLimit = int.MaxValue;
+                options.MultipartBodyLengthLimit = int.MaxValue;
+                options.MemoryBufferThreshold = int.MaxValue;
+            });
+
             return services;
         }
 
@@ -51,13 +62,13 @@ namespace Bigai.Holidays.Core.Services.Api.Configurations
                 app.UseHsts();
             }
 
+            app.UseSwaggerConfiguration(provider);
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
-
-            app.UseSwaggerConfiguration(provider);
 
             app.UseEndpoints(endpoints =>
             {

@@ -38,13 +38,13 @@ namespace Bigai.Holidays.Shared.Domain.Validators
         private void ValidateStatus()
         {
             RuleFor(entity => entity.Status)
-                .Must(BeStatus).WithMessage("{PropertyName} não é válido.");
+                .Must(BeStatus).WithMessage("{PropertyValue} não é um status válido.");
         }
 
         private void ValidateTypeProcess()
         {
             RuleFor(entity => entity.Action)
-                .Must(BeTypeProcess).WithMessage("{PropertyName} não é válida.");
+                .Must(BeTypeProcess).WithMessage("{PropertyValue} não é um processo válido.");
         }
 
         private void ValidateRegistrationDate()

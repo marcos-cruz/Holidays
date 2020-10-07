@@ -6,6 +6,7 @@ using Bigai.Holidays.Shared.Domain.Interfaces.Services;
 using Bigai.Holidays.Shared.Domain.Models;
 using Bigai.Holidays.Shared.Domain.Notifications;
 using Bigai.Holidays.Shared.Infra.CrossCutting.Helpers;
+using Bigai.Holidays.Shared.Infra.CrossCutting.Interfaces;
 using FluentValidation;
 using FluentValidation.Results;
 using System;
@@ -24,6 +25,7 @@ namespace Bigai.Holidays.Shared.Domain.Services
 
         private readonly INotificationHandler _notificationHandler;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IUserLogged _userLogged;
 
         #endregion
 
@@ -34,15 +36,26 @@ namespace Bigai.Holidays.Shared.Domain.Services
         /// </summary>
         /// <param name="notificationHandler">Error message handler.</param>
         /// <param name="unitOfWork">Context to commit changes.</param>
-        protected DomainService(INotificationHandler notificationHandler, IUnitOfWork unitOfWork)
+        /// <param name="userLogged">The who is logged in.</param>
+        protected DomainService(INotificationHandler notificationHandler, IUnitOfWork unitOfWork, IUserLogged userLogged)
         {
             _notificationHandler = notificationHandler ?? throw new ArgumentNullException(nameof(notificationHandler));
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
+            _userLogged = userLogged ?? throw new ArgumentNullException(nameof(userLogged));
         }
 
         #endregion
 
         #region Protected Methods
+
+        /// <summary>
+        /// Determines the user who is logged in.
+        /// </summary>
+        /// <returns>The user who is logged in.</returns>
+        protected IUserLogged GetUserLogged()
+        {
+            return _userLogged;
+        }
 
         /// <summary>
         /// Save all change in this context to database.
@@ -57,7 +70,6 @@ namespace Bigai.Holidays.Shared.Domain.Services
             if (HasNotification())
             {
                 commandResult = CommandResult.BadRequest("Ação não foi concluída, existem erros.");
-                commandResult.Data = GetNotifications();
             }
             else
             {
@@ -74,14 +86,12 @@ namespace Bigai.Holidays.Shared.Domain.Services
                     else
                     {
                         commandResult = CommandResult.ServiceUnavailable($"Serviço indisponível, tente novamente mais tarde.");
-                        commandResult.Data = GetNotifications();
                     }
                 }
                 catch (Exception ex)
                 {
                     NotifyError(commandName, ex.Message);
                     commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-                    commandResult.Data = GetNotifications();
                 }
             }
 
@@ -101,7 +111,6 @@ namespace Bigai.Holidays.Shared.Domain.Services
             if (HasNotification())
             {
                 commandResult = CommandResult.BadRequest("Ação não foi concluída, existem erros.");
-                commandResult.Data = GetNotifications();
             }
             else
             {
@@ -118,14 +127,12 @@ namespace Bigai.Holidays.Shared.Domain.Services
                     else
                     {
                         commandResult = CommandResult.ServiceUnavailable($"Serviço indisponível, tente novamente mais tarde.");
-                        commandResult.Data = GetNotifications();
                     }
                 }
                 catch (Exception ex)
                 {
                     NotifyError(commandName, ex.Message);
                     commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-                    commandResult.Data = GetNotifications();
                 }
             }
 
@@ -201,6 +208,7 @@ namespace Bigai.Holidays.Shared.Domain.Services
             if (!validationResult.IsValid)
             {
                 NotifyError(validationResult);
+                validationResult.Errors.Clear();
             }
 
             return validationResult.IsValid;

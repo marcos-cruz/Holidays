@@ -1,7 +1,4 @@
 ﻿using Bigai.Holidays.Core.Domain.Interfaces.Repositories;
-using Bigai.Holidays.Core.Domain.Interfaces.Repositories.Countries;
-using Bigai.Holidays.Core.Domain.Interfaces.Repositories.Holidays;
-using Bigai.Holidays.Core.Domain.Interfaces.Repositories.States;
 using Bigai.Holidays.Core.Domain.Interfaces.Services.Countries;
 using Bigai.Holidays.Core.Domain.Interfaces.Services.Holidays;
 using Bigai.Holidays.Core.Domain.Interfaces.Services.States;
@@ -9,9 +6,6 @@ using Bigai.Holidays.Core.Domain.Services.Countries;
 using Bigai.Holidays.Core.Domain.Services.Holidays;
 using Bigai.Holidays.Core.Domain.Services.States;
 using Bigai.Holidays.Core.Infra.Data.Contexts;
-using Bigai.Holidays.Core.Infra.Data.Repositories.Countries;
-using Bigai.Holidays.Core.Infra.Data.Repositories.Holidays;
-using Bigai.Holidays.Core.Infra.Data.Repositories.States;
 using Bigai.Holidays.Core.Infra.Data.UnitOfWork;
 using Bigai.Holidays.Shared.Domain.Interfaces.Notifications;
 using Bigai.Holidays.Shared.Domain.Notifications;

@@ -38,9 +38,9 @@ namespace Bigai.Holidays.Shared.Domain.Notifications
             return _notifications;
         }
 
-        public void NotifyError(DomainNotification notificacao)
+        public void NotifyError(DomainNotification notification)
         {
-            _notifications.Add(notificacao);
+            _notifications.Add(notification);
         }
 
         #endregion

@@ -1,0 +1,16 @@
+ID;CONTRY;STATE-NAME;STATE-CODE;MONTH;DAY;HOLIDAY-NAME;ALTERNATIVE-HOLIDAY-NAME;HOLIDAY-TYPE;CITY-NAME;CITY-CODE;OPTIONAL;BUSSINESS-RULE;COMMENTS
+1;MEX;;;Jan;1;Año Nuevo;New Year's Day;Statutory Holiday;;;;;
+2;MEX;;;Feb;3;Día de la Constitución;Constitution Day;Statutory Holiday;;;;1,Monday,February;First Monday in February
+3;MEX;;;Mar;16;Natalicio de Benito Juárez;Benito Juarez's Birthday;Statutory Holiday;;;;3,Monday,March;Third Monday in March
+4;MEX;;;Apr;9;Jueves Santo;Maundy Thursday;Statutory Holiday;;;;Maundy Thursday;The Thursday before Easter Sunday
+5;MEX;;;Apr;10;Viernes Santo;Good Friday;Statutory Holiday;;;;Good Friday;
+6;MEX;;;May;1;Día del Trabajo;Labor Day;Statutory Holiday;;;;;May Day
+7;MEX;Puebla;PU;May;5;Batalla de Puebla;Battle of Puebla;Regional Holiday;;;;;Puebla only
+8;MEX;;;May;10;Día de las Madres;Mother's Day;Not A Public Holiday;;;;2,Sunday,May;
+9;MEX;;;Jun;21;Día del Padre;Father's Day;Not A Public Holiday;;;;3,Sunday,June;3rd Sunday in June. Not a public holiday
+10;MEX;;;Sep;16;Día de la Independencia;Independence Day;Statutory Holiday;;;;;National Day
+11;MEX;;;Oct;12;Día de la Raza;Mexico Day of the Races;Statutory Holiday;;;;;Not an official holiday
+12;MEX;;;Nov;2;Dia de los Muertos;Day of the Dead;Statutory Holiday;;;;;Not an official holiday
+13;MEX;;;Nov;16;Día de la Revolución;Revolution Day;Statutory Holiday;;;;3,Monday,November;Third Monday of November
+14;MEX;;;Dec;12;Día de la Virgen de Guadalupe;Day of the Virgin of Guadalupe;Statutory Holiday;;;;;
+15;MEX;;;Dec;25;Natividad del Señor;Christmas Day;Statutory Holiday;;;;;Celebrated as secular winter holiday

@@ -1,6 +1,7 @@
 ﻿using Bigai.Holidays.Core.Domain.Models.Countries;
 using Bigai.Holidays.Shared.Domain.Enums.Entities;
 using Bigai.Holidays.Shared.Infra.CrossCutting.Helpers;
+using Bigai.Holidays.Shared.Infra.CrossCutting.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -13,8 +14,9 @@ namespace Bigai.Holidays.Core.Domain.Mappers.Countries
         /// This method maps the content to a list of country lists.
         /// </summary>
         /// <param name="content">The content read from a CSV file.</param>
+        /// <param name="userLogged">The who is logged in.</param>
         /// <returns>Returns a list of country lists.</returns>
-        internal static List<List<Country>> ToListOfCountryList(this string[,] content)
+        internal static List<List<Country>> ToListOfCountryList(this string[,] content, IUserLogged userLogged)
         {
             List<List<Country>> list = new List<List<Country>>();
 
@@ -37,7 +39,7 @@ namespace Bigai.Holidays.Core.Domain.Mappers.Countries
 
                     for (start = 0; tasks > 0; tasks--)
                     {
-                        countries = GetCountriesFromCsv(content, start, end);
+                        countries = GetCountriesFromCsv(content, start, end, userLogged);
                         list.Add(countries);
 
                         start = end;
@@ -53,8 +55,9 @@ namespace Bigai.Holidays.Core.Domain.Mappers.Countries
         /// This method maps the content to a list of country lists.
         /// </summary>
         /// <param name="content">The content read from a CSV file.</param>
+        /// <param name="userLogged">The who is logged in.</param>
         /// <returns>Returns a list of country lists.</returns>
-        internal static async Task<List<List<Country>>> ToListOfCountryListAsync(this string[,] content)
+        internal static async Task<List<List<Country>>> ToListOfCountryListAsync(this string[,] content, IUserLogged userLogged)
         {
             List<List<Country>> list = new List<List<Country>>();
 
@@ -77,7 +80,7 @@ namespace Bigai.Holidays.Core.Domain.Mappers.Countries
 
                     for (start = 0; tasks > 0; tasks--)
                     {
-                        countries = await Task.Run(() => GetCountriesFromCsv(content, start, end));
+                        countries = await Task.Run(() => GetCountriesFromCsv(content, start, end, userLogged));
                         list.Add(countries);
 
                         start = end;
@@ -89,7 +92,7 @@ namespace Bigai.Holidays.Core.Domain.Mappers.Countries
             return list;
         }
 
-        private static List<Country> GetCountriesFromCsv(string[,] countriesCsv, int start, int end)
+        private static List<Country> GetCountriesFromCsv(string[,] countriesCsv, int start, int end, IUserLogged userLogged)
         {
             List<Country> countries = null;
 
@@ -99,7 +102,7 @@ namespace Bigai.Holidays.Core.Domain.Mappers.Countries
 
                 try
                 {
-                    Guid userId = Guid.Parse("3332c0c3-c506-4ec2-beea-e7dd5c942038");
+                    Guid userId = userLogged.GetUserId();
 
                     for (int i = start, j = end; i < j; i++)
                     {

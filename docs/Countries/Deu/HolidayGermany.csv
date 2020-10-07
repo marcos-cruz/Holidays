@@ -1,0 +1,42 @@
+ID;CONTRY;STATE-NAME;STATE-CODE;MONTH;DAY;HOLIDAY-NAME;ALTERNATIVE-HOLIDAY-NAME;HOLIDAY-TYPE;CITY-NAME;CITY-CODE;OPTIONAL;BUSSINESS-RULE;COMMENTS
+1;DEU;;;Jan;1;Neujahrstag;New Year's Day;Public Holiday;;;;;
+2;DEU;Baden-Württemberg;BW;Jan;6;Heilige Drei Könige;Three King's Day;Regional Holiday;;;;;Baden-Württemberg, Bavaria, Saxony-Anhalt
+3;DEU;Bayern;BY;Jan;6;Heilige Drei Könige;Three King's Day;Regional Holiday;;;;;Baden-Württemberg, Bavaria, Saxony-Anhalt
+4;DEU;Sachsen-Anhalt;ST;Jan;6;Heilige Drei Könige;Three King's Day;Regional Holiday;;;;;Baden-Württemberg, Bavaria, Saxony-Anhalt
+5;DEU;;;Feb;24;Fastnacht;Fasching;Not A Public Holiday;;;;;Not a Public Holiday
+6;DEU;Berlin;BE;Mar;8;Tag der Frau;International Women's Day;Regional Holiday;;;;;Berlin
+7;DEU;;;Apr;10;Karfreitag;Good Friday;Public Holiday;;;;Good Friday;
+8;DEU;Brandenburg;BB;Apr;12;Ostersonntag;Easter Sunday;Regional Holiday;;;;Easter Sunday;Brandenburg
+9;DEU;;;Apr;13;Ostermontag;Easter Monday;Public Holiday;;;;Easter Monday;
+10;DEU;;;May;1;Tag der Arbeit;Labour Day;Public Holiday;;;;;International Workers' Day
+11;DEU;Berlin;BE;May;8;Tag des Sieges in Europa;Victory in Europe Day;Regional Holiday;;;;;Berlin
+12;DEU;;;May;10;Muttertag;Mother's Day;Not A Public Holiday;;;;2,Sunday,May;2nd Sunday in May. Not a public holiday
+13;DEU;;;May;21;Christi Himmelfahrt;Ascension Day;Public Holiday;;;;Ascension Day;39 days after Easter Sunday
+14;DEU;;;May;21;Vatertag;Father's Day;Not A Public Holiday;;;;Ascension Day;Celebrated on Ascension Day
+15;DEU;;;Jun;1;Pfingstmontag;Whit Monday;Public Holiday;;;;Whit Monday;7th Monday after Easter
+16;DEU;Baden-Württemberg;BW;Jun;11;Fronleichnam;Corpus Christi;Regional Holiday;;;;Corpus Christi;Several states
+17;DEU;Bayern;BY;Jun;11;Fronleichnam;Corpus Christi;Regional Holiday;;;;Corpus Christi;Several states
+18;DEU;Hessen;HE;Jun;11;Fronleichnam;Corpus Christi;Regional Holiday;;;;Corpus Christi;Several states
+19;DEU;Nordrhein-Westfalen;NW;Jun;11;Fronleichnam;Corpus Christi;Regional Holiday;;;;Corpus Christi;Several states
+20;DEU;Rheinland-Pfalz;RP;Jun;11;Fronleichnam;Corpus Christi;Regional Holiday;;;;Corpus Christi;Several states
+21;DEU;Saarland;SL;Jun;11;Fronleichnam;Corpus Christi;Regional Holiday;;;;Corpus Christi;Several states
+22;DEU;Bayern;BY;Aug;15;Mariä Himmelfahrt;Assumption Day;Regional Holiday;;;;;Bavaria, Saarland
+23;DEU;Saarland;SL;Aug;15;Mariä Himmelfahrt;Assumption Day;Regional Holiday;;;;;Bavaria, Saarland
+24;DEU;;;Oct;3;Tag der Deutschen Einheit;German Unity Day;Public Holiday;;;;;Celebrated on October 3rd
+25;DEU;Brandenburg;BB;Oct;31;Reformationstag;Reformation Day;Regional Holiday;;;;;Several states
+26;DEU;Bremen;HB;Oct;31;Reformationstag;Reformation Day;Regional Holiday;;;;;Several states
+27;DEU;Hamburg;HH;Oct;31;Reformationstag;Reformation Day;Regional Holiday;;;;;Several states
+28;DEU;Niedersachsen;NI;Oct;31;Reformationstag;Reformation Day;Regional Holiday;;;;;Several states
+29;DEU;Mecklenburg-Vorpommern;MV;Oct;31;Reformationstag;Reformation Day;Regional Holiday;;;;;Several states
+30;DEU;Sachsen;SN;Oct;31;Reformationstag;Reformation Day;Regional Holiday;;;;;Several states
+31;DEU;Sachsen-Anhalt;ST;Oct;31;Reformationstag;Reformation Day;Regional Holiday;;;;;Several states
+32;DEU;Schleswig-Holstein;SH;Oct;31;Reformationstag;Reformation Day;Regional Holiday;;;;;Several states
+33;DEU;Thüringen;TH;Oct;31;Reformationstag;Reformation Day;Regional Holiday;;;;;Several states
+34;DEU;Baden-Württemberg;BW;Nov;1;Allerheiligen;All Saints' Day;Regional Holiday;;;;;Several states
+35;DEU;Bayern;BY;Nov;1;Allerheiligen;All Saints' Day;Regional Holiday;;;;;Several states
+36;DEU;Nordrhein-Westfalen;NW;Nov;1;Allerheiligen;All Saints' Day;Regional Holiday;;;;;Several states
+37;DEU;Rheinland-Pfalz;RP;Nov;1;Allerheiligen;All Saints' Day;Regional Holiday;;;;;Several states
+38;DEU;Saarland;SL;Nov;1;Allerheiligen;All Saints' Day;Regional Holiday;;;;;Several states
+39;DEU;;;Nov;18;Buß- und Bettag;Repentance Day;Regional Holiday;;;;;Saxony
+40;DEU;;;Dec;25;Weihnachtstag;Christmas Day;Public Holiday;;;;;
+41;DEU;;;Dec;26;Zweiter Weihnachtsfeiertag;St. Stephen's Day;Public Holiday;;;;;Second day of Christmas

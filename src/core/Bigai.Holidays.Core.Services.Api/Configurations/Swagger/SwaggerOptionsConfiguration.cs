@@ -41,12 +41,12 @@ namespace Bigai.Holidays.Core.Services.Api.Configurations.Swagger
         /// <param name="options">Swagger options generator.</param>
         public void Configure(SwaggerGenOptions options)
         {
-            string applicationPath = PlatformServices.Default.Application.ApplicationBasePath;
-            string applicationName = PlatformServices.Default.Application.ApplicationName;
-            string xmlDocPath = Path.Combine(applicationPath, $"{applicationName}.xml");
-
             foreach (ApiVersionDescription description in _provider.ApiVersionDescriptions)
             {
+                string applicationPath = PlatformServices.Default.Application.ApplicationBasePath;
+                string applicationName = PlatformServices.Default.Application.ApplicationName;
+                string xmlDocPath = Path.Combine(applicationPath, $"{applicationName}.xml");
+
                 options.IncludeXmlComments(xmlDocPath);
                 options.SwaggerDoc(description.GroupName, GetOpenApiInfo(description));
             }

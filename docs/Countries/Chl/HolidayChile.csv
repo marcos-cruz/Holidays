@@ -1,0 +1,21 @@
+ID;CONTRY;STATE-NAME;STATE-CODE;MONTH;DAY;HOLIDAY-NAME;ALTERNATIVE-HOLIDAY-NAME;HOLIDAY-TYPE;CITY-NAME;CITY-CODE;OPTIONAL;BUSSINESS-RULE;COMMENTS
+1;CHL;;;Jan;1;Año Nuevo;New Year's Day;National Holiday;;;;;
+2;CHL;;;Apr;10;Viernes Santo;Good Friday;National Holiday;;;;Good Friday;
+3;CHL;;;Apr;11;Sábado Santo;Holy Saturday;National Holiday;;;;Holy Saturday;
+4;CHL;;;May;1;Día del Trabajador;Labour Day;National Holiday;;;;;International Workers' Day
+5;CHL;;;May;10;Día de la Madre;Mother's Day;Not A Public Holiday;;;;2,Sunday,May;2nd Sunday in May. Not a public holiday
+6;CHL;;;May;21;Día de las Glorias Navales;Navy Day;National Holiday;;;;;
+7;CHL;;;Jun;21;Día del Padre;Father's Day;Not A Public Holiday;;;;3,Sunday,June;3rd Sunday in June. Not a public holiday
+8;CHL;;;Jun;29;San Pedro y San Pablo;Saint Peter and Saint Paul Day;National Holiday;;;;;Feast of Saints Peter and Paul
+9;CHL;;;Jul;16;Virgen del Carmen;Our Lady of Mount Carmel;National Holiday;;;;;
+10;CHL;;;Aug;15;Asunción de la Virgen;Assumption Day;National Holiday;;;;Assumption Day;
+11;CHL;;;Sep;18;Día de la Independencia Nacional;Independence Day;National Holiday;;;;;
+12;CHL;;;Sep;19;Día de las Glorias del Ejército de Chile;Day of the Glories of the Chilean Army;National Holiday;;;;;
+13;CHL;;;Oct;12;Día del Encuentro de Dos Mundos;Columbus Day;National Holiday;;;;;
+15;CHL;;;Oct;31;Día Nacional de las Iglesias Evangélicas y Protestantes;Reformation Day;National Holiday;;;;;
+16;CHL;;;Nov;1;Día de Todos los Santos;All Saints' Day;National Holiday;;;;;
+17;CHL;;;Dec;8;Inmaculada Concepción de la Virgen;Immaculate Conception Day;National Holiday;;;;;
+18;CHL;;;Dec;25;Natividad del Señor;Christmas Day;National Holiday;;;;;
+19;CHL;Arica y Parinacota;AP;Jun;7;Aniversario del Asalto y Toma del Morro de Arica;Anniversary of the Assault and Taking of Morro de Arica;Regional Holiday;;;;;
+20;CHL;Bío-Bío;BI;Aug;20;Nacimiento del Prócer de la Independencia;Birth of the Hero of Independence;Regional Holiday;Chillán;;;;
+21;CHL;Bío-Bío;BI;Aug;20;Nacimiento del Prócer de la Independencia;Birth of the Hero of Independence;Regional Holiday;Chillán Viejo;;;;

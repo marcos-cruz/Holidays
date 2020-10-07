@@ -1,0 +1,16 @@
+ID;CONTRY;STATE-NAME;STATE-CODE;MONTH;DAY;HOLIDAY-NAME;ALTERNATIVE-HOLIDAY-NAME;HOLIDAY-TYPE;CITY-NAME;CITY-CODE;OPTIONAL;BUSSINESS-RULE;COMMENTS
+1;URY;;;Jan;1;Año nuevo;New Year's Day;National Holiday;;;;;
+2;URY;;;Jan;6;Día de los Niños;Children's Day;Government Holiday;;;;;Epiphany. Banks and Government only
+3;URY;;;Mar;4;Lunes de Carnaval;Carnival Monday;National Holiday;;;;;Monday before Ash Wednesday
+4;URY;;;Mar;5;Martes de carnaval;Carnival Tuesday;National Holiday;;;;;Tuesday before Ash Wednesday
+5;URY;;;Apr;18;Jueves Santo;Maundy Thursday;National Holiday;;;;Maundy Thursday;Thursday before Easter Sunday
+6;URY;;;Apr;19;Viernes Santo;Good Friday;National Holiday;;;;Good Friday;Semana de Turismo
+7;URY;;;Apr;22;Desembarco de los 33 Orientales;Landing of the 33 Patriots Day;National Holiday;;;;;
+8;URY;;;May;1;Día de los trabajadores;Labour Day;National Holiday;;;;;International Workers' Day
+9;URY;;;May;18;Batalla de las Piedras;Battle of Las Piedras;Government Holiday;;;;;Banks and Government only
+10;URY;;;Jun;19;Natalicio de José Artigas;Artigas' Birthday;National Holiday;;;;;Never Again Day
+11;URY;;;Jul;18;Jura de la Constituición;Constitution Day;National Holiday;;;;;
+12;URY;;;Aug;25;Declaratoria de la independencia;Independence Day;National Holiday;;;;;
+13;URY;;;Oct;12;Día de la Raza;Day of the Races;National Holiday;;;;;Battle of Sarandí Day
+14;URY;;;Nov;2;Día de los Difuntos;All Souls' Day;National Holiday;;;;;Banks and Government only
+15;URY;;;Dec;25;Navidad;Day of the Family;National Holiday;;;;;Christmas

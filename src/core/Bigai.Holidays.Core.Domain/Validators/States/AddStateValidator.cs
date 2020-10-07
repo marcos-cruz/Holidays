@@ -29,8 +29,6 @@ namespace Bigai.Holidays.Core.Domain.Validators.States
             _countryRepository = countryRepository ?? throw new ArgumentNullException(nameof(countryRepository));
             _stateRepository = stateRepository ?? throw new ArgumentNullException(nameof(stateRepository));
 
-            CommonValidations();
-
             ValidateCountryId();
             ValidateStateIsoCode();
         }
@@ -53,7 +51,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.States
         private void ValidateStateIsoCode()
         {
             RuleFor(country => country.StateIsoCode)
-                .Must(StateIsoCodeMustBeUnique).WithMessage("Código ISO do estado já existe.");
+                .Must(StateIsoCodeMustBeUnique).WithMessage("{PropertyValue} já existe.");
         }
 
         private bool StateIsoCodeMustBeUnique(State state, string stateIsoCode)

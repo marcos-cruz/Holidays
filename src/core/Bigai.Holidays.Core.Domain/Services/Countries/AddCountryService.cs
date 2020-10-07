@@ -5,6 +5,7 @@ using Bigai.Holidays.Core.Domain.Validators.Countries;
 using Bigai.Holidays.Shared.Domain.Commands;
 using Bigai.Holidays.Shared.Domain.Enums.Entities;
 using Bigai.Holidays.Shared.Domain.Interfaces.Notifications;
+using Bigai.Holidays.Shared.Infra.CrossCutting.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -17,6 +18,12 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
     /// </summary>
     public class AddCountryService : CountryService, IAddCountryService
     {
+        #region Private Variables
+
+        private readonly AddCountryValidator _addCountryValidator;
+
+        #endregion
+
         #region Constructor
 
         /// <summary>
@@ -24,9 +31,10 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
         /// </summary>
         /// <param name="notificationHandler">Handling error notification messages.</param>
         /// <param name="unitOfWork">Context to read and writing countries.</param>
-        public AddCountryService(INotificationHandler notificationHandler, IUnitOfWorkCore unitOfWork) : base(notificationHandler, unitOfWork)
+        public AddCountryService(INotificationHandler notificationHandler, IUnitOfWorkCore unitOfWork, IUserLogged userLogged) : base(notificationHandler, unitOfWork, userLogged)
         {
             _commandName = "Adicionar país";
+            _addCountryValidator = new AddCountryValidator(CountryRepository);
         }
 
         #endregion
@@ -56,9 +64,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
             }
             catch (Exception ex)
             {
-                NotifyError(_commandName, ex.Message);
                 commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-                commandResult.Data = GetNotifications();
             }
 
             watch.Stop();
@@ -90,9 +96,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
             }
             catch (Exception ex)
             {
-                NotifyError(_commandName, ex.Message);
                 commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-                commandResult.Data = GetNotifications();
             }
 
             watch.Stop();
@@ -117,7 +121,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
                 {
                     if (!CanAdd(listOfCountries))
                     {
-                        commandResult = CommandResult.BadRequest("Lista não pode ser salva, existem erros.");
+                        commandResult = CommandResult.BadRequest("Nenhum registro salvo, existem erros.");
                     }
                     else
                     {
@@ -133,9 +137,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
             }
             catch (Exception ex)
             {
-                NotifyError(_commandName, ex.Message);
                 commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-                commandResult.Data = GetNotifications();
             }
 
             watch.Stop();
@@ -160,7 +162,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
                 {
                     if (!CanAdd(listOfCountries))
                     {
-                        commandResult = CommandResult.BadRequest("Lista não pode ser salva, existem erros.");
+                        commandResult = CommandResult.BadRequest("Nenhum registro salvo, existem erros.");
                     }
                     else
                     {
@@ -176,9 +178,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
             }
             catch (Exception ex)
             {
-                NotifyError(_commandName, ex.Message);
                 commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-                commandResult.Data = GetNotifications();
             }
 
             watch.Stop();
@@ -203,46 +203,46 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
                 {
                     if (!CanAdd(listOfListCountries))
                     {
-                        commandResult = CommandResult.BadRequest("Lista não pode ser salva, existem erros.");
+                        commandResult = CommandResult.BadRequest("Nenhum registro salvo, existem erros.");
                     }
-
-                    int recordsSaved = 0;
-                    CommandResult result = CommandResult.Ok("");
-
-                    for (int i = 0, j = listOfListCountries.Count; i < j; i++)
+                    else
                     {
-                        var list = listOfListCountries[i];
+                        int recordsSaved = 0;
+                        CommandResult result = CommandResult.Ok("");
 
-                        CountryRepository.AddRange(list);
-                        result = Commit(_commandName, TypeProcess.Register);
-
-                        if (result.Success)
+                        for (int i = 0, j = listOfListCountries.Count; i < j; i++)
                         {
-                            recordsSaved += list.Count;
-                        }
-                        else
-                        {
-                            i = j;
-                        }
-                    }
+                            var list = listOfListCountries[i];
 
-                    commandResult = result;
-                    if (commandResult.Success && recordsSaved == recordsToSave)
-                    {
-                        commandResult.Message = $"Ação concluída com sucesso. Salvos { recordsSaved } registros de um total de { recordsToSave }";
-                        commandResult.Data = listOfListCountries;
-                    }
-                    else if (!commandResult.Success)
-                    {
-                        commandResult.Message = $"Ação não foi concluída. Salvos { recordsSaved } registros de um total de { recordsToSave }";
+                            CountryRepository.AddRange(list);
+                            result = Commit(_commandName, TypeProcess.Register);
+
+                            if (result.Success)
+                            {
+                                recordsSaved += list.Count;
+                            }
+                            else
+                            {
+                                i = j;
+                            }
+                        }
+
+                        commandResult = result;
+                        if (commandResult.Success && recordsSaved == recordsToSave)
+                        {
+                            commandResult.Message = $"Ação concluída com sucesso. Salvos { recordsSaved } registros de um total de { recordsToSave }";
+                            commandResult.Data = listOfListCountries;
+                        }
+                        else if (!commandResult.Success)
+                        {
+                            commandResult.Message = $"Ação não foi concluída. Salvos { recordsSaved } registros de um total de { recordsToSave }";
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                NotifyError(_commandName, ex.Message);
                 commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-                commandResult.Data = GetNotifications();
             }
 
             watch.Stop();
@@ -267,46 +267,46 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
                 {
                     if (!CanAdd(listOfListCountries))
                     {
-                        commandResult = CommandResult.BadRequest("Lista não pode ser salva, existem erros.");
+                        commandResult = CommandResult.BadRequest("Nenhum registro salvo, existem erros.");
                     }
-
-                    int recordsSaved = 0;
-                    CommandResult result = CommandResult.Ok("");
-
-                    for (int i = 0, j = listOfListCountries.Count; i < j; i++)
+                    else
                     {
-                        var list = listOfListCountries[i];
+                        int recordsSaved = 0;
+                        CommandResult result = CommandResult.Ok("");
 
-                        await CountryRepository.AddRangeAsync(list);
-                        result = await CommitAsync(_commandName, TypeProcess.Register);
-
-                        if (result.Success)
+                        for (int i = 0, j = listOfListCountries.Count; i < j; i++)
                         {
-                            recordsSaved += list.Count;
-                        }
-                        else
-                        {
-                            i = j;
-                        }
-                    }
+                            var list = listOfListCountries[i];
 
-                    commandResult = result;
-                    if (commandResult.Success && recordsSaved == recordsToSave)
-                    {
-                        commandResult.Message = $"Ação concluída com sucesso. Salvos { recordsSaved } registros de um total de { recordsToSave }";
-                        commandResult.Data = listOfListCountries;
-                    }
-                    else if (!commandResult.Success)
-                    {
-                        commandResult.Message = $"Ação não foi concluída. Salvos { recordsSaved } registros de um total de { recordsToSave }";
+                            await CountryRepository.AddRangeAsync(list);
+                            result = await CommitAsync(_commandName, TypeProcess.Register);
+
+                            if (result.Success)
+                            {
+                                recordsSaved += list.Count;
+                            }
+                            else
+                            {
+                                i = j;
+                            }
+                        }
+
+                        commandResult = result;
+                        if (commandResult.Success && recordsSaved == recordsToSave)
+                        {
+                            commandResult.Message = $"Ação concluída com sucesso. Salvos { recordsSaved } registros de um total de { recordsToSave }";
+                            commandResult.Data = listOfListCountries;
+                        }
+                        else if (!commandResult.Success)
+                        {
+                            commandResult.Message = $"Ação não foi concluída. Salvos { recordsSaved } registros de um total de { recordsToSave }";
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                NotifyError(_commandName, ex.Message);
                 commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-                commandResult.Data = GetNotifications();
             }
 
             watch.Stop();
@@ -321,33 +321,23 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
 
         private bool CanAdd(Country country)
         {
-            AddCountryValidator validator = new AddCountryValidator(CountryRepository);
-
-            return InstanceNotNull(country) && IsValid(validator, country);
+            return InstanceNotNull(country) && IsValid(_addCountryValidator, country);
         }
 
         private bool CanAdd(List<Country> countries)
         {
-            AddCountryValidator validator = new AddCountryValidator(CountryRepository);
-            bool instanceNotNull = true;
-            bool isValid = true;
+            bool canAdd = true;
 
             for (int i = 0, j = countries.Count; i < j; i++)
             {
-                bool result = InstanceNotNull(countries[i]);
-                if (!result && instanceNotNull)
+                bool result = CanAdd(countries[i]);
+                if (!result && canAdd)
                 {
-                    instanceNotNull = result;
-                }
-
-                result = IsValid(validator, countries[i]);
-                if (!result && isValid)
-                {
-                    isValid = result;
+                    canAdd = result;
                 }
             }
 
-            return instanceNotNull && isValid;
+            return canAdd;
         }
 
         private bool CanAdd(List<List<Country>> listOfCountries)

@@ -7,6 +7,7 @@ using Bigai.Holidays.Core.Domain.Services.Countries;
 using Bigai.Holidays.Shared.Domain.Commands;
 using Bigai.Holidays.Shared.Domain.Interfaces.Notifications;
 using Bigai.Holidays.Shared.Infra.CrossCutting.Helpers;
+using Bigai.Holidays.Shared.Infra.CrossCutting.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -35,7 +36,7 @@ namespace Bigai.Holidays.Core.Domain.Services.States
         /// <param name="notificationHandler">Handling error notification messages.</param>
         /// <param name="unitOfWork">Context to read and writing countries.</param>
         /// <param name="addStateService">Service do add countries in database.</param>
-        public ImportStateService(INotificationHandler notificationHandler, IUnitOfWorkCore unitOfWork, IAddStateService addStateService) : base(notificationHandler, unitOfWork)
+        public ImportStateService(INotificationHandler notificationHandler, IUnitOfWorkCore unitOfWork, IUserLogged userLogged, IAddStateService addStateService) : base(notificationHandler, unitOfWork, userLogged)
         {
             _addStateService = addStateService ?? throw new ArgumentNullException(nameof(addStateService));
         }
@@ -78,7 +79,7 @@ namespace Bigai.Holidays.Core.Domain.Services.States
                         }
                         else
                         {
-                            List<List<State>> list = content.ToListOfStateList();
+                            List<List<State>> list = content.ToListOfStateList(CountryRepository, GetUserLogged());
                             commandResult = _addStateService.AddRange(list);
                         }
                     }
@@ -86,14 +87,9 @@ namespace Bigai.Holidays.Core.Domain.Services.States
             }
             catch (Exception ex)
             {
-                NotifyError(_commandName, ex.Message);
                 commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
             }
 
-            if (!commandResult.Success)
-            {
-                commandResult.Data = GetNotifications();
-            }
             watch.Stop();
             commandResult.ElapsedTime = watch.ElapsedMilliseconds;
 
@@ -134,7 +130,7 @@ namespace Bigai.Holidays.Core.Domain.Services.States
                         }
                         else
                         {
-                            List<List<State>> list = await content.ToListOfStatesListAsync();
+                            List<List<State>> list = await content.ToListOfStatesListAsync(CountryRepository, GetUserLogged());
                             commandResult = _addStateService.AddRange(list);
                         }
                     }
@@ -142,14 +138,9 @@ namespace Bigai.Holidays.Core.Domain.Services.States
             }
             catch (Exception ex)
             {
-                NotifyError(_commandName, ex.Message);
                 commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
             }
 
-            if (!commandResult.Success)
-            {
-                commandResult.Data = GetNotifications();
-            }
             watch.Stop();
             commandResult.ElapsedTime = watch.ElapsedMilliseconds;
 

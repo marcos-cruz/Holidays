@@ -12,9 +12,9 @@ using System;
 namespace Bigai.Holidays.Core.Domain.Validators.Holidays
 {
     /// <summary>
-    /// This class provides support for validating <see cref="RuleHoliday"/>.
+    /// This class provides support for common <see cref="RuleHoliday"/> validations.
     /// </summary>
-    public class RuleHolidayValidator : EntityValidatorError<RuleHoliday>
+    public abstract class RuleHolidayValidator : EntityValidatorError<RuleHoliday>
     {
         #region Constructor
 
@@ -27,7 +27,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
 
         #region Validations
 
-        protected void CommonValidations()
+        private void CommonValidations()
         {
             ValidateCountryId();
             ValidateCountryIsoCode();
@@ -55,7 +55,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
         {
             RuleFor(ruleHoliday => ruleHoliday.CountryIsoCode)
                 .NotEmpty().WithMessage("Código ISO do país deve ser informado.")
-                .Must(BeCountry).WithMessage("Código ISO do país não é válido.");
+                .Must(BeCountry).WithMessage("{PropertyValue} não é um código ISO de país válido.");
         }
 
         private void ValidateStateIsoCode()
@@ -115,7 +115,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
         private void ValidateHolidayType()
         {
             RuleFor(ruleHoliday => ruleHoliday.HolidayType)
-                .Must(BeHolidayType).WithMessage("Tipo de feriado não é válido.");
+                .Must(BeHolidayType).WithMessage("{PropertyValue} não é um tipo de feriado válido.");
         }
 
         private void ValidateNativeHolidayName()
@@ -145,8 +145,8 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
             When(ruleHoliday => ruleHoliday.Month.HasValue && !ruleHoliday.BussinessRule.HasValue(), () =>
             {
                 RuleFor(ruleHoliday => ruleHoliday.Month)
-                    .GreaterThanOrEqualTo(1).WithMessage("Mês não é válido.")
-                    .LessThanOrEqualTo(12).WithMessage("Mês não é válido.");
+                    .GreaterThanOrEqualTo(1).WithMessage("{PropertyValue} não é um mês válido.")
+                    .LessThanOrEqualTo(12).WithMessage("{PropertyValue} não é um mês válido.");
             });
         }
 
@@ -155,8 +155,8 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
             When(ruleHoliday => ruleHoliday.Day.HasValue && !ruleHoliday.BussinessRule.HasValue(), () =>
             {
                 RuleFor(ruleHoliday => ruleHoliday.Day)
-                    .GreaterThanOrEqualTo(1).WithMessage("Dia não é válido.")
-                    .LessThanOrEqualTo(31).WithMessage("Dia não é válido.");
+                    .GreaterThanOrEqualTo(1).WithMessage("{PropertyValue} não é um dia válido.")
+                    .LessThanOrEqualTo(31).WithMessage("{PropertyValue} não é um dia válido.");
             });
         }
 
@@ -203,7 +203,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
                 record = null;
             }
 
-            return record == null;
+            return record != null;
         }
 
         protected bool StateMustExist(RuleHoliday ruleHoliday, IStateRepository stateRepository)
@@ -215,7 +215,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
                 record = null;
             }
 
-            return record == null;
+            return record != null;
         }
 
         #endregion

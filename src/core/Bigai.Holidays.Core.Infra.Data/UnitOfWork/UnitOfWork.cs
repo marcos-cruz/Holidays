@@ -20,10 +20,10 @@ namespace Bigai.Holidays.Core.Infra.Data.UnitOfWork
         #region Variáveis privadas
 
         private readonly HolidaysContext _holidaysContext;
-        private ICountryRepository _countryRepository;
-        private IStateRepository _stateRepository;
-        private IRuleHolidayRepository _ruleHolidayRepository;
-        private IHolidayRepository _holidayRepository;
+        private readonly ICountryRepository _countryRepository;
+        private readonly IStateRepository _stateRepository;
+        private readonly IRuleHolidayRepository _ruleHolidayRepository;
+        private readonly IHolidayRepository _holidayRepository;
 
         #endregion
 
@@ -113,6 +113,10 @@ namespace Bigai.Holidays.Core.Infra.Data.UnitOfWork
         }
 
         #endregion
+
+        //
+        // TODO: Implementar status do banco.
+        //
 
         #region Dispose
 

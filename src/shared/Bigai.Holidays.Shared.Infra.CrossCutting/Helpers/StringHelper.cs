@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System;
+using System.IO;
 
 namespace Bigai.Holidays.Shared.Infra.CrossCutting.Helpers
 {
@@ -48,5 +49,17 @@ namespace Bigai.Holidays.Shared.Infra.CrossCutting.Helpers
 
             return file;
         }
+
+        public static void RenameFile(string filename)
+        {
+            if (filename.HasValue())
+            {
+                DateTime now = DateTime.Now;
+                string newFileName = $"Imported-{ now.Year}{now.Month}{now.Day}-{filename}";
+                FileInfo fi = new FileInfo(filename);
+                fi.MoveTo(newFileName);
+            }
+        }
+
     }
 }

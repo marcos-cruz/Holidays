@@ -7,6 +7,7 @@ using Bigai.Holidays.Core.Domain.Models.States;
 using Bigai.Holidays.Shared.Domain.Interfaces.Notifications;
 using Bigai.Holidays.Shared.Domain.Models;
 using Bigai.Holidays.Shared.Domain.Services;
+using Bigai.Holidays.Shared.Infra.CrossCutting.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,12 +67,14 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
         /// </summary>
         /// <param name="notificationHandler">Handling error notification messages.</param>
         /// <param name="unitOfWork">Context to read and writing.</param>
-        public CountryService(INotificationHandler notificationHandler, IUnitOfWorkCore unitOfWork) : base(notificationHandler, unitOfWork)
+        public CountryService(INotificationHandler notificationHandler, IUnitOfWorkCore unitOfWork, IUserLogged userLogged) : base(notificationHandler, unitOfWork, userLogged)
         {
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
         }
 
         #endregion
+
+        #region Public Methods
 
         /// <summary>
         /// Gets the number of elements contained in the List.
@@ -103,24 +106,46 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
             return list.Count;
         }
 
+        /// <summary>
+        /// Gets the <see cref="Country"/> by country ISO 3 code.
+        /// </summary>
+        /// <param name="countryIsoCode">Country code consisting of 3 letters.</param>
+        /// <returns>Instance of <see cref="Country"/> or null if country does not exist.</returns>
         public Country GetCountryByIsoCode(string countryIsoCode)
         {
             return CountryRepository.Find(c => c.CountryIsoCode3 == countryIsoCode).FirstOrDefault();
         }
 
+        /// <summary>
+        /// Gets the <see cref="Country"/> by country ISO 3 code.
+        /// </summary>
+        /// <param name="countryIsoCode">Country code consisting of 3 letters.</param>
+        /// <returns>Instance of <see cref="Country"/> or null if country does not exist.</returns>
         public async Task<Country> GetCountryByIsoCodeAsync(string countryIsoCode)
         {
             return (await CountryRepository.FindAsync(c => c.CountryIsoCode3 == countryIsoCode)).FirstOrDefault();
         }
 
+        /// <summary>
+        /// Gets the <see cref="State"/> by state ISO code.
+        /// </summary>
+        /// <param name="countryIsoCode">State ISO code.</param>
+        /// <returns>Instance of <see cref="State"/> or null if country does not exist.</returns>
         public State GetStateByIsoCode(string countryIsoCode, string stateIsoCode)
         {
             return StateRepository.Find(c => c.CountryIsoCode == countryIsoCode && c.StateIsoCode == stateIsoCode).FirstOrDefault();
         }
 
+        /// <summary>
+        /// Gets the <see cref="State"/> by state ISO code.
+        /// </summary>
+        /// <param name="countryIsoCode">State ISO code.</param>
+        /// <returns>Instance of <see cref="State"/> or null if country does not exist.</returns>
         public async Task<State> GetStateByIsoCodeAsync(string countryIsoCode, string stateIsoCode)
         {
             return (await StateRepository.FindAsync(c => c.CountryIsoCode == countryIsoCode && c.StateIsoCode == stateIsoCode)).FirstOrDefault();
         }
+
+        #endregion
     }
 }

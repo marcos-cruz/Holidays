@@ -26,8 +26,6 @@ namespace Bigai.Holidays.Core.Domain.Validators.Countries
         {
             _countryRepository = countryRepository ?? throw new ArgumentNullException(nameof(countryRepository));
 
-            CommonValidations();
-
             ValidateAlphaIsoCode2();
             ValidateAlphaIsoCode3();
         }
@@ -39,21 +37,21 @@ namespace Bigai.Holidays.Core.Domain.Validators.Countries
         private void ValidateAlphaIsoCode2()
         {
             RuleFor(country => country.CountryIsoCode2)
-                .Must(AlphaIsoCode2MustBeUnique).WithMessage("Código ISO 2 do país já existe.");
+                .Must(AlphaIsoCode2MustBeUnique).WithMessage("{PropertyValue} já existe.");
         }
 
         private void ValidateAlphaIsoCode3()
         {
             RuleFor(country => country.CountryIsoCode3)
-                .Must(AlphaIsoCode3MustBeUnique).WithMessage("Código ISO 3 do país já existe.");
+                .Must(AlphaIsoCode3MustBeUnique).WithMessage("{PropertyValue} já existe.");
         }
 
-        private bool AlphaIsoCode2MustBeUnique(Country country, string alphaIsoCode2MustBeUnique)
+        private bool AlphaIsoCode2MustBeUnique(Country country, string alphaIsoCode2)
         {
             return AlphaIsoCode2MustBeUnique(country, _countryRepository);
         }
 
-        private bool AlphaIsoCode3MustBeUnique(Country country, string alphaIsoCode3MustBeUnique)
+        private bool AlphaIsoCode3MustBeUnique(Country country, string alphaIsoCode3)
         {
             return AlphaIsoCode3MustBeUnique(country, _countryRepository);
         }

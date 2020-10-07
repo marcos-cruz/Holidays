@@ -82,6 +82,16 @@ namespace Bigai.Holidays.Shared.Domain.Commands
         }
 
         /// <summary>
+        /// An error occurred while executing the command, status code 401.
+        /// </summary>
+        /// <param name="message">Message to the requesting interface.</param>
+        /// <returns>Occurred while executing the command, status code 401.</returns>
+        public static CommandResult Unauthorized(string message)
+        {
+            return new CommandResult(false, HttpStatusCode.Unauthorized, message);
+        }
+
+        /// <summary>
         /// An error occurred while executing the command, status code 500.
         /// </summary>
         /// <param name="message">Message to the requesting interface.</param>
