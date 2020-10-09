@@ -91,6 +91,8 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                 commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
             }
 
+            CsvHelper.DeleteFile(filename);
+
             watch.Stop();
             commandResult.ElapsedTime = watch.ElapsedMilliseconds;
 
@@ -141,6 +143,8 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
             {
                 commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
             }
+
+            CsvHelper.DeleteFile(filename);
 
             watch.Stop();
             commandResult.ElapsedTime = watch.ElapsedMilliseconds;

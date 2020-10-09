@@ -36,7 +36,11 @@ namespace Bigai.Holidays.Core.Services.Api.Controllers.V1
         /// <param name="importCountryService">To import countries to database.</param>
         /// <param name="importStateService">To import states to database.</param>
         /// <param name="importRuleHolidayService">To import rules holidays to database.</param>
-        public ImportsController(INotificationHandler notificationHandler, IImportCountryService importCountryService, IImportStateService importStateService, IImportRuleHolidayService importRuleHolidayService) : base(notificationHandler)
+        /// <param name="logger">For handling logging application errors.</param>
+        public ImportsController(INotificationHandler notificationHandler, 
+                                 IImportCountryService importCountryService, 
+                                 IImportStateService importStateService, 
+                                 IImportRuleHolidayService importRuleHolidayService) : base(notificationHandler)
         {
             _notificationHandler = notificationHandler ?? throw new ArgumentNullException(nameof(notificationHandler));
             _importCountryService = importCountryService ?? throw new ArgumentNullException(nameof(importCountryService));

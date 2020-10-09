@@ -56,6 +56,48 @@
             <param name="services">Collection of application services to add the dependency injections.</param>
             <returns>The same service collection so that multiple calls can be chained.</returns>
         </member>
+        <member name="T:Bigai.Holidays.Core.Services.Api.Configurations.Health.Garbage.GCInfoOptions">
+            <summary>
+            Represents the memory limit in bytes for health check.
+            </summary>
+        </member>
+        <member name="P:Bigai.Holidays.Core.Services.Api.Configurations.Health.Garbage.GCInfoOptions.Threshold">
+            <summary>
+            The failure threshold (in bytes). 
+            </summary>
+        </member>
+        <member name="T:Bigai.Holidays.Core.Services.Api.Configurations.Health.HealthChecksConfiguration">
+            <summary>
+            <see cref="T:Bigai.Holidays.Core.Services.Api.Configurations.Health.HealthChecksConfiguration"/> represents the settings for checking the health of the API.
+            </summary>
+        </member>
+        <member name="M:Bigai.Holidays.Core.Services.Api.Configurations.Health.HealthChecksConfiguration.AddHealthChecksConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds the health checks configuration to the service collection.
+            </summary>
+            <param name="services">Collection of services to add the API configuration.</param>
+            <param name="configuration">Required to access the <c>appsettings.json</c> configuration file.</param>
+            <returns>The same service collection so that multiple calls can be chained.</returns>
+        </member>
+        <member name="T:Bigai.Holidays.Core.Services.Api.Configurations.Health.SqlServerHealthCheck">
+            <summary>
+            <see cref="T:Bigai.Holidays.Core.Services.Api.Configurations.Health.SqlServerHealthCheck"/> contains methods to check the health of the database.
+            </summary>
+        </member>
+        <member name="M:Bigai.Holidays.Core.Services.Api.Configurations.Health.SqlServerHealthCheck.#ctor(System.String)">
+            <summary>
+            Return a instance of <see cref="T:Bigai.Holidays.Core.Services.Api.Configurations.Health.SqlServerHealthCheck"/>.
+            </summary>
+            <param name="connection">Connection string to database.</param>
+        </member>
+        <member name="M:Bigai.Holidays.Core.Services.Api.Configurations.Health.SqlServerHealthCheck.CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext,System.Threading.CancellationToken)">
+            <summary>
+            Perform a query to check how many countries are registered in the Countries table.
+            </summary>
+            <param name="context">Represent the context information associated.</param>
+            <param name="cancellationToken">Notification that operations should be canceled.</param>
+            <returns><see cref="T:Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult"/>The result of a health check</returns>
+        </member>
         <member name="T:Bigai.Holidays.Core.Services.Api.Configurations.HolidayContextConfiguration">
             <summary>
             <see cref="T:Bigai.Holidays.Core.Services.Api.Configurations.HolidayContextConfiguration"/> provides support for adding context to the database.
@@ -168,6 +210,7 @@
             <param name="importCountryService">To import countries to database.</param>
             <param name="importStateService">To import states to database.</param>
             <param name="importRuleHolidayService">To import rules holidays to database.</param>
+            <param name="logger">For handling logging application errors.</param>
         </member>
         <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.ImportsController.Country(System.Guid)">
             <summary>

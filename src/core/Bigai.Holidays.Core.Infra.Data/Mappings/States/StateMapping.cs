@@ -39,7 +39,6 @@ namespace Bigai.Holidays.Core.Infra.Data.Mappings.States
                 .IsUnique(false);
 
             #endregion
-
         }
     }
 }

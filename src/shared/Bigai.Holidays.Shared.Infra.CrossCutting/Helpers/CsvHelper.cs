@@ -11,6 +11,19 @@ namespace Bigai.Holidays.Shared.Infra.CrossCutting.Helpers
     public class CsvHelper
     {
         /// <summary>
+        /// This method deletes a file from the server.
+        /// </summary>
+        /// <param name="filename">File name to be deleted.</param>
+        public static void DeleteFile(string filename)
+        {
+            if (filename.HasValue())
+            {
+                FileInfo fi = new FileInfo(filename);
+                fi.Delete();
+            }
+        }
+
+        /// <summary>
         /// This method reads a CSV file and returns its contents in an array of rows and columns.
         /// </summary>
         /// <param name="fileName">Path for the CSV file to read.</param>

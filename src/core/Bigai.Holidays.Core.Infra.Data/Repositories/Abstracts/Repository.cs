@@ -2,6 +2,8 @@
 using Bigai.Holidays.Shared.Domain.Interfaces.Repositories;
 using Bigai.Holidays.Shared.Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,7 @@ namespace Bigai.Holidays.Core.Infra.Data.Repositories.Abstracts
 
         protected HolidaysContext DbContext;
 
+        private bool _databaseExist = false;
         private bool _disposed = false;
 
         #endregion
@@ -30,6 +33,23 @@ namespace Bigai.Holidays.Core.Infra.Data.Repositories.Abstracts
         #endregion
 
         #region Public Methods
+
+        public virtual bool DatabaseExist()
+        {
+            if (!_databaseExist)
+            {
+                _databaseExist = DbContext.Database.GetService<IRelationalDatabaseCreator>().Exists();
+            }
+            return _databaseExist;
+        }
+
+        public virtual void CreateDatabase()
+        {
+            if (!_databaseExist)
+            {
+                _databaseExist = DbContext.Database.EnsureCreated();
+            }
+        }
 
         public virtual TEntity Add(TEntity entity)
         {

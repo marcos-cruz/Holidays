@@ -1,11 +1,21 @@
 ﻿using Bigai.Holidays.Core.Services.Api.Configurations.Swagger;
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Bigai.Holidays.Core.Services.Api.Configurations
 {
@@ -70,14 +80,69 @@ namespace Bigai.Holidays.Core.Services.Api.Configurations
 
             app.UseAuthorization();
 
+            app.UseStaticFiles();
+
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Resources")),
+                RequestPath = new PathString("/Resources")
+            });
+
+            //
+            // HealthChecks
+            //
+            app.UseHealthChecks("/api/hc", new HealthCheckOptions()
+            {
+                Predicate = _ => true,
+                ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+            });
+            app.UseHealthChecksUI(options =>
+            {
+                options.UIPath = "/hc-ui";
+                options.AddCustomStylesheet(@"Resources\css\dotnet.css");
+            });
+
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+
+                //
+                // HealthChecks
+                //
+                /*
+                 * 
+                endpoints.MapHealthChecks("/api/hc", new HealthCheckOptions()
+                {
+                    Predicate = _ => true,
+                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+                });
+                endpoints.MapHealthChecksUI(options =>
+                {
+                    options.UIPath = "/api/hc-ui";
+                    options.ResourcesPath = "/api/hc-ui-resources";
+
+                    options.UseRelativeApiPath = false;
+                    options.UseRelativeResourcesPath = false;
+                    options.UseRelativeWebhookPath = false;
+                });
+                */
             });
 
             return app;
         }
 
+        private static Task WriteResponse(HttpContext httpContext, HealthReport result)
+        {
+            httpContext.Response.ContentType = "application/json"; var json = new JObject(
+                new JProperty("status", result.Status.ToString()),
+                new JProperty("results", new JObject(result.Entries.Select(pair =>
+                new JProperty(pair.Key, new JObject(
+                    new JProperty("status", pair.Value.Status.ToString()),
+                    new JProperty("description", pair.Value.Description),
+                    new JProperty("data", new JObject(pair.Value.Data.Select(p => new JProperty(p.Key, p.Value))))))))));
+            return httpContext.Response.WriteAsync(json.ToString(Formatting.Indented));
+        }
         /// <summary>
         /// Disables model state validation so that you can standardize error messages.
         /// </summary>

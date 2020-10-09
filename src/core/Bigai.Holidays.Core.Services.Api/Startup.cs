@@ -1,4 +1,5 @@
 using Bigai.Holidays.Core.Services.Api.Configurations;
+using Bigai.Holidays.Core.Services.Api.Configurations.Health;
 using Bigai.Holidays.Core.Services.Api.Configurations.Swagger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -50,6 +51,8 @@ namespace Bigai.Holidays.Core.Services.Api
             services.AddSwaggerConfiguration();
 
             services.AddDependencyInjections();
+
+            services.AddHealthChecksConfiguration(Configuration);
         }
 
         /// <summary>

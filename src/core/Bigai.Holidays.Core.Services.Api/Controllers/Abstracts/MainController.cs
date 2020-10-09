@@ -102,11 +102,11 @@ namespace Bigai.Holidays.Core.Services.Api.Controllers.Abstracts
                         return CommandResult.BadRequest($"{ file.FileName } não é um arquivo válido.");
                     }
 
-                    string foldername = Path.Combine("Resources", "Data");
+                    string foldername = Path.Combine("Resources", "Images");
                     string pathToSave = Path.Combine(Directory.GetCurrentDirectory(), foldername);
                     string fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
                     string fullPath = Path.Combine(pathToSave, fileName);
-                    string dbPath = Path.Combine(foldername, fileName);
+                    string dbPathImages = Path.Combine(foldername, fileName);
 
                     using (var stream = new FileStream(fullPath, FileMode.Create))
                     {
