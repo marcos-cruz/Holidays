@@ -106,7 +106,7 @@ namespace Bigai.Holidays.Core.Domain.Models.Holidays
 
         protected RuleHoliday() { }
 
-        private RuleHoliday(Guid? id, EntityStatus status, TypeProcess action, Guid? userId, Guid countryId, Guid? stateId, string countryIsoCode, string stateIsoCode, string cityCode, string cityName, HolidayType holidayType, string nativeHolidayName, string englishHolidayName, int? month, int? day, bool optional, string bussinessRule, string comments) : base(id, status, action, userId)
+        private RuleHoliday(Guid? id, EntityStatus status, ActionType action, Guid? userId, Guid countryId, Guid? stateId, string countryIsoCode, string stateIsoCode, string cityCode, string cityName, HolidayType holidayType, string nativeHolidayName, string englishHolidayName, int? month, int? day, bool optional, string bussinessRule, string comments) : base(id, status, action, userId)
         {
             CountryId = countryId;
             StateId = stateId;
@@ -159,7 +159,7 @@ namespace Bigai.Holidays.Core.Domain.Models.Holidays
         /// <param name="bussinessRule">Rule for creating the holiday. Optional.</param>
         /// <param name="comments">Any comment about the holiday. Optional.</param>
         /// <returns>Instance of <see cref="RuleHoliday"/>.</returns>
-        public static RuleHoliday CreateRuleHoliday(Guid? id, EntityStatus status, TypeProcess action, Guid? userId, Guid countryId, Guid? stateId, string countryIsoCode, string stateIsoCode, string cityCode, string cityName, HolidayType holidayType, string nativeHolidayName, string englishHolidayName, int? month, int? day, bool optional, string bussinessRule, string comments)
+        public static RuleHoliday CreateRuleHoliday(Guid? id, EntityStatus status, ActionType action, Guid? userId, Guid countryId, Guid? stateId, string countryIsoCode, string stateIsoCode, string cityCode, string cityName, HolidayType holidayType, string nativeHolidayName, string englishHolidayName, int? month, int? day, bool optional, string bussinessRule, string comments)
         {
             if (month.HasValue && month.Value < 1)
             {

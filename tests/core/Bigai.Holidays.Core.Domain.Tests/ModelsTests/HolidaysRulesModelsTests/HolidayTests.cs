@@ -18,7 +18,7 @@ namespace Bigai.Holidays.Core.Domain.Tests.ModelsTests.HolidaysRulesModelsTests
             Holiday holiday;
             Guid entityId = string.IsNullOrEmpty(id) ? Guid.Empty : Guid.Parse(id);
             EntityStatus entityStatus = EntityStatus.GetByName(status);
-            TypeProcess action = TypeProcess.GetByName(typeProcess);
+            ActionType action = ActionType.GetByName(typeProcess);
             Guid userId = string.IsNullOrEmpty(user) ? Guid.Empty : Guid.Parse(user);
             Guid countryId = string.IsNullOrEmpty(country) ? Guid.Empty : Guid.Parse(country);
             Guid stateId = string.IsNullOrEmpty(state) ? Guid.Empty : Guid.Parse(state);
@@ -54,8 +54,8 @@ namespace Bigai.Holidays.Core.Domain.Tests.ModelsTests.HolidaysRulesModelsTests
             Holiday holidayA, holidayB;
 
             // Act
-            holidayA = Holiday.CreateHoliday(null, EntityStatus.Active, TypeProcess.Register, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), DateTime.Parse("2020/10/04"), HolidayType.Local, false, "Native Description", "alternativeDescription", "BRA", "RJ", "Rio de Janeiro", "3304557");
-            holidayB = Holiday.CreateHoliday(null, EntityStatus.Active, TypeProcess.Register, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), DateTime.Parse("2020/10/04"), HolidayType.Local, false, "Native Description", "alternativeDescription", "BRA", "RJ", "Rio de Janeiro", "3304557");
+            holidayA = Holiday.CreateHoliday(null, EntityStatus.Active, ActionType.Register, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), DateTime.Parse("2020/10/04"), HolidayType.Local, false, "Native Description", "alternativeDescription", "BRA", "RJ", "Rio de Janeiro", "3304557");
+            holidayB = Holiday.CreateHoliday(null, EntityStatus.Active, ActionType.Register, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), DateTime.Parse("2020/10/04"), HolidayType.Local, false, "Native Description", "alternativeDescription", "BRA", "RJ", "Rio de Janeiro", "3304557");
 
             // Assert
             Assert.Equal(holidayA, holidayB);
@@ -69,8 +69,8 @@ namespace Bigai.Holidays.Core.Domain.Tests.ModelsTests.HolidaysRulesModelsTests
             Holiday holidayA, holidayB;
 
             // Act
-            holidayA = Holiday.CreateHoliday(null, EntityStatus.Active, TypeProcess.Register, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7080"), DateTime.Parse("2020/10/04"), HolidayType.Local, false, "Native Description", "alternativeDescription", "BRA", "RJ", "Rio de Janeiro", "3304557");
-            holidayB = Holiday.CreateHoliday(null, EntityStatus.Active, TypeProcess.Register, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc8070"), DateTime.Parse("2020/10/04"), HolidayType.Local, false, "Native Description", "alternativeDescription", "BRA", "RJ", "Rio de Janeiro", "3304557");
+            holidayA = Holiday.CreateHoliday(null, EntityStatus.Active, ActionType.Register, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7080"), DateTime.Parse("2020/10/04"), HolidayType.Local, false, "Native Description", "alternativeDescription", "BRA", "RJ", "Rio de Janeiro", "3304557");
+            holidayB = Holiday.CreateHoliday(null, EntityStatus.Active, ActionType.Register, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc8070"), DateTime.Parse("2020/10/04"), HolidayType.Local, false, "Native Description", "alternativeDescription", "BRA", "RJ", "Rio de Janeiro", "3304557");
 
             // Assert
             Assert.NotEqual(holidayA, holidayB);

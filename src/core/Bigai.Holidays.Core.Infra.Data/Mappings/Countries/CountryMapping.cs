@@ -61,6 +61,10 @@ namespace Bigai.Holidays.Core.Infra.Data.Mappings.Countries
             builder.Property(c => c.IntermediateRegionCode)
                 .IsRequired();
 
+            builder.Property(c => c.PathCountryImage)
+                .HasColumnType($"varchar(100)")
+                .IsRequired(false);
+
             #endregion
 
             #region Index

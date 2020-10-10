@@ -106,20 +106,21 @@ namespace Bigai.Holidays.Core.Domain.Mappers.Countries
 
                     for (int i = start, j = end; i < j; i++)
                     {
-                        var numericCode = countriesCsv[i, 1];
-                        var alphaIsoCode2 = countriesCsv[i, 2];
-                        var alphaIsoCode3 = countriesCsv[i, 3];
-                        var name = countriesCsv[i, 4];
-                        var shortName = countriesCsv[i, 5];
-                        var languageCode = countriesCsv[i, 6];
-                        var regionName = countriesCsv[i, 7];
-                        var subRegionName = countriesCsv[i, 8];
-                        var intermediateRegionName = countriesCsv[i, 9];
-                        var regionCode = countriesCsv[i, 10].HasValue() ? int.Parse(countriesCsv[i, 10]) : 0;
-                        var subRegionCode = countriesCsv[i, 11].HasValue() ? int.Parse(countriesCsv[i, 11]) : 0;
-                        var intermediateRegionCode = countriesCsv[i, 12].HasValue() ? int.Parse(countriesCsv[i, 12]) : 0;
+                        string numericCode = countriesCsv[i, 1];
+                        string alphaIsoCode2 = countriesCsv[i, 2];
+                        string alphaIsoCode3 = countriesCsv[i, 3];
+                        string name = countriesCsv[i, 4];
+                        string shortName = countriesCsv[i, 5];
+                        string languageCode = countriesCsv[i, 6];
+                        string regionName = countriesCsv[i, 7];
+                        string subRegionName = countriesCsv[i, 8];
+                        string intermediateRegionName = countriesCsv[i, 9];
+                        int regionCode = countriesCsv[i, 10].HasValue() ? int.Parse(countriesCsv[i, 10]) : 0;
+                        int subRegionCode = countriesCsv[i, 11].HasValue() ? int.Parse(countriesCsv[i, 11]) : 0;
+                        int intermediateRegionCode = countriesCsv[i, 12].HasValue() ? int.Parse(countriesCsv[i, 12]) : 0;
+                        string pathCountryImage = null;
 
-                        var country = Country.CreateCountry(null, EntityStatus.Active, TypeProcess.Register, userId, numericCode, alphaIsoCode2, alphaIsoCode3, name, shortName, languageCode, regionName, subRegionName, intermediateRegionName, regionCode, subRegionCode, intermediateRegionCode);
+                        var country = Country.CreateCountry(null, EntityStatus.Active, ActionType.Register, userId, numericCode, alphaIsoCode2, alphaIsoCode3, name, shortName, languageCode, regionName, subRegionName, intermediateRegionName, regionCode, subRegionCode, intermediateRegionCode, pathCountryImage);
                         countries.Add(country);
                     }
                 }

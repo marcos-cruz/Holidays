@@ -28,7 +28,7 @@ namespace Bigai.Holidays.Core.Infra.Data.Mappings.Holidays
                 .IsRequired();
 
             builder.Property(c => c.StateIsoCode)
-                .HasColumnType($"varchar(2)")
+                .HasColumnType($"varchar(6)")
                 .IsRequired(false);
 
             builder.Property(c => c.CityId)

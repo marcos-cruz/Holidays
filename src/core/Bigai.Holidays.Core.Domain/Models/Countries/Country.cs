@@ -84,6 +84,11 @@ namespace Bigai.Holidays.Core.Domain.Models.Countries
         /// </summary>
         public int IntermediateRegionCode { get; private set; }
 
+        /// <summary>
+        /// Path where the flag of the country is saved.
+        /// </summary>
+        public string PathCountryImage { get; private set; }
+
         #endregion
 
         #region Navigation Properties
@@ -112,7 +117,7 @@ namespace Bigai.Holidays.Core.Domain.Models.Countries
             CreateListOfAggregated();
         }
 
-        private Country(Guid? id, EntityStatus status, TypeProcess action, Guid? userId, string numericCode, string countryIsoCode2, string countryIsoCode3, string name, string shortName, string languageCode, string regionName, string subRegionName, string intermediateRegionName, int regionCode, int subRegionCode, int intermediateRegionCode) : base(id, status, action, userId)
+        private Country(Guid? id, EntityStatus status, ActionType action, Guid? userId, string numericCode, string countryIsoCode2, string countryIsoCode3, string name, string shortName, string languageCode, string regionName, string subRegionName, string intermediateRegionName, int regionCode, int subRegionCode, int intermediateRegionCode, string pathCountryImage) : base(id, status, action, userId)
         {
             NumericCode = numericCode.HasValue() ? numericCode.Trim().ToUpper() : numericCode;
             CountryIsoCode2 = countryIsoCode2.HasValue() ? countryIsoCode2.Trim().ToUpper() : countryIsoCode2;
@@ -126,6 +131,7 @@ namespace Bigai.Holidays.Core.Domain.Models.Countries
             RegionCode = regionCode;
             SubRegionCode = subRegionCode;
             IntermediateRegionCode = intermediateRegionCode;
+            PathCountryImage = pathCountryImage.HasValue() ? pathCountryImage.Trim().ToLower() : "";
 
             CreateListOfAggregated();
         }
@@ -149,39 +155,11 @@ namespace Bigai.Holidays.Core.Domain.Models.Countries
         /// <param name="regionCode">Region code. Required.</param>
         /// <param name="subRegionCode">Sub region code. Required.</param>
         /// <param name="intermediateRegionCode">Intermediate region code. Optional.</param>
+        /// <param name="pathCountryImage">Path where the flag of the country is saved.</param>
         /// <returns>Instance of <see cref="Country"/>.</returns>
-        public static Country CreateCountry(Guid? id, EntityStatus status, TypeProcess action, Guid? userId, string numericCode, string countryIsoCode2, string countryIsoCode3, string name, string shortName, string languageCode, string regionName, string subRegionName, string intermediateRegionName, int regionCode, int subRegionCode, int intermediateRegionCode)
+        public static Country CreateCountry(Guid? id, EntityStatus status, ActionType action, Guid? userId, string numericCode, string countryIsoCode2, string countryIsoCode3, string name, string shortName, string languageCode, string regionName, string subRegionName, string intermediateRegionName, int regionCode, int subRegionCode, int intermediateRegionCode, string pathCountryImage)
         {
-            return new Country(id, status, action, userId, numericCode, countryIsoCode2, countryIsoCode3, name, shortName, languageCode, regionName, subRegionName, intermediateRegionName, regionCode, subRegionCode, intermediateRegionCode);
-        }
-
-        /// <summary>
-        /// Return a instance of <see cref="Country"/>.
-        /// </summary>
-        /// <param name="id">Record identifier. Optional if action equal <c>Register</c>. Required for other actions.</param>
-        /// <param name="status">Current status of the entity.</param>
-        /// <param name="action">Action to take with entity.</param>
-        /// <param name="userId">Who is taking this action.</param>
-        /// <param name="numericCode">Numeric code, according to ISO-3166. Optional.</param>
-        /// <param name="countryIsoCode2">Country code consisting of 2 letters, according to ISO-3166. Required.</param>
-        /// <param name="countryIsoCode3">Country code consisting of 3 letters, according to ISO-3166. Required.</param>
-        /// <param name="name">Official country name. Required.</param>
-        /// <param name="shortName">Official short country name. Required.</param>
-        /// <param name="languageCode">Language code. Required.</param>
-        /// <param name="regionName">Region name. Required.</param>
-        /// <param name="subRegionName">Sub region name. Required.</param>
-        /// <param name="intermediateRegionName">Intermediate region name. Optional.</param>
-        /// <param name="regionCode">Region code. Required.</param>
-        /// <param name="subRegionCode">Sub region code. Required.</param>
-        /// <param name="intermediateRegionCode">Intermediate region code. Optional.</param>
-        /// <returns>Instance of <see cref="Country"/>.</returns>
-        public static Country CreateCountry(Guid? id, EntityStatus status, TypeProcess action, Guid? userId, string numericCode, string countryIsoCode2, string countryIsoCode3, string name, string shortName, string languageCode, string regionName, string subRegionName, string intermediateRegionName, int regionCode, int subRegionCode, int intermediateRegionCode, IList<State> states)
-        {
-            var country = new Country(id, status, action, userId, numericCode, countryIsoCode2, countryIsoCode3, name, shortName, languageCode, regionName, subRegionName, intermediateRegionName, regionCode, subRegionCode, intermediateRegionCode);
-
-            country.AssignStates(states);
-
-            return country;
+            return new Country(id, status, action, userId, numericCode, countryIsoCode2, countryIsoCode3, name, shortName, languageCode, regionName, subRegionName, intermediateRegionName, regionCode, subRegionCode, intermediateRegionCode, pathCountryImage);
         }
 
         #endregion
@@ -209,7 +187,8 @@ namespace Bigai.Holidays.Core.Domain.Models.Countries
                    IntermediateRegionName == country.IntermediateRegionName &&
                    RegionCode == country.RegionCode &&
                    SubRegionCode == country.SubRegionCode &&
-                   IntermediateRegionCode == country.IntermediateRegionCode;
+                   IntermediateRegionCode == country.IntermediateRegionCode &&
+                   PathCountryImage == country.PathCountryImage;
         }
 
         #endregion
@@ -221,21 +200,6 @@ namespace Bigai.Holidays.Core.Domain.Models.Countries
             _states = new List<State>();
             _rulesHolidays = new List<RuleHoliday>();
             _holidays = new List<Holiday>();
-        }
-
-        private void AssignStates(IList<State> states)
-        {
-            if (states != null)
-            {
-                foreach (State state in states)
-                {
-                    state.CreateRelationship(Id);
-
-                    state.SynchronizeRegistrationDate(this);
-
-                    _states.Add(state);
-                }
-            }
         }
 
         #endregion

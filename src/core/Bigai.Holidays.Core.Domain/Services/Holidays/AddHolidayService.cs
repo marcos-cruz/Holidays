@@ -1,7 +1,8 @@
 ﻿using Bigai.Holidays.Core.Domain.Interfaces.Repositories;
 using Bigai.Holidays.Core.Domain.Interfaces.Services.Holidays;
+using Bigai.Holidays.Core.Domain.Mappers.Holidays;
 using Bigai.Holidays.Core.Domain.Models.Holidays;
-using Bigai.Holidays.Core.Domain.Services.Countries;
+using Bigai.Holidays.Core.Domain.Services.Abstracts;
 using Bigai.Holidays.Core.Domain.Validators.Holidays;
 using Bigai.Holidays.Shared.Domain.Commands;
 using Bigai.Holidays.Shared.Domain.Enums.Entities;
@@ -10,6 +11,7 @@ using Bigai.Holidays.Shared.Infra.CrossCutting.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Bigai.Holidays.Core.Domain.Services.Holidays
@@ -17,7 +19,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
     /// <summary>
     /// <see cref="AddHolidayService"/> implements a contract to validate business rules and add <see cref="Holiday"/> to the database.
     /// </summary>
-    public class AddHolidayService : CountryService, IAddHolidayService
+    public class AddHolidayService : HolidayBaseService, IAddHolidayService
     {
         #region Private Variables
 
@@ -41,6 +43,64 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
         #endregion
 
         #region Public Methods
+
+        public CommandResult Add(string countryIsoCode, int year)
+        {
+            CommandResult commandResult;
+            Stopwatch watch = Stopwatch.StartNew();
+
+            try
+            {
+                var rulesHolidays = RuleHolidayRepository.Find(r => r.CountryIsoCode == countryIsoCode).ToList();
+                if (rulesHolidays == null || rulesHolidays.Count() == 0)
+                {
+                    commandResult = CommandResult.BadRequest($"Não existe feriados cadastrados para {countryIsoCode}.");
+                }
+                else
+                {
+                    var holidays = rulesHolidays.ToHolidayList(GetNotificationHandler(), year, GetUserLogged());
+                    commandResult = AddRange(holidays, false);
+                }
+            }
+            catch (Exception ex)
+            {
+                commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
+            }
+
+            watch.Stop();
+            commandResult.ElapsedTime = watch.ElapsedMilliseconds;
+
+            return commandResult;
+        }
+
+        public async Task<CommandResult> AddAsync(string countryIsoCode, int year)
+        {
+            CommandResult commandResult;
+            Stopwatch watch = Stopwatch.StartNew();
+
+            try
+            {
+                var rulesHolidays = (await RuleHolidayRepository.FindAsync(r => r.CountryIsoCode == countryIsoCode)).ToList();
+                if (rulesHolidays == null || rulesHolidays.Count() == 0)
+                {
+                    commandResult = CommandResult.BadRequest($"Não existe feriados cadastrados para {countryIsoCode}.");
+                }
+                else
+                {
+                    var holidays = await Task.Run(() => rulesHolidays.ToHolidayList(GetNotificationHandler(), year, GetUserLogged()));
+                    commandResult = AddRange(holidays, false);
+                }
+            }
+            catch (Exception ex)
+            {
+                commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
+            }
+
+            watch.Stop();
+            commandResult.ElapsedTime = watch.ElapsedMilliseconds;
+
+            return commandResult;
+        }
 
         public CommandResult Add(Holiday holiday)
         {
@@ -127,7 +187,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                     else
                     {
                         HolidayRepository.AddRange(listOfHolidays);
-                        commandResult = Commit(_commandName, TypeProcess.Register);
+                        commandResult = Commit(_commandName, ActionType.Register);
                         if (commandResult.Success)
                         {
                             commandResult.Message = $"Ação concluída com sucesso. Salvos { recordsToSave } registros de um total de { recordsToSave }";
@@ -168,7 +228,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                     else
                     {
                         await HolidayRepository.AddRangeAsync(listOfHolidays);
-                        commandResult = await CommitAsync(_commandName, TypeProcess.Register);
+                        commandResult = await CommitAsync(_commandName, ActionType.Register);
                         if (commandResult.Success)
                         {
                             commandResult.Message = $"Ação concluída com sucesso. Salvos { recordsToSave } registros de um total de { recordsToSave }";
@@ -188,7 +248,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
             return commandResult;
         }
 
-        public CommandResult AddRange(List<List<Holiday>> listOfListHolidays)
+        public CommandResult AddRange(List<List<Holiday>> listOfListHolidays, bool validate = true)
         {
             CommandResult commandResult;
             Stopwatch watch = Stopwatch.StartNew();
@@ -202,7 +262,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                 }
                 else
                 {
-                    if (!CanAdd(listOfListHolidays))
+                    if (validate && !CanAdd(listOfListHolidays))
                     {
                         commandResult = CommandResult.BadRequest("Nenhum registro salvo, existem erros.");
                     }
@@ -216,7 +276,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                             var list = listOfListHolidays[i];
 
                             HolidayRepository.AddRange(list);
-                            result = Commit(_commandName, TypeProcess.Register);
+                            result = Commit(_commandName, ActionType.Register);
 
                             if (result.Success)
                             {
@@ -252,7 +312,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
             return commandResult;
         }
 
-        public async Task<CommandResult> AddRangeAsync(List<List<Holiday>> listOfListHolidays)
+        public async Task<CommandResult> AddRangeAsync(List<List<Holiday>> listOfListHolidays, bool validate = true)
         {
             CommandResult commandResult;
             Stopwatch watch = Stopwatch.StartNew();
@@ -266,7 +326,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                 }
                 else
                 {
-                    if (!CanAdd(listOfListHolidays))
+                    if (validate && !CanAdd(listOfListHolidays))
                     {
                         commandResult = CommandResult.BadRequest("Nenhum registro salvo, existem erros.");
                     }
@@ -280,7 +340,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                             var list = listOfListHolidays[i];
 
                             await HolidayRepository.AddRangeAsync(list);
-                            result = await CommitAsync(_commandName, TypeProcess.Register);
+                            result = await CommitAsync(_commandName, ActionType.Register);
 
                             if (result.Success)
                             {

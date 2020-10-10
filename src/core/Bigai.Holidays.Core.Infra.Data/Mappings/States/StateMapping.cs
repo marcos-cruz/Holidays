@@ -31,6 +31,10 @@ namespace Bigai.Holidays.Core.Infra.Data.Mappings.States
                 .HasColumnType($"varchar(100)")
                 .IsRequired();
 
+            builder.Property(c => c.PathStateImage)
+                .HasColumnType($"varchar(100)")
+                .IsRequired(false);
+
             #endregion
 
             #region Index

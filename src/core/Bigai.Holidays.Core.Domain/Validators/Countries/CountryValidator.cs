@@ -202,7 +202,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.Countries
         {
             Country record = countryRepository.Find(c => c.CountryIsoCode2 == country.CountryIsoCode2).FirstOrDefault();
 
-            if (country.Action != TypeProcess.Register && record.Id == country.Id)
+            if (country.Action != ActionType.Register && record.Id == country.Id)
             {
                 record = null;
             }
@@ -214,7 +214,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.Countries
         {
             Country record = countryRepository.Find(c => c.CountryIsoCode3 == country.CountryIsoCode3).FirstOrDefault();
 
-            if (country.Action != TypeProcess.Register && record.Id == country.Id)
+            if (country.Action != ActionType.Register && record.Id == country.Id)
             {
                 record = null;
             }

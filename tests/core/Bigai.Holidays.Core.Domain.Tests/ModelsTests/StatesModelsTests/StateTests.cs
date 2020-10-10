@@ -16,12 +16,12 @@ namespace Bigai.Holidays.Core.Domain.Tests.ModelsTests.StatesModelsTests
             State state;
             Guid entityId = string.IsNullOrEmpty(id) ? Guid.Empty : Guid.Parse(id);
             EntityStatus entityStatus = EntityStatus.GetByName(status);
-            TypeProcess action = TypeProcess.GetByName(typeProcess);
+            ActionType action = ActionType.GetByName(typeProcess);
             Guid userId = string.IsNullOrEmpty(user) ? Guid.Empty : Guid.Parse(user);
             Guid countryId = string.IsNullOrEmpty(country) ? Guid.Empty : Guid.Parse(country);
 
             // Act
-            state = State.CreateState(entityId, entityStatus, action, userId, countryId, countryIsoCode, stateIsoCode, name);
+            state = State.CreateState(entityId, entityStatus, action, userId, countryId, countryIsoCode, stateIsoCode, name, null);
 
             // Assert
             Assert.NotNull(state);
@@ -42,14 +42,14 @@ namespace Bigai.Holidays.Core.Domain.Tests.ModelsTests.StatesModelsTests
             State stateA, stateB;
 
             // Act
-            stateA = State.CreateState(null, EntityStatus.Active, TypeProcess.Register, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), "BRA", "SP", "São Paulo");
-            stateB = State.CreateState(null, EntityStatus.Active, TypeProcess.Register, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), "BRA", "SP", "São Paulo");
+            stateA = State.CreateState(null, EntityStatus.Active, ActionType.Register, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), "BRA", "SP", "São Paulo", null);
+            stateB = State.CreateState(null, EntityStatus.Active, ActionType.Register, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), "BRA", "SP", "São Paulo", null);
 
             // Assert
             Assert.Equal(stateA, stateB);
             Assert.True(stateA == stateB);
         }
-        
+
         [Fact]
         public void EqualsCore_StatesMustBeEquals_False()
         {
@@ -57,8 +57,8 @@ namespace Bigai.Holidays.Core.Domain.Tests.ModelsTests.StatesModelsTests
             State stateA, stateB;
 
             // Act
-            stateA = State.CreateState(null, EntityStatus.Active, TypeProcess.Register, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), "BRA", "SP", "São Paulo");
-            stateB = State.CreateState(null, EntityStatus.Active, TypeProcess.Register, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), "USA", "AL", "Alabama");
+            stateA = State.CreateState(null, EntityStatus.Active, ActionType.Register, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), "BRA", "SP", "São Paulo", null);
+            stateB = State.CreateState(null, EntityStatus.Active, ActionType.Register, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), "USA", "AL", "Alabama", null);
 
             // Assert
             Assert.NotEqual(stateA, stateB);

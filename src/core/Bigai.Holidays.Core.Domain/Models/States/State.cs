@@ -33,6 +33,11 @@ namespace Bigai.Holidays.Core.Domain.Models.States
         /// </summary>
         public string Name { get; private set; }
 
+        /// <summary>
+        /// Path where the image of the flag of the state is saved.
+        /// </summary>
+        public string PathStateImage { get; private set; }
+
         #endregion
 
         #region Navigation Properites
@@ -45,12 +50,13 @@ namespace Bigai.Holidays.Core.Domain.Models.States
 
         protected State() { }
 
-        private State(Guid? id, EntityStatus status, TypeProcess action, Guid? userId, Guid countryId, string countryIsoCode, string stateIsoCode, string name) : base(id, status, action, userId)
+        private State(Guid? id, EntityStatus status, ActionType action, Guid? userId, Guid countryId, string countryIsoCode, string stateIsoCode, string name, string pathStateImage) : base(id, status, action, userId)
         {
             CountryId = countryId;
             CountryIsoCode = countryIsoCode.HasValue() ? countryIsoCode.Trim().ToUpper() : countryIsoCode;
             StateIsoCode = stateIsoCode.HasValue() ? stateIsoCode.Trim().ToUpper() : stateIsoCode;
             Name = name.HasValue() ? name.Trim().Replace("  ", " ") : name;
+            PathStateImage = pathStateImage.HasValue() ? pathStateImage.Trim().ToLower() : pathStateImage;
         }
 
         /// <summary>
@@ -64,10 +70,11 @@ namespace Bigai.Holidays.Core.Domain.Models.States
         /// <param name="countryIsoCode">Country code consisting of 3 letters, according to ISO-3166. Required.</param>
         /// <param name="stateIsoCode">State code, according to ISO-3166. Required.</param>
         /// <param name="name">Official name. Required.</param>
+        /// <param name="pathStateImage">Path where the image of the flag of the state is saved.</param>
         /// <returns>Instance of <see cref="State"/>.</returns>
-        public static State CreateState(Guid? id, EntityStatus status, TypeProcess action, Guid? userId, Guid countryId, string countryIsoCode, string stateIsoCode, string name)
+        public static State CreateState(Guid? id, EntityStatus status, ActionType action, Guid? userId, Guid countryId, string countryIsoCode, string stateIsoCode, string name, string pathStateImage)
         {
-            return new State(id, status, action, userId, countryId, countryIsoCode, stateIsoCode, name);
+            return new State(id, status, action, userId, countryId, countryIsoCode, stateIsoCode, name, pathStateImage);
         }
 
         #endregion
@@ -86,7 +93,8 @@ namespace Bigai.Holidays.Core.Domain.Models.States
 
             return CountryIsoCode == state.CountryIsoCode &&
                    StateIsoCode == state.StateIsoCode &&
-                   Name == state.Name;
+                   Name == state.Name &&
+                   PathStateImage == state.PathStateImage;
         }
 
         #endregion

@@ -1,90 +1,90 @@
 ID;CONTRY;STATE-NAME;STATE-CODE;MONTH;DAY;HOLIDAY-NAME;ALTERNATIVE-HOLIDAY-NAME;HOLIDAY-TYPE;CITY-NAME;CITY-CODE;OPTIONAL;BUSSINESS-RULE;COMMENTS
-1;CAN;Alberta;AB;Feb;17;Family Day;;Regional Holiday;;;;;
-2;CAN;Alberta;AB;Apr;10;Good Friday;;Regional Holiday;;;;Good Friday;
-3;CAN;Alberta;AB;Apr;13;Easter Monday;;Regional Holiday;;;;Easter Monday;
-4;CAN;Alberta;AB;May;18;Victoria Day;;Regional Holiday;;;;;Most provinces
-5;CAN;Alberta;AB;Aug;3;Heritage Day;;Regional Holiday;;;;1,Monday,August;Optional General Holiday. First Monday in August
-6;CAN;Alberta;AB;Nov;11;Remembrance Day;;Regional Holiday;;;;;
-7;CAN;Alberta;AB;Oct;12;Thanksgiving;;Regional Holiday;;;;2,Monday,October;2nd Monday in October
-8;CAN;Alberta;AB;Dec;26;Boxing Day;;Regional Holiday;;;;;
-9;CAN;British Columbia;BC;Feb;17;Family Day;;Regional Holiday;;;;;
-10;CAN;British Columbia;BC;Apr;10;Good Friday;;Regional Holiday;;;;Good Friday;
-11;CAN;British Columbia;BC;May;18;Victoria Day;;Regional Holiday;;;;;Most provinces
-12;CAN;British Columbia;BC;Aug;3;Civic Day;;Regional Holiday;;;;1,Monday,August;First Monday in August
-13;CAN;British Columbia;BC;Nov;11;Remembrance Day;;Regional Holiday;;;;;
-14;CAN;British Columbia;BC;Oct;12;Thanksgiving;;Regional Holiday;;;;2,Monday,October;2nd Monday in October
-15;CAN;Manitoba;MB;Oct;12;Thanksgiving;;Regional Holiday;;;;2,Monday,October;2nd Monday in October
-16;CAN;Manitoba;MB;Feb;17;Louis Riel Day;;Statutory Holiday;;;;;
-17;CAN;New Brunswick;NB;Feb;17;Family Day;;Regional Holiday;;;;;
-18;CAN;New Brunswick;NB;Apr;10;Good Friday;;Regional Holiday;;;;Good Friday;
-19;CAN;New Brunswick;NB;Aug;3;Civic Day;;Regional Holiday;;;;1,Monday,August;First Monday in August
-20;CAN;New Brunswick;NB;Nov;11;Remembrance Day;;Regional Holiday;;;;;
-21;CAN;New Brunswick;NB;Oct;12;Thanksgiving;;Regional Holiday;;;;2,Monday,October;2nd Monday in October
-22;CAN;New Brunswick;NL;Dec;26;Boxing Day;;Regional Holiday;;;;;
-23;CAN;Newfoundland & Labrador;NL;Apr;10;Good Friday;;Regional Holiday;;;;Good Friday;
-24;CAN;Newfoundland & Labrador;NL;Apr;20;St. George's Day;;Regional Holiday;;;;Easter Monday;
-25;CAN;Newfoundland & Labrador;NL;May;18;Victoria Day;;Regional Holiday;;;;;Most provinces
-26;CAN;Newfoundland & Labrador;NL;Jun;22;June Day;;Regional Holiday;;;;;Newfoundland and Labrador
-27;CAN;Newfoundland & Labrador;NL;Jul;13;Orangeman's Day;;Government Holiday;;;;;Newfoundland and Labrador
-28;CAN;Newfoundland & Labrador;NL;Nov;11;Remembrance Day;;Regional Holiday;;;;;
-29;CAN;Newfoundland & Labrador;NL;Oct;12;Thanksgiving;;Regional Holiday;;;;2,Monday,October;2nd Monday in October
-30;CAN;Newfoundland & Labrador;NL;Dec;28;Boxing Day;;Government Holiday;;;;;Newfoundland and Labrador, Nunavut. Govt. Only
-31;CAN;Northwest Territories;NT;Apr;10;Good Friday;;Regional Holiday;;;;Good Friday;
-32;CAN;Northwest Territories;NT;May;18;Victoria Day;;Regional Holiday;;;;;Most provinces
-33;CAN;Northwest Territories;NT;Jun;21;National Aboriginal Day;;Regional Holiday;;;;;Northwest Territories, Yukon. Provincial Statutory Holiday
-34;CAN;Northwest Territories;NT;Aug;3;Civic Day;;Regional Holiday;;;;1,Monday,August;First Monday in August
-35;CAN;Northwest Territories;NT;Nov;11;Remembrance Day;;Regional Holiday;;;;;
-36;CAN;Northwest Territories;NT;Oct;12;Thanksgiving;;Regional Holiday;;;;2,Monday,October;2nd Monday in October
-37;CAN;Nova Scotia;NS;Feb;17;Heritage Day;;Statutory Holiday;;;;;
-38;CAN;Nova Scotia;NS;Apr;10;Good Friday;;Regional Holiday;;;;Good Friday;
-39;CAN;Nova Scotia;NS;May;18;Victoria Day;;Regional Holiday;;;;;Most provinces
-40;CAN;Nova Scotia;NS;Oct;12;Thanksgiving;;Not A Public Holiday;;;;2,Monday,October;2nd Monday in October
-41;CAN;Nova Scotia;NS;Dec;26;Boxing Day;;Regional Holiday;;;;;
-42;CAN;Nunavut;NU;Apr;10;Good Friday;;Regional Holiday;;;;Good Friday;
-43;CAN;Nunavut;NU;Apr;13;Easter Monday;;Regional Holiday;;;;Easter Monday;
-44;CAN;Nunavut;NU;Jul;9;Nunavut Day;;Regional Holiday;;;;;Nunavut
-45;CAN;Nunavut;NU;Aug;3;Civic Day;;Regional Holiday;;;;1,Monday,August;First Monday in August
-46;CAN;Nunavut;NU;Nov;11;Remembrance Day;;Regional Holiday;;;;;
-47;CAN;Nunavut;NU;Oct;12;Thanksgiving;;Regional Holiday;;;;2,Monday,October;2nd Monday in October
-48;CAN;Nunavut;NU;Dec;28;Boxing Day;;Government Holiday;;;;;Newfoundland and Labrador, Nunavut. Govt. Only
-49;CAN;Ontario;ON;Feb;17;Family Day;;Regional Holiday;;;;;
-50;CAN;Ontario;ON;Apr;10;Good Friday;;Regional Holiday;;;;Good Friday;
-51;CAN;Ontario;ON;May;18;Victoria Day;;Regional Holiday;;;;;Most provinces
-52;CAN;Ontario;ON;Aug;3;Civic Holiday;;Not A Public Holiday;;;;;Ontario. Non Statutory but widely observed
-53;CAN;Ontario;ON;Oct;12;Thanksgiving;;Regional Holiday;;;;2,Monday,October;2nd Monday in October
-54;CAN;Ontario;ON;Dec;26;Boxing Day;;Regional Holiday;;;;;Statutory in Ontario and federal jurisdictions. Optional in Alberta
-55;CAN;Prince Edward Island;PE;Apr;10;Good Friday;;Regional Holiday;;;;Good Friday;
-56;CAN;Prince Edward Island;PE;May;18;Victoria Day;;Regional Holiday;;;;;Most provinces
-57;CAN;Prince Edward Island;PE;Nov;11;Remembrance Day;;Regional Holiday;;;;;
-58;CAN;Quebec;QC;Apr;10;Good Friday;;Regional Holiday;;;;Good Friday;
-59;CAN;Quebec;QC;Apr;13;Easter Monday;;Regional Holiday;;;;Easter Monday;
-60;CAN;Quebec;QC;May;18;National Patriot's Day;;Regional Holiday;;;;;Most provinces
-61;CAN;Quebec;QC;Jun;24;The National Holiday of Quebec;;Regional Holiday;;;;;Quebec only
-62;CAN;Quebec;QC;Jun;24;St. Jean Baptiste Day;;Statutory Holiday;;;;;
-63;CAN;Quebec;QC;Oct;12;Thanksgiving;;Regional Holiday;;;;2,Monday,October;2nd Monday in October
-64;CAN;Saskatchewan;SK;Feb;17;Family Day;;Regional Holiday;;;;;
-65;CAN;Saskatchewan;SK;Apr;10;Good Friday;;Regional Holiday;;;;Good Friday;
-66;CAN;Saskatchewan;SK;May;18;Victoria Day;;Regional Holiday;;;;;Most provinces
-67;CAN;Saskatchewan;SK;Aug;3;Civic Day;;Regional Holiday;;;;1,Monday,August;First Monday in August
-68;CAN;Saskatchewan;SK;Nov;11;Remembrance Day;;Regional Holiday;;;;;
-69;CAN;Saskatchewan;SK;Oct;12;Thanksgiving;;Regional Holiday;;;;2,Monday,October;2nd Monday in October
-70;CAN;Yukon;YT;Apr;10;Good Friday;;Regional Holiday;;;;Good Friday;
-71;CAN;Yukon;YT;May;18;Victoria Day;;Regional Holiday;;;;;Most provinces
-72;CAN;Yukon;YT;Jun;21;National Aboriginal Day;;Regional Holiday;;;;;Northwest Territories, Yukon. Provincial Statutory Holiday
-73;CAN;Yukon;YT;Aug;17;Discovery Day;;Regional Holiday;;;;17,Monday,nearest;Monday nearest August 17th. Yukon
-74;CAN;Yukon;YT;Nov;11;Remembrance Day;;Regional Holiday;;;;;
-75;CAN;Yukon;YT;Oct;12;Thanksgiving;;Regional Holiday;;;;2,Monday,October;2nd Monday in October
-76;CAN;;;Jan;1;New Year's Day;;Statutory Holiday;;;;;
-77;CAN;;;Feb;17;Nova Scotia Heritage Day;;Regional Holiday;;;;3,Monday,February;3rd Monday in February
-78;CAN;;;Feb;17;Louis Riel Day;;Regional Holiday;;;;3,Monday,February;3rd Monday in February
-79;CAN;;;Feb;17;Family Day;;Regional Holiday;;;;;Statutory holiday in several provinces
-80;CAN;;;Feb;17;Islander Day;;Regional Holiday;;;;;Prince Edward island
-81;CAN;;;Mar;16;St. Patrick's Day;;Government Holiday;;;;;Newfoundland and Labrador
-82;CAN;;;Apr;13;Easter Monday;;Regional Holiday;;;;;Nunavut. Optional in Alberta and Quebec
-83;CAN;;;Apr;20;St. George's Day;;Government Holiday;;;;;Newfoundland and Labrador
-84;CAN;;;May;10;Mother's Day;;Not A Public Holiday;;;;1,Sunday,May;
-85;CAN;;;Jun;21;Father's Day;;Not A Public Holiday;;;;3,Sunday,June;3rd Sunday in June. Not a public holiday
-86;CAN;;;Jun;21;Aboriginal Day;;Statutory Holiday;;;;;
-87;CAN;;;Jul;1;Canada Day;;Statutory Holiday;;;;1,July,!Sunday;National Day. July 1st or July 2nd if the 1st is a Sunday
-88;CAN;;;Sep;7;Labour Day;;Statutory Holiday;;;;1,Monday,September;First Monday in September
-89;CAN;;;Dec;25;Christmas Day;;Statutory Holiday;;;;;
+1;CAN;Alberta;AB;Feb;17;Family Day;Family Day;Regional Holiday;;;;;
+2;CAN;Alberta;AB;Apr;10;Good Friday;Good Friday;Regional Holiday;;;;Good Friday;
+3;CAN;Alberta;AB;Apr;13;Easter Monday;Easter Monday;Regional Holiday;;;;Easter Monday;
+4;CAN;Alberta;AB;May;18;Victoria Day;Victoria Day;Regional Holiday;;;;;Most provinces
+5;CAN;Alberta;AB;Aug;3;Heritage Day;Heritage Day;Regional Holiday;;;;1,Monday,August;Optional General Holiday. First Monday in August
+6;CAN;Alberta;AB;Nov;11;Remembrance Day;Remembrance Day;Regional Holiday;;;;;
+7;CAN;Alberta;AB;Oct;12;Thanksgiving;Thanksgiving;Regional Holiday;;;;2,Monday,October;2nd Monday in October
+8;CAN;Alberta;AB;Dec;26;Boxing Day;Boxing Day;Regional Holiday;;;;;
+9;CAN;British Columbia;BC;Feb;17;Family Day;Family Day;Regional Holiday;;;;;
+10;CAN;British Columbia;BC;Apr;10;Good Friday;Good Friday;Regional Holiday;;;;Good Friday;
+11;CAN;British Columbia;BC;May;18;Victoria Day;Victoria Day;Regional Holiday;;;;;Most provinces
+12;CAN;British Columbia;BC;Aug;3;Civic Day;Civic Day;Regional Holiday;;;;1,Monday,August;First Monday in August
+13;CAN;British Columbia;BC;Nov;11;Remembrance Day;Remembrance Day;Regional Holiday;;;;;
+14;CAN;British Columbia;BC;Oct;12;Thanksgiving;Thanksgiving;Regional Holiday;;;;2,Monday,October;2nd Monday in October
+15;CAN;Manitoba;MB;Oct;12;Thanksgiving;Thanksgiving;Regional Holiday;;;;2,Monday,October;2nd Monday in October
+16;CAN;Manitoba;MB;Feb;17;Louis Riel Day;Louis Riel Day;Statutory Holiday;;;;;
+17;CAN;New Brunswick;NB;Feb;17;Family Day;Family Day;Regional Holiday;;;;;
+18;CAN;New Brunswick;NB;Apr;10;Good Friday;Good Friday;Regional Holiday;;;;Good Friday;
+19;CAN;New Brunswick;NB;Aug;3;Civic Day;Civic Day;Regional Holiday;;;;1,Monday,August;First Monday in August
+20;CAN;New Brunswick;NB;Nov;11;Remembrance Day;Remembrance Day;Regional Holiday;;;;;
+21;CAN;New Brunswick;NB;Oct;12;Thanksgiving;Thanksgiving;Regional Holiday;;;;2,Monday,October;2nd Monday in October
+22;CAN;New Brunswick;NL;Dec;26;Boxing Day;Boxing Day;Regional Holiday;;;;;
+23;CAN;Newfoundland & Labrador;NL;Apr;10;Good Friday;Good Friday;Regional Holiday;;;;Good Friday;
+24;CAN;Newfoundland & Labrador;NL;Apr;20;St. George's Day;St. George's Day;Regional Holiday;;;;Easter Monday;
+25;CAN;Newfoundland & Labrador;NL;May;18;Victoria Day;Victoria Day;Regional Holiday;;;;;Most provinces
+26;CAN;Newfoundland & Labrador;NL;Jun;22;June Day;June Day;Regional Holiday;;;;;Newfoundland and Labrador
+27;CAN;Newfoundland & Labrador;NL;Jul;13;Orangeman's Day;Orangeman's Day;Government Holiday;;;;;Newfoundland and Labrador
+28;CAN;Newfoundland & Labrador;NL;Nov;11;Remembrance Day;Remembrance Day;Regional Holiday;;;;;
+29;CAN;Newfoundland & Labrador;NL;Oct;12;Thanksgiving;Thanksgiving;Regional Holiday;;;;2,Monday,October;2nd Monday in October
+30;CAN;Newfoundland & Labrador;NL;Dec;28;Boxing Day;Boxing Day;Government Holiday;;;;;Newfoundland and Labrador, Nunavut. Govt. Only
+31;CAN;Northwest Territories;NT;Apr;10;Good Friday;Good Friday;Regional Holiday;;;;Good Friday;
+32;CAN;Northwest Territories;NT;May;18;Victoria Day;Victoria Day;Regional Holiday;;;;;Most provinces
+33;CAN;Northwest Territories;NT;Jun;21;National Aboriginal Day;National Aboriginal Day;Regional Holiday;;;;;Northwest Territories, Yukon. Provincial Statutory Holiday
+34;CAN;Northwest Territories;NT;Aug;3;Civic Day;Civic Day;Regional Holiday;;;;1,Monday,August;First Monday in August
+35;CAN;Northwest Territories;NT;Nov;11;Remembrance Day;Remembrance Day;Regional Holiday;;;;;
+36;CAN;Northwest Territories;NT;Oct;12;Thanksgiving;Thanksgiving;Regional Holiday;;;;2,Monday,October;2nd Monday in October
+37;CAN;Nova Scotia;NS;Feb;17;Heritage Day;Heritage Day;Statutory Holiday;;;;;
+38;CAN;Nova Scotia;NS;Apr;10;Good Friday;Good Friday;Regional Holiday;;;;Good Friday;
+39;CAN;Nova Scotia;NS;May;18;Victoria Day;Victoria Day;Regional Holiday;;;;;Most provinces
+40;CAN;Nova Scotia;NS;Oct;12;Thanksgiving;Thanksgiving;Not A Public Holiday;;;;2,Monday,October;2nd Monday in October
+41;CAN;Nova Scotia;NS;Dec;26;Boxing Day;Boxing Day;Regional Holiday;;;;;
+42;CAN;Nunavut;NU;Apr;10;Good Friday;Good Friday;Regional Holiday;;;;Good Friday;
+43;CAN;Nunavut;NU;Apr;13;Easter Monday;Easter Monday;Regional Holiday;;;;Easter Monday;
+44;CAN;Nunavut;NU;Jul;9;Nunavut Day;Nunavut Day;Regional Holiday;;;;;Nunavut
+45;CAN;Nunavut;NU;Aug;3;Civic Day;Civic Day;Regional Holiday;;;;1,Monday,August;First Monday in August
+46;CAN;Nunavut;NU;Nov;11;Remembrance Day;Remembrance Day;Regional Holiday;;;;;
+47;CAN;Nunavut;NU;Oct;12;Thanksgiving;Thanksgiving;Regional Holiday;;;;2,Monday,October;2nd Monday in October
+48;CAN;Nunavut;NU;Dec;28;Boxing Day;Boxing Day;Government Holiday;;;;;Newfoundland and Labrador, Nunavut. Govt. Only
+49;CAN;Ontario;ON;Feb;17;Family Day;Family Day;Regional Holiday;;;;;
+50;CAN;Ontario;ON;Apr;10;Good Friday;Good Friday;Regional Holiday;;;;Good Friday;
+51;CAN;Ontario;ON;May;18;Victoria Day;Victoria Day;Regional Holiday;;;;;Most provinces
+52;CAN;Ontario;ON;Aug;3;Civic Holiday;Civic Holiday;Not A Public Holiday;;;;;Ontario. Non Statutory but widely observed
+53;CAN;Ontario;ON;Oct;12;Thanksgiving;Thanksgiving;Regional Holiday;;;;2,Monday,October;2nd Monday in October
+54;CAN;Ontario;ON;Dec;26;Boxing Day;Boxing Day;Regional Holiday;;;;;Statutory in Ontario and federal jurisdictions. Optional in Alberta
+55;CAN;Prince Edward Island;PE;Apr;10;Good Friday;Good Friday;Regional Holiday;;;;Good Friday;
+56;CAN;Prince Edward Island;PE;May;18;Victoria Day;Victoria Day;Regional Holiday;;;;;Most provinces
+57;CAN;Prince Edward Island;PE;Nov;11;Remembrance Day;Remembrance Day;Regional Holiday;;;;;
+58;CAN;Quebec;QC;Apr;10;Good Friday;Good Friday;Regional Holiday;;;;Good Friday;
+59;CAN;Quebec;QC;Apr;13;Easter Monday;Easter Monday;Regional Holiday;;;;Easter Monday;
+60;CAN;Quebec;QC;May;18;National Patriot's Day;National Patriot's Day;Regional Holiday;;;;;Most provinces
+61;CAN;Quebec;QC;Jun;24;The National Holiday of Quebec;The National Holiday of Quebec;Regional Holiday;;;;;Quebec only
+62;CAN;Quebec;QC;Jun;24;St. Jean Baptiste Day;St. Jean Baptiste Day;Statutory Holiday;;;;;
+63;CAN;Quebec;QC;Oct;12;Thanksgiving;Thanksgiving;Regional Holiday;;;;2,Monday,October;2nd Monday in October
+64;CAN;Saskatchewan;SK;Feb;17;Family Day;Family Day;Regional Holiday;;;;;
+65;CAN;Saskatchewan;SK;Apr;10;Good Friday;Good Friday;Regional Holiday;;;;Good Friday;
+66;CAN;Saskatchewan;SK;May;18;Victoria Day;Victoria Day;Regional Holiday;;;;;Most provinces
+67;CAN;Saskatchewan;SK;Aug;3;Civic Day;Civic Day;Regional Holiday;;;;1,Monday,August;First Monday in August
+68;CAN;Saskatchewan;SK;Nov;11;Remembrance Day;Remembrance Day;Regional Holiday;;;;;
+69;CAN;Saskatchewan;SK;Oct;12;Thanksgiving;Thanksgiving;Regional Holiday;;;;2,Monday,October;2nd Monday in October
+70;CAN;Yukon;YT;Apr;10;Good Friday;Good Friday;Regional Holiday;;;;Good Friday;
+71;CAN;Yukon;YT;May;18;Victoria Day;Victoria Day;Regional Holiday;;;;;Most provinces
+72;CAN;Yukon;YT;Jun;21;National Aboriginal Day;National Aboriginal Day;Regional Holiday;;;;;Northwest Territories, Yukon. Provincial Statutory Holiday
+73;CAN;Yukon;YT;Aug;17;Discovery Day;Discovery Day;Regional Holiday;;;;17,Monday,nearest;Monday nearest August 17th. Yukon
+74;CAN;Yukon;YT;Nov;11;Remembrance Day;Remembrance Day;Regional Holiday;;;;;
+75;CAN;Yukon;YT;Oct;12;Thanksgiving;Thanksgiving;Regional Holiday;;;;2,Monday,October;2nd Monday in October
+76;CAN;;;Jan;1;New Year's Day;New Year's Day;Statutory Holiday;;;;;
+77;CAN;;;Feb;17;Nova Scotia Heritage Day;Nova Scotia Heritage Day;Regional Holiday;;;;3,Monday,February;3rd Monday in February
+78;CAN;;;Feb;17;Louis Riel Day;Louis Riel Day;Regional Holiday;;;;3,Monday,February;3rd Monday in February
+79;CAN;;;Feb;17;Family Day;Family Day;Regional Holiday;;;;;Statutory holiday in several provinces
+80;CAN;;;Feb;17;Islander Day;Islander Day;Regional Holiday;;;;;Prince Edward island
+81;CAN;;;Mar;16;St. Patrick's Day;St. Patrick's Day;Government Holiday;;;;;Newfoundland and Labrador
+82;CAN;;;Apr;13;Easter Monday;Easter Monday;Regional Holiday;;;;;Nunavut. Optional in Alberta and Quebec
+83;CAN;;;Apr;20;St. George's Day;St. George's Day;Government Holiday;;;;;Newfoundland and Labrador
+84;CAN;;;May;10;Mother's Day;Mother's Day;Not A Public Holiday;;;;1,Sunday,May;
+85;CAN;;;Jun;21;Father's Day;Father's Day;Not A Public Holiday;;;;3,Sunday,June;3rd Sunday in June. Not a public holiday
+86;CAN;;;Jun;21;Aboriginal Day;Aboriginal Day;Statutory Holiday;;;;;
+87;CAN;;;Jul;1;Canada Day;Canada Day;Statutory Holiday;;;;1,July,!Sunday;National Day. July 1st or July 2nd if the 1st is a Sunday
+88;CAN;;;Sep;7;Labour Day;Labour Day;Statutory Holiday;;;;1,Monday,September;First Monday in September
+89;CAN;;;Dec;25;Christmas Day;Christmas Day;Statutory Holiday;;;;;

@@ -19,12 +19,7 @@ namespace Bigai.Holidays.Core.Services.Api.Configurations.Health
         /// <returns>The same service collection so that multiple calls can be chained.</returns>
         public static IServiceCollection AddHealthChecksConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
-            //services.AddHealthChecks().AddGCInfoCheck("GCInfo");
-
             var connectionString = configuration.GetConnectionString(HolidaysContext.KeyConnectionString);
-
-            //classe abstrata garbage collecion
-            //    limpar código
 
             services.AddHealthChecks()
                 //

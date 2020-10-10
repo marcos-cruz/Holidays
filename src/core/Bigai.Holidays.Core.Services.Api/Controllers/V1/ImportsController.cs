@@ -20,7 +20,6 @@ namespace Bigai.Holidays.Core.Services.Api.Controllers.V1
     {
         #region Private Variables
 
-        private readonly INotificationHandler _notificationHandler;
         private readonly IImportCountryService _importCountryService;
         private readonly IImportStateService _importStateService;
         private readonly IImportRuleHolidayService _importRuleHolidayService;
@@ -42,7 +41,6 @@ namespace Bigai.Holidays.Core.Services.Api.Controllers.V1
                                  IImportStateService importStateService, 
                                  IImportRuleHolidayService importRuleHolidayService) : base(notificationHandler)
         {
-            _notificationHandler = notificationHandler ?? throw new ArgumentNullException(nameof(notificationHandler));
             _importCountryService = importCountryService ?? throw new ArgumentNullException(nameof(importCountryService));
             _importStateService = importStateService ?? throw new ArgumentNullException(nameof(importStateService));
             _importRuleHolidayService = importRuleHolidayService ?? throw new ArgumentNullException(nameof(importRuleHolidayService));

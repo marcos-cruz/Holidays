@@ -24,7 +24,7 @@ namespace Bigai.Holidays.Shared.Domain.Models
         /// <summary>
         /// Action to take with entity.
         /// </summary>
-        public TypeProcess Action { get; private set; }
+        public ActionType Action { get; private set; }
 
         /// <summary>
         /// Who registered the record.
@@ -59,7 +59,7 @@ namespace Bigai.Holidays.Shared.Domain.Models
         /// <param name="status">Current status of the entity. Required.</param>
         /// <param name="action">Action to take with entity. Required.</param>
         /// <param name="userId">Who is taking this action. Optional.</param>
-        protected Entity(Guid? id, EntityStatus status, TypeProcess action, Guid? userId)
+        protected Entity(Guid? id, EntityStatus status, ActionType action, Guid? userId)
         {
             AssignId(id);
 
@@ -89,7 +89,7 @@ namespace Bigai.Holidays.Shared.Domain.Models
 
         private void AssignRegistrationDate()
         {
-            if (Action == TypeProcess.Register || Action == TypeProcess.Seed)
+            if (Action == ActionType.Register || Action == ActionType.Seed)
             {
                 RegistrationDate = DateTime.UtcNow;
             }
@@ -97,7 +97,7 @@ namespace Bigai.Holidays.Shared.Domain.Models
 
         private void AssignLastModificationDate()
         {
-            if (Action != TypeProcess.Register)
+            if (Action != ActionType.Register)
             {
                 ModificationDate = DateTime.UtcNow;
             }
@@ -105,11 +105,11 @@ namespace Bigai.Holidays.Shared.Domain.Models
 
         private void AssignWhoDidAction(Guid? userId)
         {
-            if ((Action == TypeProcess.Register || Action == TypeProcess.Register) && userId.HasValue)
+            if ((Action == ActionType.Register || Action == ActionType.Register) && userId.HasValue)
             {
                 RegisteredBy = userId.Value;
             }
-            else if (Action != TypeProcess.Register && userId.HasValue)
+            else if (Action != ActionType.Register && userId.HasValue)
             {
                 ModifiedBy = userId;
             }
@@ -247,7 +247,7 @@ namespace Bigai.Holidays.Shared.Domain.Models
         /// <param name="root">Root entity.</param>
         public virtual void SynchronizeRegistrationDate(Entity root)
         {
-            if (root.Action == TypeProcess.Register)
+            if (root.Action == ActionType.Register)
             {
                 RegistrationDate = root.RegistrationDate;
             }

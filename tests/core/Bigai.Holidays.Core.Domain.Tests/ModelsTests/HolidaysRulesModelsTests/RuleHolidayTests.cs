@@ -20,7 +20,7 @@ namespace Bigai.Holidays.Core.Domain.Tests.ModelsTests.HolidaysRulesModelsTests
             RuleHoliday ruleHoliday;
             Guid entityId = string.IsNullOrEmpty(id) ? Guid.Empty : Guid.Parse(id);
             EntityStatus entityStatus = EntityStatus.GetByName(status);
-            TypeProcess action = TypeProcess.GetByName(typeProcess);
+            ActionType action = ActionType.GetByName(typeProcess);
             HolidayType type = HolidayType.GetByName(holidayType);
             Guid userId = string.IsNullOrEmpty(user) ? Guid.Empty : Guid.Parse(user);
             Guid countryId = string.IsNullOrEmpty(country) ? Guid.Empty : Guid.Parse(country);
@@ -58,8 +58,8 @@ namespace Bigai.Holidays.Core.Domain.Tests.ModelsTests.HolidaysRulesModelsTests
             RuleHoliday ruleA, ruleB;
 
             // Act
-            ruleA = RuleHoliday.CreateRuleHoliday(null, EntityStatus.Locked, TypeProcess.Update, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), "USA", null, "", "", HolidayType.National, "Bennington Battle Day", "Bennington Battle Day", 8, 16, false, "", "16 August or nearest weekday");
-            ruleB = RuleHoliday.CreateRuleHoliday(null, EntityStatus.Locked, TypeProcess.Update, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), "USA", null, "", "", HolidayType.National, "Bennington Battle Day", "Bennington Battle Day", 8, 16, false, "", "16 August or nearest weekday");
+            ruleA = RuleHoliday.CreateRuleHoliday(null, EntityStatus.Locked, ActionType.Update, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), "USA", null, "", "", HolidayType.National, "Bennington Battle Day", "Bennington Battle Day", 8, 16, false, "", "16 August or nearest weekday");
+            ruleB = RuleHoliday.CreateRuleHoliday(null, EntityStatus.Locked, ActionType.Update, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), "USA", null, "", "", HolidayType.National, "Bennington Battle Day", "Bennington Battle Day", 8, 16, false, "", "16 August or nearest weekday");
 
             // Assert
             Assert.Equal(ruleA, ruleB);
@@ -73,8 +73,8 @@ namespace Bigai.Holidays.Core.Domain.Tests.ModelsTests.HolidaysRulesModelsTests
             RuleHoliday ruleA, ruleB;
 
             // Act
-            ruleA = RuleHoliday.CreateRuleHoliday(null, EntityStatus.Locked, TypeProcess.Update, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), "USA", null, "", "", HolidayType.National, "Bennington Battle Day", "Bennington Battle Day", 8, 16, false, "", "16 August or nearest weekday");
-            ruleB = RuleHoliday.CreateRuleHoliday(null, EntityStatus.Locked, TypeProcess.Update, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), "USA", null, "", "", HolidayType.Local, "Bennington Battle Day", "Bennington Battle Day", 8, 16, false, "", "16 August or nearest weekday");
+            ruleA = RuleHoliday.CreateRuleHoliday(null, EntityStatus.Locked, ActionType.Update, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), "USA", null, "", "", HolidayType.National, "Bennington Battle Day", "Bennington Battle Day", 8, 16, false, "", "16 August or nearest weekday");
+            ruleB = RuleHoliday.CreateRuleHoliday(null, EntityStatus.Locked, ActionType.Update, Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7060"), Guid.Parse("41408960-a65f-42ea-93c0-e320a1bc7070"), "USA", null, "", "", HolidayType.Local, "Bennington Battle Day", "Bennington Battle Day", 8, 16, false, "", "16 August or nearest weekday");
 
             // Assert
             Assert.NotEqual(ruleA, ruleB);

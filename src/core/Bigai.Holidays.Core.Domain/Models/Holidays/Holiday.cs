@@ -91,7 +91,7 @@ namespace Bigai.Holidays.Core.Domain.Models.Holidays
 
         protected Holiday() { }
 
-        private Holiday(Guid? id, EntityStatus status, TypeProcess action, Guid? userId, Guid countryId, Guid? stateId, DateTime holidayDate, HolidayType holidayType, bool optional, string nativeDescription, string alternativeDescription, string countryCode, string stateCode, string cityName, string cityCode) : base(id, status, action, userId)
+        private Holiday(Guid? id, EntityStatus status, ActionType action, Guid? userId, Guid countryId, Guid? stateId, DateTime holidayDate, HolidayType holidayType, bool optional, string nativeDescription, string alternativeDescription, string countryCode, string stateCode, string cityName, string cityCode) : base(id, status, action, userId)
         {
             CountryId = countryId;
             StateId = stateId;
@@ -128,7 +128,7 @@ namespace Bigai.Holidays.Core.Domain.Models.Holidays
         /// <param name="cityName">City name. Required if rule is for local holiday.</param>
         /// <param name="cityCode">Official Code of the city. Optional.</param>
         /// <returns></returns>
-        public static Holiday CreateHoliday(Guid? id, EntityStatus status, TypeProcess action, Guid? userId, Guid countryId, Guid? stateId, DateTime holidayDate, HolidayType holidayType, bool optional, string nativeDescription, string alternativeDescription, string countryCode, string stateCode, string cityName, string cityCode)
+        public static Holiday CreateHoliday(Guid? id, EntityStatus status, ActionType action, Guid? userId, Guid countryId, Guid? stateId, DateTime holidayDate, HolidayType holidayType, bool optional, string nativeDescription, string alternativeDescription, string countryCode, string stateCode, string cityName, string cityCode)
         {
             return new Holiday(id, status, action, userId, countryId, stateId, holidayDate, holidayType, optional, nativeDescription, alternativeDescription, countryCode, stateCode, cityName, cityCode);
         }

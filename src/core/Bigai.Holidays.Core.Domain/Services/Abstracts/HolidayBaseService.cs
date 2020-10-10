@@ -13,9 +13,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Bigai.Holidays.Core.Domain.Services.Countries
+namespace Bigai.Holidays.Core.Domain.Services.Abstracts
 {
-    public class CountryService : DomainService//, ICountryService
+    public abstract class HolidayBaseService : DomainService
     {
         #region Private Variables
 
@@ -63,11 +63,12 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
         #region Constructor
 
         /// <summary>
-        /// Return a instance of <see cref="CountryService"/>
+        /// Return a instance of <see cref="HolidayBaseService"/>
         /// </summary>
         /// <param name="notificationHandler">Handling error notification messages.</param>
         /// <param name="unitOfWork">Context to read and writing.</param>
-        public CountryService(INotificationHandler notificationHandler, IUnitOfWorkCore unitOfWork, IUserLogged userLogged) : base(notificationHandler, unitOfWork, userLogged)
+        /// <param name="userLogged">User who is logged in.</param>
+        public HolidayBaseService(INotificationHandler notificationHandler, IUnitOfWorkCore unitOfWork, IUserLogged userLogged) : base(notificationHandler, unitOfWork, userLogged)
         {
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
         }

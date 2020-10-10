@@ -3,6 +3,7 @@ using Bigai.Holidays.Core.Domain.Interfaces.Services.States;
 using Bigai.Holidays.Core.Domain.Mappers.States;
 using Bigai.Holidays.Core.Domain.Models.Countries;
 using Bigai.Holidays.Core.Domain.Models.States;
+using Bigai.Holidays.Core.Domain.Services.Abstracts;
 using Bigai.Holidays.Core.Domain.Services.Countries;
 using Bigai.Holidays.Shared.Domain.Commands;
 using Bigai.Holidays.Shared.Domain.Interfaces.Notifications;
@@ -18,7 +19,7 @@ namespace Bigai.Holidays.Core.Domain.Services.States
     /// <summary>
     /// <see cref="ImportStateService"/> implements a contract to perform domain operations with CSV files for <see cref="State"/>.
     /// </summary>
-    public class ImportStateService : CountryService, IImportStateService
+    public class ImportStateService : HolidayBaseService, IImportStateService
     {
         #region Private Variables
 
@@ -81,6 +82,11 @@ namespace Bigai.Holidays.Core.Domain.Services.States
                         {
                             List<List<State>> list = content.ToListOfStateList(CountryRepository, GetUserLogged());
                             commandResult = _addStateService.AddRange(list);
+                            if (commandResult.Success)
+                            {
+                                commandResult.Message = commandResult.Message.Replace("Ação concluída", $"{_file} importado");
+                                commandResult.Data = null;
+                            }
                         }
                     }
                 }
@@ -134,6 +140,11 @@ namespace Bigai.Holidays.Core.Domain.Services.States
                         {
                             List<List<State>> list = await content.ToListOfStatesListAsync(CountryRepository, GetUserLogged());
                             commandResult = _addStateService.AddRange(list);
+                            if (commandResult.Success)
+                            {
+                                commandResult.Message = commandResult.Message.Replace("Ação concluída", $"{_file} importado");
+                                commandResult.Data = null;
+                            }
                         }
                     }
                 }

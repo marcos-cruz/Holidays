@@ -53,7 +53,9 @@ namespace Bigai.Holidays.Core.Domain.Validators.States
         {
             RuleFor(state => state.StateIsoCode)
                 .NotEmpty().WithMessage("Código ISO do estado deve ser informado.")
-                .Must(BeState).WithMessage("Código ISO do estado não é válido.");
+                .Must(BeState).WithMessage("Código ISO do estado não é válido.")
+                .MaximumLength(6).WithMessage("Código ISO do estado deve ter no máximo 6 caracteres.");
+
         }
 
         private void ValidateName()
@@ -92,7 +94,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.States
         {
             State record = stateRepository.Find(c => c.CountryIsoCode == state.CountryIsoCode && c.StateIsoCode == state.StateIsoCode).FirstOrDefault();
 
-            if (state.Action != TypeProcess.Register && record.Id == state.Id)
+            if (state.Action != ActionType.Register && record.Id == state.Id)
             {
                 record = null;
             }

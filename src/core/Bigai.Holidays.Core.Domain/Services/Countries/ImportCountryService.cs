@@ -2,6 +2,7 @@
 using Bigai.Holidays.Core.Domain.Interfaces.Services.Countries;
 using Bigai.Holidays.Core.Domain.Mappers.Countries;
 using Bigai.Holidays.Core.Domain.Models.Countries;
+using Bigai.Holidays.Core.Domain.Services.Abstracts;
 using Bigai.Holidays.Shared.Domain.Commands;
 using Bigai.Holidays.Shared.Domain.Interfaces.Notifications;
 using Bigai.Holidays.Shared.Infra.CrossCutting.Helpers;
@@ -16,7 +17,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
     /// <summary>
     /// <see cref="ImportCountryService"/> implements a contract to perform domain operations with CSV files for <see cref="Country"/>.
     /// </summary>
-    public class ImportCountryService : CountryService, IImportCountryService
+    public class ImportCountryService : HolidayBaseService, IImportCountryService
     {
         #region Private Variables
 
@@ -79,6 +80,11 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
                         {
                             List<List<Country>> list = content.ToListOfCountryList(GetUserLogged());
                             commandResult = _addCountryService.AddRange(list);
+                            if (commandResult.Success)
+                            {
+                                commandResult.Message = commandResult.Message.Replace("Ação concluída", $"{_file} importado");
+                                commandResult.Data = null;
+                            }
                         }
                     }
                 }
@@ -132,6 +138,11 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
                         {
                             List<List<Country>> list = await content.ToListOfCountryListAsync(GetUserLogged());
                             commandResult = _addCountryService.AddRange(list);
+                            if (commandResult.Success)
+                            {
+                                commandResult.Message = commandResult.Message.Replace("Ação concluída", $"{_file} importado");
+                                commandResult.Data = null;
+                            }
                         }
                     }
                 }

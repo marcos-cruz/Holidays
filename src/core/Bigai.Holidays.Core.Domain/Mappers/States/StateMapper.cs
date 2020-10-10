@@ -110,9 +110,10 @@ namespace Bigai.Holidays.Core.Domain.Mappers.States
 
                     for (int i = start, j = end; i < j; i++)
                     {
-                        var countryIsoCode = statesCsv[i, 1];
-                        var stateIsoCode = statesCsv[i, 2];
-                        var name = statesCsv[i, 3];
+                        string countryIsoCode = statesCsv[i, 1];
+                        string stateIsoCode = statesCsv[i, 2];
+                        string name = statesCsv[i, 3];
+                        string pathStateImage = null;
 
                         if (country == null || country.CountryIsoCode3 != countryIsoCode)
                         {
@@ -120,7 +121,7 @@ namespace Bigai.Holidays.Core.Domain.Mappers.States
                             countryId = country != null ? country.Id : Guid.Empty;
                         }
 
-                        var state = State.CreateState(null, EntityStatus.Active, TypeProcess.Register, userId, countryId, countryIsoCode, stateIsoCode, name);
+                        var state = State.CreateState(null, EntityStatus.Active, ActionType.Register, userId, countryId, countryIsoCode, stateIsoCode, name, pathStateImage);
                         states.Add(state);
                     }
                 }

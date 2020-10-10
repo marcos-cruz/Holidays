@@ -170,7 +170,7 @@ namespace Bigai.Holidays.Core.Domain.Mappers.Holidays
                             type = HolidayType.Regional;
                         }
 
-                        var rule = RuleHoliday.CreateRuleHoliday(null, EntityStatus.Active, TypeProcess.Register, userId, countryId, stateId, countryCode, stateCode, cityCode, cityName, type, nativeDescription, alternativeDescription, month, day, optional, bussinessRule, comments);
+                        var rule = RuleHoliday.CreateRuleHoliday(null, EntityStatus.Active, ActionType.Register, userId, countryId, stateId, countryCode, stateCode, cityCode, cityName, type, nativeDescription, alternativeDescription, month, day, optional, bussinessRule, comments);
                         rules.Add(rule);
                     }
                 }

@@ -48,6 +48,11 @@ namespace Bigai.Holidays.Shared.Domain.Services
 
         #region Protected Methods
 
+        protected INotificationHandler GetNotificationHandler()
+        {
+            return _notificationHandler;
+        }
+
         /// <summary>
         /// Determines the user who is logged in.
         /// </summary>
@@ -63,7 +68,7 @@ namespace Bigai.Holidays.Shared.Domain.Services
         /// <param name="commandName">Process name for notification in case of error.</param>
         /// <param name="typeProcess">Process type for creating the response code.</param>
         /// <returns>Result of the action with the http status code..</returns>
-        protected CommandResult Commit(string commandName, TypeProcess typeProcess)
+        protected CommandResult Commit(string commandName, ActionType typeProcess)
         {
             CommandResult commandResult;
 
@@ -78,7 +83,7 @@ namespace Bigai.Holidays.Shared.Domain.Services
                     if (_unitOfWork.Commit())
                     {
                         commandResult = CommandResult.Ok("Ação concluída com sucesso");
-                        if (typeProcess == TypeProcess.Register)
+                        if (typeProcess == ActionType.Register)
                         {
                             commandResult = CommandResult.Created("Ação concluída com sucesso");
                         }
@@ -104,7 +109,7 @@ namespace Bigai.Holidays.Shared.Domain.Services
         /// <param name="commandName">Process name for notification in case of error.</param>
         /// <param name="typeProcess">Process type for creating the response code.</param>
         /// <returns>Result of the action with the http status code..</returns>
-        protected async Task<CommandResult> CommitAsync(string commandName, TypeProcess typeProcess)
+        protected async Task<CommandResult> CommitAsync(string commandName, ActionType typeProcess)
         {
             CommandResult commandResult;
 
@@ -119,7 +124,7 @@ namespace Bigai.Holidays.Shared.Domain.Services
                     if (await _unitOfWork.CommitAsync())
                     {
                         commandResult = CommandResult.Ok("Ação concluída com sucesso");
-                        if (typeProcess == TypeProcess.Register)
+                        if (typeProcess == ActionType.Register)
                         {
                             commandResult = CommandResult.Created("Ação concluída com sucesso");
                         }

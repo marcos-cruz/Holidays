@@ -41,6 +41,8 @@ namespace Bigai.Holidays.Core.Infra.CrossCutting.IoC
 
             services.AddScoped<IAddRuleHolidayService, AddRuleHolidayService>();
             services.AddScoped<IImportRuleHolidayService, ImportRuleHolidayService>();
+
+            services.AddScoped<IQueryHolidayService, QueryHolidayService>();
         }
 
         private static void RepositoryDependencyInjection(IServiceCollection services)

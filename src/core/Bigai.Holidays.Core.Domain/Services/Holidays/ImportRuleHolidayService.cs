@@ -4,7 +4,7 @@ using Bigai.Holidays.Core.Domain.Mappers.Holidays;
 using Bigai.Holidays.Core.Domain.Models.Countries;
 using Bigai.Holidays.Core.Domain.Models.Holidays;
 using Bigai.Holidays.Core.Domain.Models.States;
-using Bigai.Holidays.Core.Domain.Services.Countries;
+using Bigai.Holidays.Core.Domain.Services.Abstracts;
 using Bigai.Holidays.Shared.Domain.Commands;
 using Bigai.Holidays.Shared.Domain.Interfaces.Notifications;
 using Bigai.Holidays.Shared.Infra.CrossCutting.Helpers;
@@ -19,7 +19,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
     /// <summary>
     /// <see cref="ImportRuleHolidayService"/> implements a contract to perform domain operations with CSV files for <see cref="RuleHoliday"/>.
     /// </summary>
-    public class ImportRuleHolidayService : CountryService, IImportRuleHolidayService
+    public class ImportRuleHolidayService : HolidayBaseService, IImportRuleHolidayService
     {
         #region Private Variables
 
@@ -82,6 +82,11 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                         {
                             List<List<RuleHoliday>> list = content.ToListOfRuleHolidayList(CountryRepository, StateRepository, GetUserLogged());
                             commandResult = _addRuleHolidayService.AddRange(list);
+                            if (commandResult.Success)
+                            {
+                                commandResult.Message = commandResult.Message.Replace("Ação concluída", $"{_file} importado");
+                                commandResult.Data = null;
+                            }
                         }
                     }
                 }
@@ -135,6 +140,11 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                         {
                             List<List<RuleHoliday>> list = await content.ToListOfRuleHolidayListAsync(CountryRepository, StateRepository, GetUserLogged());
                             commandResult = _addRuleHolidayService.AddRange(list);
+                            if (commandResult.Success)
+                            {
+                                commandResult.Message = commandResult.Message.Replace("Ação concluída", $"{_file} importado");
+                                commandResult.Data = null;
+                            }
                         }
                     }
                 }

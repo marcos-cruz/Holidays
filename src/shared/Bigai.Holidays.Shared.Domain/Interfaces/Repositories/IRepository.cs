@@ -13,6 +13,17 @@ namespace Bigai.Holidays.Shared.Domain.Interfaces.Repositories
     public interface IRepository<TEntity> : IDisposable where TEntity : Entity
     {
         /// <summary>
+        /// Determines whether the database already exists.
+        /// </summary>
+        /// <returns><c>true</c> if database exist, otherwise <c>false</c>.</returns>
+        bool DatabaseExist();
+
+        /// <summary>
+        /// Creates the database.
+        /// </summary>
+        void CreateDatabase();
+
+        /// <summary>
         /// Add a <see cref="TEntity"/> in database.
         /// </summary>
         /// <param name="entity">Instance of <see cref="TEntity"/> to be added.</param>

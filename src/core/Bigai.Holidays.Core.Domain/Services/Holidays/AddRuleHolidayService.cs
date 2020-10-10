@@ -1,7 +1,7 @@
 ﻿using Bigai.Holidays.Core.Domain.Interfaces.Repositories;
 using Bigai.Holidays.Core.Domain.Interfaces.Services.Holidays;
 using Bigai.Holidays.Core.Domain.Models.Holidays;
-using Bigai.Holidays.Core.Domain.Services.Countries;
+using Bigai.Holidays.Core.Domain.Services.Abstracts;
 using Bigai.Holidays.Core.Domain.Validators.Holidays;
 using Bigai.Holidays.Shared.Domain.Commands;
 using Bigai.Holidays.Shared.Domain.Enums.Entities;
@@ -17,7 +17,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
     /// <summary>
     /// <see cref="AddRuleHolidayService"/> implements a contract to validate business rules and add <see cref="RuleHoliday"/> to the database.
     /// </summary>
-    public class AddRuleHolidayService : CountryService, IAddRuleHolidayService
+    public class AddRuleHolidayService : HolidayBaseService, IAddRuleHolidayService
     {
         #region Private Variables
 
@@ -127,7 +127,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                     else
                     {
                         RuleHolidayRepository.AddRange(listOfRuleHolidays);
-                        commandResult = Commit(_commandName, TypeProcess.Register);
+                        commandResult = Commit(_commandName, ActionType.Register);
                         if (commandResult.Success)
                         {
                             commandResult.Message = $"Ação concluída com sucesso. Salvos { recordsToSave } registros de um total de { recordsToSave }";
@@ -168,7 +168,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                     else
                     {
                         await RuleHolidayRepository.AddRangeAsync(listOfRuleHolidays);
-                        commandResult = await CommitAsync(_commandName, TypeProcess.Register);
+                        commandResult = await CommitAsync(_commandName, ActionType.Register);
                         if (commandResult.Success)
                         {
                             commandResult.Message = $"Ação concluída com sucesso. Salvos { recordsToSave } registros de um total de { recordsToSave }";
@@ -216,7 +216,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                             var list = listOfListRuleHolidays[i];
 
                             RuleHolidayRepository.AddRange(list);
-                            result = Commit(_commandName, TypeProcess.Register);
+                            result = Commit(_commandName, ActionType.Register);
 
                             if (result.Success)
                             {
@@ -280,7 +280,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                             var list = listOfListRuleHolidays[i];
 
                             await RuleHolidayRepository.AddRangeAsync(list);
-                            result = await CommitAsync(_commandName, TypeProcess.Register);
+                            result = await CommitAsync(_commandName, ActionType.Register);
 
                             if (result.Success)
                             {

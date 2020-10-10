@@ -202,6 +202,22 @@
             </summary>
             <param name="modelState">A collection of errors.</param>
         </member>
+        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.HolidaysController.#ctor(Bigai.Holidays.Shared.Domain.Interfaces.Notifications.INotificationHandler,Bigai.Holidays.Core.Domain.Interfaces.Services.Holidays.IQueryHolidayService)">
+            <summary>
+            Return a instance of <see cref="T:Bigai.Holidays.Core.Services.Api.Controllers.V1.HolidaysController"/>.
+            </summary>
+            <param name="notificationHandler">For handling error notification messages.</param>
+            <param name="queryHolidayService">To query holidays in database.</param>
+        </member>
+        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.HolidaysController.GetByCountry(System.Guid,System.String,System.Int32)">
+            <summary>
+            Obtains a list of holidays by country code for a specific year.
+            </summary>
+            <param name="token">Authorization key.</param>
+            <param name="countryIsoCode">Country code consisting of 3 letters, according to ISO-3166.</param>
+            <param name="year">Year to query holidays.</param>
+            <returns>Returns a CommandResponse containing the result of executing the command.</returns>
+        </member>
         <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.ImportsController.#ctor(Bigai.Holidays.Shared.Domain.Interfaces.Notifications.INotificationHandler,Bigai.Holidays.Core.Domain.Interfaces.Services.Countries.IImportCountryService,Bigai.Holidays.Core.Domain.Interfaces.Services.States.IImportStateService,Bigai.Holidays.Core.Domain.Interfaces.Services.Holidays.IImportRuleHolidayService)">
             <summary>
             Return a instance of <see cref="T:Bigai.Holidays.Core.Services.Api.Controllers.V1.ImportsController"/>.

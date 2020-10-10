@@ -109,7 +109,7 @@ namespace Bigai.Holidays.Shared.Domain.Enums.Abstracts
             //
             // Can't use == to compare generics unless we constrain TValue to "class", which we don't want because then we couldn't use int.
             //
-            return _list.SingleOrDefault(item => EqualityComparer<TKey>.Default.Equals(item.Key, key));
+            return ListOfEnums.SingleOrDefault(item => EqualityComparer<TKey>.Default.Equals(item.Key, key));
         }
 
         /// <summary>

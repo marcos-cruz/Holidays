@@ -49,7 +49,7 @@ namespace Bigai.Holidays.Shared.Domain.Validators
 
         private void ValidateRegistrationDate()
         {
-            When(entity => entity.Action == TypeProcess.Register, () =>
+            When(entity => entity.Action == ActionType.Register, () =>
             {
                 RuleFor(entity => entity.RegistrationDate)
                     .GreaterThan(entity => DateTime.MinValue)
@@ -59,7 +59,7 @@ namespace Bigai.Holidays.Shared.Domain.Validators
 
         private void ValidateRegisteredBy()
         {
-            When(entity => entity.Action == TypeProcess.Register, () =>
+            When(entity => entity.Action == ActionType.Register, () =>
             {
                 RuleFor(entity => entity.RegisteredBy)
                     .NotEmpty().WithMessage("Quem está cadastrando deve ser informado.");
@@ -68,7 +68,7 @@ namespace Bigai.Holidays.Shared.Domain.Validators
 
         private void ValidateModificationDate()
         {
-            When(entity => entity.Action != TypeProcess.Register, () =>
+            When(entity => entity.Action != ActionType.Register, () =>
             {
                 RuleFor(entity => entity.ModificationDate)
                     .GreaterThan(entity => DateTime.MinValue)
@@ -79,7 +79,7 @@ namespace Bigai.Holidays.Shared.Domain.Validators
 
         private void ValidateModifiedBy()
         {
-            When(entity => entity.Action != TypeProcess.Register, () =>
+            When(entity => entity.Action != ActionType.Register, () =>
             {
                 RuleFor(entity => entity.ModifiedBy)
                     .NotEmpty().WithMessage("Quem está modificando deve ser informado.");
@@ -91,9 +91,9 @@ namespace Bigai.Holidays.Shared.Domain.Validators
             return status != null && EntityStatus.GetById(status.Key) != null;
         }
 
-        protected bool BeTypeProcess(TypeProcess action)
+        protected bool BeTypeProcess(ActionType action)
         {
-            return action != null && TypeProcess.GetById(action.Key) != null;
+            return action != null && ActionType.GetById(action.Key) != null;
         }
 
         protected bool BeCountry(string countryIsoCode)

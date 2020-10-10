@@ -16,11 +16,11 @@ namespace Bigai.Holidays.Core.Domain.Tests.ModelsTests.CountriesModelsTests
             Country country;
             Guid entityId = string.IsNullOrEmpty(id) ? Guid.Empty : Guid.Parse(id);
             EntityStatus entityStatus = EntityStatus.GetByName(status);
-            TypeProcess action = TypeProcess.GetByName(typeProcess);
+            ActionType action = ActionType.GetByName(typeProcess);
             Guid userId = string.IsNullOrEmpty(user) ? Guid.Empty : Guid.Parse(user);
 
             // Act
-            country = Country.CreateCountry(entityId, entityStatus, action, userId, numericCode, alphaIsoCode2, alphaIsoCode3, name, shortName, languageCode, regionName, subRegionName, intermediateRegionName, regionCode, subRegionCode, intermediateRegionCode);
+            country = Country.CreateCountry(entityId, entityStatus, action, userId, numericCode, alphaIsoCode2, alphaIsoCode3, name, shortName, languageCode, regionName, subRegionName, intermediateRegionName, regionCode, subRegionCode, intermediateRegionCode, null);
 
             // Assert
             Assert.NotNull(country);
@@ -48,8 +48,8 @@ namespace Bigai.Holidays.Core.Domain.Tests.ModelsTests.CountriesModelsTests
             Country countryA, countryB;
 
             // Act
-            countryA = Country.CreateCountry(null, EntityStatus.Active, TypeProcess.Register, null, "4", "AF", "AFG", "Afghanistan", "Afghanistan", "fa, ps", "Asia", "Southern Asia", "", 142, 34, 0);
-            countryB = Country.CreateCountry(null, EntityStatus.Locked, TypeProcess.Update, null, "4", "AF", "AFG", "Afghanistan", "Afghanistan", "fa, ps", "Asia", "Southern Asia", "", 142, 34, 0);
+            countryA = Country.CreateCountry(null, EntityStatus.Active, ActionType.Register, null, "4", "AF", "AFG", "Afghanistan", "Afghanistan", "fa, ps", "Asia", "Southern Asia", "", 142, 34, 0, null);
+            countryB = Country.CreateCountry(null, EntityStatus.Locked, ActionType.Update, null, "4", "AF", "AFG", "Afghanistan", "Afghanistan", "fa, ps", "Asia", "Southern Asia", "", 142, 34, 0, null);
 
             // Assert
             Assert.Equal(countryA, countryB);
@@ -63,8 +63,8 @@ namespace Bigai.Holidays.Core.Domain.Tests.ModelsTests.CountriesModelsTests
             Country countryA, countryB;
 
             // Act
-            countryA = Country.CreateCountry(null, EntityStatus.Active, TypeProcess.Register, null, "4", "AF", "AFG", "Afghanistan", "Afghanistan", "fa, ps", "Asia", "Southern Asia", "", 142, 34, 0);
-            countryB = Country.CreateCountry(null, EntityStatus.Locked, TypeProcess.Update, null, "248", "AX", "ALA", "Åland Islands", "Åland Islands", "sv", "Europe", "Northern Europe", "", 150, 154, 0);
+            countryA = Country.CreateCountry(null, EntityStatus.Active, ActionType.Register, null, "4", "AF", "AFG", "Afghanistan", "Afghanistan", "fa, ps", "Asia", "Southern Asia", "", 142, 34, 0, null);
+            countryB = Country.CreateCountry(null, EntityStatus.Locked, ActionType.Update, null, "248", "AX", "ALA", "Åland Islands", "Åland Islands", "sv", "Europe", "Northern Europe", "", 150, 154, 0, null);
 
             // Assert
             Assert.NotEqual(countryA, countryB);

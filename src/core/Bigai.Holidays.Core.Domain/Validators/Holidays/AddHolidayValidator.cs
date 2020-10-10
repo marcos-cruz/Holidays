@@ -72,7 +72,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
         {
             Holiday record = holidayRepository.Find(c => c.ComposeKey == holiday.ComposeKey).FirstOrDefault();
 
-            if (holiday.Action != TypeProcess.Register && record.Id == holiday.Id)
+            if (holiday.Action != ActionType.Register && record.Id == holiday.Id)
             {
                 record = null;
             }
