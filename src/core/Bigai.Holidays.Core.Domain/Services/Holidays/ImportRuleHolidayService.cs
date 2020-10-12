@@ -1,9 +1,7 @@
 ﻿using Bigai.Holidays.Core.Domain.Interfaces.Repositories;
 using Bigai.Holidays.Core.Domain.Interfaces.Services.Holidays;
 using Bigai.Holidays.Core.Domain.Mappers.Holidays;
-using Bigai.Holidays.Core.Domain.Models.Countries;
 using Bigai.Holidays.Core.Domain.Models.Holidays;
-using Bigai.Holidays.Core.Domain.Models.States;
 using Bigai.Holidays.Core.Domain.Services.Abstracts;
 using Bigai.Holidays.Shared.Domain.Commands;
 using Bigai.Holidays.Shared.Domain.Interfaces.Notifications;
@@ -46,64 +44,6 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
 
         #region Public Methods
 
-        public CommandResult Import(string filename)
-        {
-            CommandResult commandResult;
-            Stopwatch watch = Stopwatch.StartNew();
-            _file = filename.GetFileNameFromPath();
-
-            try
-            {
-                if (!FileExist(filename))
-                {
-                    NotifyError(_file, $"{filename} não existe.");
-                    commandResult = CommandResult.BadRequest($"{ _file } não foi localizado.");
-                }
-                else
-                {
-                    string[,] content = ImportCsvFile(filename);
-
-                    if (content == null)
-                    {
-                        NotifyError(_file, $"{filename} está vazio.");
-                        commandResult = CommandResult.BadRequest($"{ _file } não tem registros.");
-                    }
-                    else
-                    {
-                        int items = content.GetLength(0);
-                        int columns = content.GetLength(1);
-
-                        if (items == 0 || columns != _columns)
-                        {
-                            NotifyError(_file, $"Formato inválido. Forneça um arquivo no formato CSV com { _columns } colunas.");
-                            commandResult = CommandResult.BadRequest($"Importação do arquivo { _file } não foi concluída, existem erros.");
-                        }
-                        else
-                        {
-                            List<List<RuleHoliday>> list = content.ToListOfRuleHolidayList(CountryRepository, StateRepository, GetUserLogged());
-                            commandResult = _addRuleHolidayService.AddRange(list);
-                            if (commandResult.Success)
-                            {
-                                commandResult.Message = commandResult.Message.Replace("Ação concluída", $"{_file} importado");
-                                commandResult.Data = null;
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-            }
-
-            CsvHelper.DeleteFile(filename);
-
-            watch.Stop();
-            commandResult.ElapsedTime = watch.ElapsedMilliseconds;
-
-            return commandResult;
-        }
-
         public async Task<CommandResult> ImportAsync(string filename)
         {
             CommandResult commandResult;
@@ -139,7 +79,8 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                         else
                         {
                             List<List<RuleHoliday>> list = await content.ToListOfRuleHolidayListAsync(CountryRepository, StateRepository, GetUserLogged());
-                            commandResult = _addRuleHolidayService.AddRange(list);
+                            bool validateRepository = await MustBeValidateAsync((list[0])[0]);
+                            commandResult = await _addRuleHolidayService.AddRangeAsync(list, validateRepository);
                             if (commandResult.Success)
                             {
                                 commandResult.Message = commandResult.Message.Replace("Ação concluída", $"{_file} importado");
@@ -166,84 +107,9 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
 
         #region Private Methods
 
-        private void CreateRelationship(List<List<RuleHoliday>> list)
+        private async Task<bool> MustBeValidateAsync(RuleHoliday ruleHoliday)
         {
-            Country country = null;
-            State state = null;
-
-            for (int i = 0, j = list.Count; i < j; i++)
-            {
-                var ruleHolidays = list[i];
-                if (country == null)
-                {
-                    country = GetCountryByIsoCode(ruleHolidays[0].CountryIsoCode);
-                }
-                if (state == null)
-                {
-                    state = GetStateByIsoCode(ruleHolidays[0].CountryIsoCode, ruleHolidays[0].StateIsoCode);
-                }
-
-                for (int x = 0, y = ruleHolidays.Count; x < y; x++)
-                {
-                    if (country != null && ruleHolidays[x].CountryIsoCode != country.CountryIsoCode3)
-                    {
-                        country = GetCountryByIsoCode(ruleHolidays[0].CountryIsoCode);
-                    }
-                    if (state != null && ruleHolidays[x].StateIsoCode != state.StateIsoCode)
-                    {
-                        state = GetStateByIsoCode(ruleHolidays[x].CountryIsoCode, ruleHolidays[x].StateIsoCode);
-                    }
-
-                    if (country != null && ruleHolidays[x].CountryIsoCode == country.CountryIsoCode3)
-                    {
-                        ruleHolidays[x].CreateCountryRelationship(country.Id);
-                    }
-                    if (state != null && ruleHolidays[x].StateIsoCode == state.CountryIsoCode)
-                    {
-                        ruleHolidays[x].CreateStateRelationship(state.Id);
-                    }
-                }
-            }
-        }
-
-        private async Task CreateRelationshipAsync(List<List<RuleHoliday>> list)
-        {
-            Country country = null;
-            State state = null;
-
-            for (int i = 0, j = list.Count; i < j; i++)
-            {
-                var ruleHolidays = list[i];
-                if (country == null)
-                {
-                    country = await GetCountryByIsoCodeAsync(ruleHolidays[0].CountryIsoCode);
-                }
-                if (state == null)
-                {
-                    state = await GetStateByIsoCodeAsync(ruleHolidays[0].CountryIsoCode, ruleHolidays[0].StateIsoCode);
-                }
-
-                for (int x = 0, y = ruleHolidays.Count; x < y; x++)
-                {
-                    if (country != null && ruleHolidays[x].CountryIsoCode != country.CountryIsoCode3)
-                    {
-                        country = await GetCountryByIsoCodeAsync(ruleHolidays[0].CountryIsoCode);
-                    }
-                    if (state != null && ruleHolidays[x].StateIsoCode != state.StateIsoCode)
-                    {
-                        state = await GetStateByIsoCodeAsync(ruleHolidays[x].CountryIsoCode, ruleHolidays[x].StateIsoCode);
-                    }
-
-                    if (country != null && ruleHolidays[x].CountryIsoCode == country.CountryIsoCode3)
-                    {
-                        ruleHolidays[x].CreateCountryRelationship(country.Id);
-                    }
-                    if (state != null && ruleHolidays[x].StateIsoCode == state.CountryIsoCode)
-                    {
-                        ruleHolidays[x].CreateStateRelationship(state.Id);
-                    }
-                }
-            }
+            return (await RuleHolidayRepository.GetCountAsync(c => c.CountryIsoCode == ruleHoliday.CountryIsoCode)) > 0;
         }
 
         #endregion

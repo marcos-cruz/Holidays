@@ -6,6 +6,7 @@ using Bigai.Holidays.Shared.Domain.Enums.Entities;
 using FluentValidation;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Bigai.Holidays.Core.Domain.Validators.Holidays
 {
@@ -27,10 +28,17 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
         /// <summary>
         /// Determines whether the record meets the business rules for adding a new record.
         /// </summary>
+        public AddHolidayValidator() : base()
+        {
+        }
+
+        /// <summary>
+        /// Determines whether the record meets the business rules for adding a new record.
+        /// </summary>
         /// <param name="countryRepository">Context for accessing the repository.</param>
         /// <param name="stateRepository">Context for accessing the repository.</param>
         /// <param name="holidayRepository">Context for accessing the repository.</param>
-        public AddHolidayValidator(ICountryRepository countryRepository, IStateRepository stateRepository, IHolidayRepository holidayRepository)
+        public AddHolidayValidator(ICountryRepository countryRepository, IStateRepository stateRepository, IHolidayRepository holidayRepository) : base()
         {
             _countryRepository = countryRepository ?? throw new ArgumentNullException(nameof(countryRepository));
             _stateRepository = stateRepository ?? throw new ArgumentNullException(nameof(stateRepository));
@@ -47,30 +55,39 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
 
         private void ValidateComposeKey()
         {
-            RuleFor(holiday => holiday.ComposeKey)
-                .Must(HolidayMustBeUnique).WithMessage("Feriado já existe.");
+            RuleFor(holiday => holiday.ComposeKey).MustAsync(async (holiday, composeKey, cancellation) =>
+            {
+                bool unique = await HolidayMustBeUniqueAsync(holiday);
+                return unique;
+            }).WithMessage("Feriado já existe.");
         }
 
         private void ValidateCountryId()
         {
-            RuleFor(holiday => holiday.CountryId)
-                .Must(CountryMustExist).WithMessage("País não existe.");
+            RuleFor(holiday => holiday.CountryId).MustAsync(async (holiday, countryId, cancellation) =>
+            {
+                bool unique = await CountryMustExistAsync(holiday);
+                return unique;
+            }).WithMessage("País não existe.");
         }
 
         private void ValidateStateId()
         {
-            RuleFor(holiday => holiday.StateId)
-                .Must(StateMustExist).WithMessage("Estado não existe.");
+            RuleFor(holiday => holiday.StateId).MustAsync(async (holiday, stateId, cancellation) =>
+            {
+                bool unique = await StateMustExistAsync(holiday);
+                return unique;
+            }).WithMessage("Estado não existe.");
         }
 
-        private bool HolidayMustBeUnique(Holiday holiday, string composeKey)
+        private async Task<bool> HolidayMustBeUniqueAsync(Holiday holiday)
         {
-            return HolidayMustBeUnique(holiday, _holidayRepository);
+            return await HolidayMustBeUniqueAsync(holiday, _holidayRepository);
         }
 
-        private bool HolidayMustBeUnique(Holiday holiday, IHolidayRepository holidayRepository)
+        private async Task<bool> HolidayMustBeUniqueAsync(Holiday holiday, IHolidayRepository holidayRepository)
         {
-            Holiday record = holidayRepository.Find(c => c.ComposeKey == holiday.ComposeKey).FirstOrDefault();
+            Holiday record = (await holidayRepository.FindAsync(c => c.ComposeKey == holiday.ComposeKey)).FirstOrDefault();
 
             if (holiday.Action != ActionType.Register && record.Id == holiday.Id)
             {
@@ -80,19 +97,19 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
             return record == null;
         }
 
-        private bool CountryMustExist(Holiday holiday, Guid countryId)
+        private async Task<bool> CountryMustExistAsync(Holiday holiday)
         {
-            return CountryMustExist(holiday, _countryRepository);
+            return await CountryMustExistAsync(holiday, _countryRepository);
         }
 
-        private bool StateMustExist(Holiday holiday, Guid? stateId)
+        private async Task<bool> StateMustExistAsync(Holiday holiday)
         {
             if (!holiday.StateId.HasValue)
             {
                 return true;
             }
 
-            return StateMustExist(holiday, _stateRepository);
+            return await StateMustExistAsync(holiday, _stateRepository);
         }
 
         #endregion

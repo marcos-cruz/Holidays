@@ -9,6 +9,16 @@ namespace Bigai.Holidays.Shared.Infra.CrossCutting.Mappers
     public static class DateMapper
     {
         /// <summary>
+        /// Converts date and time to SQL date and time.
+        /// </summary>
+        /// <param name="date">DateTime to be converted.</param>
+        /// <returns>DateTime in SQL format.</returns>
+        public static string ToSqlDate(this DateTime date)
+        {
+            return date.ToString("yyyy-MM-dd HH:mm:ss.fff");
+        }
+
+        /// <summary>
         /// Determines the number of the month.
         /// </summary>
         /// <param name="value">Value to be tested.</param>

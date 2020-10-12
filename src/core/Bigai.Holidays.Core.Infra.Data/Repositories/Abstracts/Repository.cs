@@ -34,37 +34,35 @@ namespace Bigai.Holidays.Core.Infra.Data.Repositories.Abstracts
 
         #region Public Methods
 
-        public virtual bool DatabaseExist()
+        public virtual async Task<bool> DatabaseExistAsync()
         {
-            if (!_databaseExist)
+            try
             {
-                _databaseExist = DbContext.Database.GetService<IRelationalDatabaseCreator>().Exists();
+                if (!_databaseExist)
+                {
+                    _databaseExist = await DbContext.Database.GetService<IRelationalDatabaseCreator>().ExistsAsync();
+                }
             }
+            catch (Exception ex) { throw ex; }
+
             return _databaseExist;
         }
 
-        public virtual void CreateDatabase()
+        public virtual async Task<bool> CreateDatabaseAsync()
         {
-            if (!_databaseExist)
-            {
-                _databaseExist = DbContext.Database.EnsureCreated();
-            }
-        }
-
-        public virtual TEntity Add(TEntity entity)
-        {
-            if (entity == null)
-            {
-                return null;
-            }
-
+            bool databaseCreated = false;
             try
             {
-                DbContext.Set<TEntity>().Add(entity);
+                if (!_databaseExist)
+                {
+                    databaseCreated = await DbContext.Database.EnsureCreatedAsync();
+                    _databaseExist = true;
+                }
 
-                return entity;
             }
             catch (Exception ex) { throw ex; }
+
+            return databaseCreated;
         }
 
         public virtual async Task<TEntity> AddAsync(TEntity entity)
@@ -83,20 +81,6 @@ namespace Bigai.Holidays.Core.Infra.Data.Repositories.Abstracts
             catch (Exception ex) { throw ex; }
         }
 
-        public virtual void AddRange(List<TEntity> entities)
-        {
-            if (entities == null || entities.Count == 0)
-            {
-                return;
-            }
-
-            try
-            {
-                DbContext.Set<TEntity>().AddRange(entities);
-            }
-            catch (Exception ex) { throw ex; }
-        }
-
         public virtual async Task AddRangeAsync(List<TEntity> entities)
         {
             if (entities == null || entities.Count == 0)
@@ -111,40 +95,9 @@ namespace Bigai.Holidays.Core.Infra.Data.Repositories.Abstracts
             catch (Exception ex) { throw ex; }
         }
 
-        public virtual TEntity Update(TEntity entity)
-        {
-            if (entity == null)
-            {
-                return null;
-            }
-
-            try
-            {
-                DbContext.Set<TEntity>().Update(entity);
-            }
-            catch (Exception ex) { throw ex; }
-
-            return entity;
-        }
-
         public virtual async Task<TEntity> UpdateAsync(TEntity entity)
         {
             return (await Task.Run(() => Update(entity)));
-        }
-
-        public virtual void Remove(Guid id)
-        {
-            try
-            {
-                TEntity obj = DbContext.Set<TEntity>().Find(id);
-
-                DbContext.Set<TEntity>().Remove(obj);
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
         }
 
         public virtual async Task RemoveAsync(Guid id)
@@ -162,11 +115,11 @@ namespace Bigai.Holidays.Core.Infra.Data.Repositories.Abstracts
             }
         }
 
-        public virtual IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
+        public virtual async Task<int> GetCountAsync(Expression<Func<TEntity, bool>> predicate)
         {
             try
             {
-                return DbContext.Set<TEntity>().Where(predicate).AsNoTracking().ToList();
+                return (await DbContext.Set<TEntity>().Where(predicate).ToListAsync()).Count();
             }
             catch (Exception ex) { throw ex; }
         }
@@ -180,29 +133,11 @@ namespace Bigai.Holidays.Core.Infra.Data.Repositories.Abstracts
             catch (Exception ex) { throw ex; }
         }
 
-        public virtual TEntity GetById(Guid id)
-        {
-            try
-            {
-                return DbContext.Set<TEntity>().AsNoTracking().FirstOrDefault(t => t.Id == id);
-            }
-            catch (Exception ex) { throw ex; }
-        }
-
         public virtual async Task<TEntity> GetByIdAsync(Guid id)
         {
             try
             {
                 return await DbContext.Set<TEntity>().AsNoTracking().FirstOrDefaultAsync(t => t.Id == id);
-            }
-            catch (Exception ex) { throw ex; }
-        }
-
-        public virtual int SaveChanges()
-        {
-            try
-            {
-                return DbContext.SaveChanges();
             }
             catch (Exception ex) { throw ex; }
         }
@@ -214,6 +149,26 @@ namespace Bigai.Holidays.Core.Infra.Data.Repositories.Abstracts
                 return await DbContext.SaveChangesAsync();
             }
             catch (Exception ex) { throw ex; }
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private TEntity Update(TEntity entity)
+        {
+            if (entity == null)
+            {
+                return null;
+            }
+
+            try
+            {
+                DbContext.Set<TEntity>().Update(entity);
+            }
+            catch (Exception ex) { throw ex; }
+
+            return entity;
         }
 
         #endregion

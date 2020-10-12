@@ -15,13 +15,5 @@ namespace Bigai.Holidays.Core.Domain.Interfaces.Services.Holidays
         /// <param name="year">Year for holidays filter.</param>
         /// <returns></returns>
         Task<CommandResult> GetHolidaysAsync(string countryIsoCode, int year);
-
-        /// <summary>
-        /// Gets an lists of <see cref="Holiday"/> by country and year.
-        /// </summary>
-        /// <param name="countryIsoCode">Country code consisting of 3 letters.</param>
-        /// <param name="year">Year for holidays filter.</param>
-        /// <returns></returns>
-        CommandResult GetHolidays(string countryIsoCode, int year);
     }
 }

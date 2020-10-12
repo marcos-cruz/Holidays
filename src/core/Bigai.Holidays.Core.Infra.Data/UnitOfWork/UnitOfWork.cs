@@ -82,21 +82,6 @@ namespace Bigai.Holidays.Core.Infra.Data.UnitOfWork
 
         #region Métodos Commit
 
-        public bool Commit()
-        {
-            try
-            {
-                return _holidaysContext.SaveChanges() > 0;
-            }
-            catch (Exception ex)
-            {
-                //
-                // TODO: [UnitOfWork] - Disparar envio de e-mail para suporte/desenvolvimento.
-                //
-                throw ex;
-            }
-        }
-
         public async Task<bool> CommitAsync()
         {
             try

@@ -8,6 +8,7 @@ using Bigai.Holidays.Shared.Domain.Validators;
 using Bigai.Holidays.Shared.Infra.CrossCutting.Helpers;
 using FluentValidation;
 using System;
+using System.Threading.Tasks;
 
 namespace Bigai.Holidays.Core.Domain.Validators.Holidays
 {
@@ -30,6 +31,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
         private void CommonValidations()
         {
             ValidateCountryId();
+            ValidateStateId();
             ValidateCountryIsoCode();
             ValidateStateIsoCode();
             ValidateCityId();
@@ -51,6 +53,16 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
                 .NotEqual(Guid.Empty).WithMessage("País não é válido.");
         }
 
+        private void ValidateStateId()
+        {
+            When(ruleHoliday => ruleHoliday.StateIsoCode.HasValue(), () =>
+            {
+                RuleFor(ruleHoliday => ruleHoliday.StateId)
+                    .NotEmpty().WithMessage("Estado deve ser informado.")
+                    .NotEqual(Guid.Empty).WithMessage("Estado não é válido.");
+            });
+        }
+
         private void ValidateCountryIsoCode()
         {
             RuleFor(ruleHoliday => ruleHoliday.CountryIsoCode)
@@ -65,11 +77,17 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
                 RuleFor(ruleHoliday => ruleHoliday.StateIsoCode)
                     .Must(BeState).WithMessage("Código ISO do estado deve ser informado.");
             });
+            
+            When(ruleHoliday => !ruleHoliday.StateIsoCode.HasValue() && ruleHoliday.CityName.HasValue(), () =>
+            {
+                RuleFor(ruleHoliday => ruleHoliday.StateIsoCode)
+                    .NotEmpty().WithMessage("Código ISO do estado deve ser informado.");
+            });
         }
 
         private void ValidateCityId()
         {
-            When(rule => !rule.CityId.HasValue() && rule.CityName.HasValue(), () =>
+            When(ruleHoliday => !ruleHoliday.CityId.HasValue() && ruleHoliday.CityName.HasValue(), () =>
             {
                 RuleFor(ruleHoliday => ruleHoliday.CityId)
                     .NotEmpty().WithMessage("Id da cidade deve ser informado.");
@@ -194,9 +212,9 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
             return holidayType != null && HolidayType.GetById(holidayType.Key) != null;
         }
 
-        protected bool CountryMustExist(RuleHoliday ruleHoliday, ICountryRepository countryRepository)
+        protected async Task<bool> CountryMustExistAsync(RuleHoliday ruleHoliday, ICountryRepository countryRepository)
         {
-            Country record = countryRepository.GetById(ruleHoliday.CountryId);
+            Country record = await countryRepository.GetByIdAsync(ruleHoliday.CountryId);
 
             if (record != null && ruleHoliday.CountryIsoCode != record.CountryIsoCode3)
             {
@@ -206,9 +224,9 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
             return record != null;
         }
 
-        protected bool StateMustExist(RuleHoliday ruleHoliday, IStateRepository stateRepository)
+        protected async Task<bool> StateMustExistAsync(RuleHoliday ruleHoliday, IStateRepository stateRepository)
         {
-            State record = stateRepository.GetById(ruleHoliday.StateId.Value);
+            State record = await stateRepository.GetByIdAsync(ruleHoliday.StateId.Value);
 
             if (record != null && ruleHoliday.StateIsoCode != record.StateIsoCode)
             {

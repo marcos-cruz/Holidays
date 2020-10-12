@@ -16,37 +16,20 @@ namespace Bigai.Holidays.Core.Domain.Interfaces.Services.Holidays
         /// </summary>
         /// <param name="ruleHoliday">Instance of <see cref="RuleHoliday"/> to be added.</param>
         /// <returns>Returns an instance of <see cref="CommandResult"/> containing the operation status code  and the <see cref="RuleHoliday"/> added to the database.</returns>
-        CommandResult Add(RuleHoliday ruleHoliday);
-
-        /// <summary>
-        /// Add a <see cref="RuleHoliday"/> in database.
-        /// </summary>
-        /// <param name="ruleHoliday">Instance of <see cref="RuleHoliday"/> to be added.</param>
-        /// <returns>Returns an instance of <see cref="CommandResult"/> containing the operation status code  and the <see cref="RuleHoliday"/> added to the database.</returns>
         Task<CommandResult> AddAsync(RuleHoliday ruleHoliday);
 
         /// <summary>
         /// Add a list of <see cref="RuleHoliday"/> in database.
         /// </summary>
         /// <param name="listOfRuleHolidays">List of <see cref="RuleHoliday"/> to be added.</param>
-        CommandResult AddRange(List<RuleHoliday> listOfRuleHolidays);
-
-        /// <summary>
-        /// Add a list of <see cref="RuleHoliday"/> in database.
-        /// </summary>
-        /// <param name="listOfRuleHolidays">List of <see cref="RuleHoliday"/> to be added.</param>
-        Task<CommandResult> AddRangeAsync(List<RuleHoliday> listOfRuleHolidays);
+        /// <param name="validateRepository">Determines whether the list should be validated. Default <c>true</c>.</param>
+        Task<CommandResult> AddRangeAsync(List<RuleHoliday> listOfRuleHolidays, bool validateRepository = true);
 
         /// <summary>
         /// Add a list of <see cref="RuleHoliday"/> lists in database.
         /// </summary>
         /// <param name="listOfListRuleHolidays">List of <see cref="RuleHoliday"/> lists to be added.</param>
-        CommandResult AddRange(List<List<RuleHoliday>> listOfListRuleHolidays);
-
-        /// <summary>
-        /// Add a list of <see cref="RuleHoliday"/> lists in database.
-        /// </summary>
-        /// <param name="listOfListRuleHolidays">List of <see cref="RuleHoliday"/> lists to be added.</param>
-        Task<CommandResult> AddRangeAsync(List<List<RuleHoliday>> listOfListRuleHolidays);
+        /// <param name="validateRepository">Determines whether the list should be validated. Default <c>true</c>.</param>
+        Task<CommandResult> AddRangeAsync(List<List<RuleHoliday>> listOfListRuleHolidays, bool validateRepository = true);
     }
 }

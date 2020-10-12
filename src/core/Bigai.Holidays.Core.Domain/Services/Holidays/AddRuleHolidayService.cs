@@ -22,6 +22,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
         #region Private Variables
 
         private readonly AddRuleHolidayValidator _addRuleHolidayValidator;
+        private readonly AddRuleHolidayValidator _addRuleHolidayValidatorRepository;
 
         #endregion
 
@@ -35,44 +36,13 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
         public AddRuleHolidayService(INotificationHandler notificationHandler, IUnitOfWorkCore unitOfWork, IUserLogged userLogged) : base(notificationHandler, unitOfWork, userLogged)
         {
             _commandName = "Adicionar regras de feriados";
-            _addRuleHolidayValidator = new AddRuleHolidayValidator(CountryRepository, StateRepository, RuleHolidayRepository);
+            _addRuleHolidayValidator = new AddRuleHolidayValidator();
+            _addRuleHolidayValidatorRepository = new AddRuleHolidayValidator(CountryRepository, StateRepository, RuleHolidayRepository);
         }
 
         #endregion
 
         #region Public Methods
-
-        public CommandResult Add(RuleHoliday ruleHoliday)
-        {
-            CommandResult commandResult;
-            Stopwatch watch = Stopwatch.StartNew();
-
-            try
-            {
-                if (!CanAdd(ruleHoliday))
-                {
-                    commandResult = CommandResult.BadRequest("Registro não pode ser salvo, existem erros.");
-                }
-                else
-                {
-                    ruleHoliday = RuleHolidayRepository.Add(ruleHoliday);
-                    commandResult = Commit(_commandName, ruleHoliday.Action);
-                    if (commandResult.Success)
-                    {
-                        commandResult.Data = ruleHoliday;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-            }
-
-            watch.Stop();
-            commandResult.ElapsedTime = watch.ElapsedMilliseconds;
-
-            return commandResult;
-        }
 
         public async Task<CommandResult> AddAsync(RuleHoliday ruleHoliday)
         {
@@ -81,7 +51,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
 
             try
             {
-                if (!CanAdd(ruleHoliday))
+                if (!await CanAddAsync(ruleHoliday, true))
                 {
                     commandResult = CommandResult.BadRequest("Registro não pode ser salvo, existem erros.");
                 }
@@ -106,7 +76,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
             return commandResult;
         }
 
-        public CommandResult AddRange(List<RuleHoliday> listOfRuleHolidays)
+        public async Task<CommandResult> AddRangeAsync(List<RuleHoliday> listOfRuleHolidays, bool validateRepository = true)
         {
             CommandResult commandResult;
             Stopwatch watch = Stopwatch.StartNew();
@@ -120,48 +90,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                 }
                 else
                 {
-                    if (!CanAdd(listOfRuleHolidays))
-                    {
-                        commandResult = CommandResult.BadRequest("Nenhum registro salvo, existem erros.");
-                    }
-                    else
-                    {
-                        RuleHolidayRepository.AddRange(listOfRuleHolidays);
-                        commandResult = Commit(_commandName, ActionType.Register);
-                        if (commandResult.Success)
-                        {
-                            commandResult.Message = $"Ação concluída com sucesso. Salvos { recordsToSave } registros de um total de { recordsToSave }";
-                            commandResult.Data = listOfRuleHolidays;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-            }
-
-            watch.Stop();
-            commandResult.ElapsedTime = watch.ElapsedMilliseconds;
-
-            return commandResult;
-        }
-
-        public async Task<CommandResult> AddRangeAsync(List<RuleHoliday> listOfRuleHolidays)
-        {
-            CommandResult commandResult;
-            Stopwatch watch = Stopwatch.StartNew();
-
-            try
-            {
-                int recordsToSave = Count(listOfRuleHolidays);
-                if (recordsToSave == 0)
-                {
-                    commandResult = CommandResult.BadRequest("Nenhum registro salvo, a lista está vazia.");
-                }
-                else
-                {
-                    if (!CanAdd(listOfRuleHolidays))
+                    if (!await CanAddAsync(listOfRuleHolidays, validateRepository))
                     {
                         commandResult = CommandResult.BadRequest("Nenhum registro salvo, existem erros.");
                     }
@@ -188,7 +117,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
             return commandResult;
         }
 
-        public CommandResult AddRange(List<List<RuleHoliday>> listOfListRuleHolidays)
+        public async Task<CommandResult> AddRangeAsync(List<List<RuleHoliday>> listOfListRuleHolidays, bool validateRepository = true)
         {
             CommandResult commandResult;
             Stopwatch watch = Stopwatch.StartNew();
@@ -202,71 +131,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                 }
                 else
                 {
-                    if (!CanAdd(listOfListRuleHolidays))
-                    {
-                        commandResult = CommandResult.BadRequest("Nenhum registro salvo, existem erros.");
-                    }
-                    else
-                    {
-                        int recordsSaved = 0;
-                        CommandResult result = CommandResult.Ok("");
-
-                        for (int i = 0, j = listOfListRuleHolidays.Count; i < j; i++)
-                        {
-                            var list = listOfListRuleHolidays[i];
-
-                            RuleHolidayRepository.AddRange(list);
-                            result = Commit(_commandName, ActionType.Register);
-
-                            if (result.Success)
-                            {
-                                recordsSaved += list.Count;
-                            }
-                            else
-                            {
-                                i = j;
-                            }
-                        }
-
-                        commandResult = result;
-                        if (commandResult.Success && recordsSaved == recordsToSave)
-                        {
-                            commandResult.Message = $"Ação concluída com sucesso. Salvos { recordsSaved } registros de um total de { recordsToSave }";
-                            commandResult.Data = listOfListRuleHolidays;
-                        }
-                        else if (!commandResult.Success)
-                        {
-                            commandResult.Message = $"Ação não foi concluída. Salvos { recordsSaved } registros de um total de { recordsToSave }";
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-            }
-
-            watch.Stop();
-            commandResult.ElapsedTime = watch.ElapsedMilliseconds;
-
-            return commandResult;
-        }
-
-        public async Task<CommandResult> AddRangeAsync(List<List<RuleHoliday>> listOfListRuleHolidays)
-        {
-            CommandResult commandResult;
-            Stopwatch watch = Stopwatch.StartNew();
-
-            try
-            {
-                int recordsToSave = Count(listOfListRuleHolidays);
-                if (recordsToSave == 0)
-                {
-                    commandResult = CommandResult.BadRequest("Nenhum registro salvo, a lista está vazia.");
-                }
-                else
-                {
-                    if (!CanAdd(listOfListRuleHolidays))
+                    if (!await CanAddAsync(listOfListRuleHolidays, validateRepository))
                     {
                         commandResult = CommandResult.BadRequest("Nenhum registro salvo, existem erros.");
                     }
@@ -320,18 +185,20 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
 
         #region Private Methods
 
-        private bool CanAdd(RuleHoliday ruleHoliday)
+        private async Task<bool> CanAddAsync(RuleHoliday ruleHoliday, bool validateRepository)
         {
-            return InstanceNotNull(ruleHoliday) && IsValid(_addRuleHolidayValidator, ruleHoliday);
+            var validator = validateRepository == true ? _addRuleHolidayValidatorRepository : _addRuleHolidayValidator;
+
+            return InstanceNotNull(ruleHoliday) && (await IsValidAsync(validator, ruleHoliday));
         }
 
-        private bool CanAdd(List<RuleHoliday> rulesHolidays)
+        private async Task<bool> CanAddAsync(List<RuleHoliday> rulesHolidays, bool validateRepository)
         {
             bool canAdd = true;
 
             for (int i = 0, j = rulesHolidays.Count; i < j; i++)
             {
-                bool result = CanAdd(rulesHolidays[i]);
+                bool result = await CanAddAsync(rulesHolidays[i], validateRepository);
                 if (!result && canAdd)
                 {
                     canAdd = result;
@@ -341,13 +208,13 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
             return canAdd;
         }
 
-        private bool CanAdd(List<List<RuleHoliday>> listOfListRulesHolidays)
+        private async Task<bool> CanAddAsync(List<List<RuleHoliday>> listOfListRulesHolidays, bool validateRepository)
         {
             bool canAdd = true;
 
             for (int i = 0, j = listOfListRulesHolidays.Count; i < j; i++)
             {
-                bool result = CanAdd(listOfListRulesHolidays[i]);
+                bool result = await CanAddAsync(listOfListRulesHolidays[i], validateRepository);
                 if (!result && canAdd)
                 {
                     canAdd = result;

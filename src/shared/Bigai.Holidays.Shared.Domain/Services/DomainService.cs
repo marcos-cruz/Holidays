@@ -5,12 +5,11 @@ using Bigai.Holidays.Shared.Domain.Interfaces.Repositories;
 using Bigai.Holidays.Shared.Domain.Interfaces.Services;
 using Bigai.Holidays.Shared.Domain.Models;
 using Bigai.Holidays.Shared.Domain.Notifications;
+using Bigai.Holidays.Shared.Domain.Validators;
 using Bigai.Holidays.Shared.Infra.CrossCutting.Helpers;
 using Bigai.Holidays.Shared.Infra.CrossCutting.Interfaces;
-using FluentValidation;
 using FluentValidation.Results;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -48,6 +47,10 @@ namespace Bigai.Holidays.Shared.Domain.Services
 
         #region Protected Methods
 
+        /// <summary>
+        /// Returns the instance of the notification handler.
+        /// </summary>
+        /// <returns>The instance of the notification handler.</returns>
         protected INotificationHandler GetNotificationHandler()
         {
             return _notificationHandler;
@@ -60,47 +63,6 @@ namespace Bigai.Holidays.Shared.Domain.Services
         protected IUserLogged GetUserLogged()
         {
             return _userLogged;
-        }
-
-        /// <summary>
-        /// Save all change in this context to database.
-        /// </summary>
-        /// <param name="commandName">Process name for notification in case of error.</param>
-        /// <param name="typeProcess">Process type for creating the response code.</param>
-        /// <returns>Result of the action with the http status code..</returns>
-        protected CommandResult Commit(string commandName, ActionType typeProcess)
-        {
-            CommandResult commandResult;
-
-            if (HasNotification())
-            {
-                commandResult = CommandResult.BadRequest("Ação não foi concluída, existem erros.");
-            }
-            else
-            {
-                try
-                {
-                    if (_unitOfWork.Commit())
-                    {
-                        commandResult = CommandResult.Ok("Ação concluída com sucesso");
-                        if (typeProcess == ActionType.Register)
-                        {
-                            commandResult = CommandResult.Created("Ação concluída com sucesso");
-                        }
-                    }
-                    else
-                    {
-                        commandResult = CommandResult.ServiceUnavailable($"Serviço indisponível, tente novamente mais tarde.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    NotifyError(commandName, ex.Message);
-                    commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-                }
-            }
-
-            return commandResult;
         }
 
         /// <summary>
@@ -176,15 +138,6 @@ namespace Bigai.Holidays.Shared.Domain.Services
         }
 
         /// <summary>
-        /// Returns a list of errors.
-        /// </summary>
-        /// <returns>List of errors</returns>
-        protected List<DomainNotification> GetNotifications()
-        {
-            return _notificationHandler.GetNotifications();
-        }
-
-        /// <summary>
         /// Determines whether an object's instance is null.
         /// </summary>
         /// <param name="entity">Instance to be validated.</param>
@@ -204,11 +157,11 @@ namespace Bigai.Holidays.Shared.Domain.Services
         /// <typeparam name="TValidator">Validator type.</typeparam>
         /// <typeparam name="TEntity">Entity type.</typeparam>
         /// <param name="validator">Validator with business rules to be tested at the entity.</param>
-        /// <param name="entity">Entity to be tested.</param>
-        /// <returns></returns>
-        protected bool IsValid<TValidator, TEntity>(TValidator validator, TEntity entity) where TValidator : AbstractValidator<TEntity> where TEntity : Entity
+        /// <param name="entity">Instance of entity to be validated.</param>
+        /// <returns><c>true</c> if the entity is valida, otherwise <c>false</c>.</returns>
+        protected async Task<bool> IsValidAsync<TValidator, TEntity>(TValidator validator, TEntity entity) where TValidator : EntityValidatorError<TEntity> where TEntity : Entity
         {
-            ValidationResult validationResult = validator.Validate(entity);
+            ValidationResult validationResult = await validator.ValidateAsync(entity);
 
             if (!validationResult.IsValid)
             {
@@ -217,16 +170,6 @@ namespace Bigai.Holidays.Shared.Domain.Services
             }
 
             return validationResult.IsValid;
-        }
-
-        /// <summary>
-        /// This method reads a CSV file and returns its contents in an array of rows and columns.
-        /// </summary>
-        /// <param name="fileName">Path containing the name of the CSV file to read.</param>
-        /// <returns>Returns a multidimensional array with the rows and columns that were read from the CSV file. If you are unable to read the file or if it is empty, then return null.</returns>
-        protected string[,] ImportCsvFile(string fileName)
-        {
-            return CsvHelper.LoadCsv(fileName);
         }
 
         /// <summary>

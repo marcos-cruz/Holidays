@@ -1,7 +1,6 @@
 ﻿using Bigai.Holidays.Core.Domain.Interfaces.Repositories;
 using Bigai.Holidays.Core.Domain.Interfaces.Services.States;
 using Bigai.Holidays.Core.Domain.Mappers.States;
-using Bigai.Holidays.Core.Domain.Models.Countries;
 using Bigai.Holidays.Core.Domain.Models.States;
 using Bigai.Holidays.Core.Domain.Services.Abstracts;
 using Bigai.Holidays.Core.Domain.Services.Countries;
@@ -46,64 +45,6 @@ namespace Bigai.Holidays.Core.Domain.Services.States
 
         #region Public Methods
 
-        public CommandResult Import(string filename)
-        {
-            CommandResult commandResult;
-            Stopwatch watch = Stopwatch.StartNew();
-            _file = filename.GetFileNameFromPath();
-
-            try
-            {
-                if (!FileExist(filename))
-                {
-                    NotifyError(_file, $"{filename} não existe.");
-                    commandResult = CommandResult.BadRequest($"{ _file } não foi localizado.");
-                }
-                else
-                {
-                    string[,] content = ImportCsvFile(filename);
-
-                    if (content == null)
-                    {
-                        NotifyError(_file, $"{filename} está vazio.");
-                        commandResult = CommandResult.BadRequest($"{ _file } não tem registros.");
-                    }
-                    else
-                    {
-                        int items = content.GetLength(0);
-                        int columns = content.GetLength(1);
-
-                        if (items == 0 || columns != _columns)
-                        {
-                            NotifyError(_file, $"Formato inválido. Forneça um arquivo no formato CSV com { _columns } colunas.");
-                            commandResult = CommandResult.BadRequest($"Importação do arquivo { _file } não foi concluída, existem erros.");
-                        }
-                        else
-                        {
-                            List<List<State>> list = content.ToListOfStateList(CountryRepository, GetUserLogged());
-                            commandResult = _addStateService.AddRange(list);
-                            if (commandResult.Success)
-                            {
-                                commandResult.Message = commandResult.Message.Replace("Ação concluída", $"{_file} importado");
-                                commandResult.Data = null;
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-            }
-
-            CsvHelper.DeleteFile(filename);
-
-            watch.Stop();
-            commandResult.ElapsedTime = watch.ElapsedMilliseconds;
-
-            return commandResult;
-        }
-
         public async Task<CommandResult> ImportAsync(string filename)
         {
             CommandResult commandResult;
@@ -139,7 +80,8 @@ namespace Bigai.Holidays.Core.Domain.Services.States
                         else
                         {
                             List<List<State>> list = await content.ToListOfStatesListAsync(CountryRepository, GetUserLogged());
-                            commandResult = _addStateService.AddRange(list);
+                            bool validateRepository = await MustBeValidateAsync((list[0])[0]);
+                            commandResult = await _addStateService.AddRangeAsync(list, validateRepository);
                             if (commandResult.Success)
                             {
                                 commandResult.Message = commandResult.Message.Replace("Ação concluída", $"{_file} importado");
@@ -166,58 +108,9 @@ namespace Bigai.Holidays.Core.Domain.Services.States
 
         #region Private Methods
 
-        private void CreateRelationship(List<List<State>> list)
+        private async Task<bool> MustBeValidateAsync(State state)
         {
-            Country country = null;
-
-            for (int i = 0, j = list.Count; i < j; i++)
-            {
-                var states = list[i];
-                if (country == null)
-                {
-                    country = GetCountryByIsoCode(states[0].CountryIsoCode);
-                }
-
-                for (int x = 0, y = states.Count; x < y; x++)
-                {
-                    if (country != null && states[x].CountryIsoCode != country.CountryIsoCode3)
-                    {
-                        country = GetCountryByIsoCode(states[x].CountryIsoCode);
-                    }
-
-                    if (country != null && states[x].CountryIsoCode == country.CountryIsoCode3)
-                    {
-                        states[x].CreateRelationship(country.Id);
-                    }
-                }
-            }
-        }
-
-        private async Task CreateRelationshipAsync(List<List<State>> list)
-        {
-            Country country = null;
-
-            for (int i = 0, j = list.Count; i < j; i++)
-            {
-                var states = list[i];
-                if (country == null)
-                {
-                    country = await GetCountryByIsoCodeAsync(states[0].CountryIsoCode);
-                }
-
-                for (int x = 0, y = states.Count; x < y; x++)
-                {
-                    if (country != null && states[x].CountryIsoCode != country.CountryIsoCode3)
-                    {
-                        country = await GetCountryByIsoCodeAsync(states[x].CountryIsoCode);
-                    }
-                    
-                    if (country != null && states[x].CountryIsoCode == country.CountryIsoCode3)
-                    {
-                        states[x].CreateRelationship(country.Id);
-                    }
-                }
-            }
+            return (await StateRepository.GetCountAsync(s => s.CountryIsoCode == state.CountryIsoCode && s.StateIsoCode == state.StateIsoCode)) > 0;
         }
 
         #endregion

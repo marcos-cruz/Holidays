@@ -19,7 +19,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Abstracts
     {
         #region Private Variables
 
-        private readonly IUnitOfWorkCore _unitOfWork;
+        protected readonly IUnitOfWorkCore _unitOfWork;
         protected string _commandName;
 
         #endregion
@@ -112,29 +112,9 @@ namespace Bigai.Holidays.Core.Domain.Services.Abstracts
         /// </summary>
         /// <param name="countryIsoCode">Country code consisting of 3 letters.</param>
         /// <returns>Instance of <see cref="Country"/> or null if country does not exist.</returns>
-        public Country GetCountryByIsoCode(string countryIsoCode)
-        {
-            return CountryRepository.Find(c => c.CountryIsoCode3 == countryIsoCode).FirstOrDefault();
-        }
-
-        /// <summary>
-        /// Gets the <see cref="Country"/> by country ISO 3 code.
-        /// </summary>
-        /// <param name="countryIsoCode">Country code consisting of 3 letters.</param>
-        /// <returns>Instance of <see cref="Country"/> or null if country does not exist.</returns>
         public async Task<Country> GetCountryByIsoCodeAsync(string countryIsoCode)
         {
             return (await CountryRepository.FindAsync(c => c.CountryIsoCode3 == countryIsoCode)).FirstOrDefault();
-        }
-
-        /// <summary>
-        /// Gets the <see cref="State"/> by state ISO code.
-        /// </summary>
-        /// <param name="countryIsoCode">State ISO code.</param>
-        /// <returns>Instance of <see cref="State"/> or null if country does not exist.</returns>
-        public State GetStateByIsoCode(string countryIsoCode, string stateIsoCode)
-        {
-            return StateRepository.Find(c => c.CountryIsoCode == countryIsoCode && c.StateIsoCode == stateIsoCode).FirstOrDefault();
         }
 
         /// <summary>

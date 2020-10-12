@@ -16,19 +16,12 @@ namespace Bigai.Holidays.Shared.Domain.Interfaces.Repositories
         /// Determines whether the database already exists.
         /// </summary>
         /// <returns><c>true</c> if database exist, otherwise <c>false</c>.</returns>
-        bool DatabaseExist();
+        Task<bool> DatabaseExistAsync();
 
         /// <summary>
         /// Creates the database.
         /// </summary>
-        void CreateDatabase();
-
-        /// <summary>
-        /// Add a <see cref="TEntity"/> in database.
-        /// </summary>
-        /// <param name="entity">Instance of <see cref="TEntity"/> to be added.</param>
-        /// <returns><see cref="TEntity"/> that was added to the database.</returns>
-        TEntity Add(TEntity entity);
+        Task<bool> CreateDatabaseAsync();
 
         /// <summary>
         /// Add a <see cref="TEntity"/> in database.
@@ -41,21 +34,8 @@ namespace Bigai.Holidays.Shared.Domain.Interfaces.Repositories
         /// Add a list of <see cref="TEntity"/> in database.
         /// </summary>
         /// <param name="entities">List of instances of <see cref="TEntity"/> to be added.</param>
-        void AddRange(List<TEntity> entities);
-
-        /// <summary>
-        /// Add a list of <see cref="TEntity"/> in database.
-        /// </summary>
-        /// <param name="entities">List of instances of <see cref="TEntity"/> to be added.</param>
         /// <returns></returns>
         Task AddRangeAsync(List<TEntity> entities);
-
-        /// <summary>
-        /// Update a <see cref="TEntity"/> in database.
-        /// </summary>
-        /// <param name="entity">Instance of <see cref="TEntity"/> to be updated.</param>
-        /// <returns><see cref="TEntity"/> that was updated to the database.</returns>
-        TEntity Update(TEntity entity);
 
         /// <summary>
         /// Update a <see cref="TEntity"/> in database.
@@ -71,10 +51,11 @@ namespace Bigai.Holidays.Shared.Domain.Interfaces.Repositories
         Task RemoveAsync(Guid id);
 
         /// <summary>
-        /// Remove a <see cref="TEntity"/> in database.
+        /// Determines the number of records that satisfy the query filter.
         /// </summary>
-        /// <param name="id">Id of <see cref="TEntity"/> to be removed.</param>
-        void Remove(Guid id);
+        /// <param name="predicate">Expression to be tested.</param>
+        /// <returns>The number od records taht satisfy the query filter.</returns>
+        Task<int> GetCountAsync(Expression<Func<TEntity, bool>> predicate);
 
         /// <summary>
         /// Gets an <see cref="TEntity"/> by its id.
@@ -84,13 +65,6 @@ namespace Bigai.Holidays.Shared.Domain.Interfaces.Repositories
         Task<TEntity> GetByIdAsync(Guid id);
 
         /// <summary>
-        /// Gets an <see cref="TEntity"/> by its id.
-        /// </summary>
-        /// <param name="id">Id that identifies the entity in the database.</param>
-        /// <returns>Instance of the <see cref="TEntity"/> corresponding to the Id, <c>null</c> if it does not exist.</returns>
-        TEntity GetById(Guid id);
-
-        /// <summary>
         /// Gets an lists of <see cref="TEntity"/> according to an expression.
         /// </summary>
         /// <param name="predicate">Expression to be tested.</param>
@@ -98,22 +72,9 @@ namespace Bigai.Holidays.Shared.Domain.Interfaces.Repositories
         Task<IEnumerable<TEntity>> FindAsync(Expression<Func<TEntity, bool>> predicate);
 
         /// <summary>
-        /// Gets an lists of <see cref="TEntity"/> according to an expression.
-        /// </summary>
-        /// <param name="predicate">Expression to be tested.</param>
-        /// <returns>Lists of <see cref="TEntity"/> according to an expression.</returns>
-        IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
-
-        /// <summary>
         /// Save all changes in this context to database.
         /// </summary>
         /// <returns>Number os entities written in database.</returns>
         Task<int> SaveChangesAsync();
-
-        /// <summary>
-        /// Save all changes in this context to database.
-        /// </summary>
-        /// <returns>Number os entities written in database.</returns>
-        int SaveChanges();
     }
 }

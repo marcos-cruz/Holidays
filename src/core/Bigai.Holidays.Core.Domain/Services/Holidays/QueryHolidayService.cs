@@ -37,40 +37,6 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
 
         #region Public Methods
 
-        public CommandResult GetHolidays(string countryIsoCode, int year)
-        {
-            _commandName = "GetHolidays";
-            CommandResult commandResult;
-            Stopwatch watch = Stopwatch.StartNew();
-
-            try
-            {
-                var holidays = HolidayRepository.GetHolidays(countryIsoCode, year);
-                if (holidays == null || holidays.Count() == 0)
-                {
-                    commandResult = _addHolidayService.Add(countryIsoCode, year);
-                    if (commandResult.Success)
-                    {
-                        commandResult = GetHolidays(countryIsoCode, year);
-                    }
-                }
-                else
-                {
-                    commandResult = CommandResult.Ok($"{holidays} registros encontrados.");
-                    commandResult.Data = holidays.ToResponse();
-                }
-            }
-            catch (Exception)
-            {
-                commandResult = CommandResult.InternalServerError($"Ocorreu um erro na busca.");
-            }
-
-            watch.Stop();
-            commandResult.ElapsedTime = watch.ElapsedMilliseconds;
-
-            return commandResult;
-        }
-
         public async Task<CommandResult> GetHolidaysAsync(string countryIsoCode, int year)
         {
             _commandName = "GetHolidays";
@@ -82,7 +48,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                 var holidays = await HolidayRepository.GetHolidaysAsync(countryIsoCode, year);
                 if (holidays == null || holidays.Count() == 0)
                 {
-                    commandResult = _addHolidayService.Add(countryIsoCode, year);
+                    commandResult = await _addHolidayService.AddAsync(countryIsoCode, year);
                     if (commandResult.Success)
                     {
                         commandResult = await GetHolidaysAsync(countryIsoCode, year);
@@ -90,7 +56,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
                 }
                 else
                 {
-                    commandResult = CommandResult.Ok($"{holidays} registros encontrados.");
+                    commandResult = CommandResult.Ok($"{holidays.Count()} feriados encontrados.");
                     commandResult.Data = holidays.ToResponse();
                 }
             }

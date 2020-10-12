@@ -46,8 +46,8 @@ namespace Bigai.Holidays.Core.Services.Api.Controllers.V1
         /// <param name="countryIsoCode">Country code consisting of 3 letters, according to ISO-3166.</param>
         /// <param name="year">Year to query holidays.</param>
         /// <returns>Returns a CommandResponse containing the result of executing the command.</returns>
-        [HttpPost, DisableRequestSizeLimit]
-        [Route("{token:guid}/countryIsoCode/year")]
+        [HttpGet]
+        [Route("{token:guid}/{countryIsoCode}/{year:int}")]
         [ProducesResponseType(typeof(CommandResponse), (int)HttpStatusCode.BadRequest)]
         [ProducesResponseType(typeof(CommandResponse), (int)HttpStatusCode.Unauthorized)]
         [ProducesResponseType(typeof(CommandResponse), (int)HttpStatusCode.InternalServerError)]

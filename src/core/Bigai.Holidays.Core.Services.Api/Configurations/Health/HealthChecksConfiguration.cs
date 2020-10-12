@@ -39,9 +39,9 @@ namespace Bigai.Holidays.Core.Services.Api.Configurations.Health
                 //
                 .AddSqlServer(connectionString: connectionString, healthQuery: "SELECT 1;", name: "SQL Server", failureStatus: HealthStatus.Degraded)
                 //
-                // Checks whether the countries table has records
+                // Checks whether the holidays table has records
                 //
-                .AddCheck("Countries", new SqlServerHealthCheck(connectionString));
+                .AddCheck("Holidays", new SqlServerHealthCheck(connectionString));
                 //
                 // .AddSqlServer(connectionString, name: "SQL Server") // Checks whether the database is responding
                 //

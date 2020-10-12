@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Bigai.Holidays.Shared.Infra.CrossCutting.Mappers;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System;
 using System.Threading;
@@ -33,7 +34,7 @@ namespace Bigai.Holidays.Core.Services.Api.Configurations.Health
         #region Public Methods
 
         /// <summary>
-        /// Perform a query to check how many countries are registered in the Countries table.
+        /// Perform a query to check how many holidays are registered in the Holidays table in current year.
         /// </summary>
         /// <param name="context">Represent the context information associated.</param>
         /// <param name="cancellationToken">Notification that operations should be canceled.</param>
@@ -42,17 +43,22 @@ namespace Bigai.Holidays.Core.Services.Api.Configurations.Health
         {
             try
             {
+                DateTime startDate = new DateTime(DateTime.Now.Year, 01, 01);
+                DateTime endDate = new DateTime(DateTime.Now.Year, 12, 31);
+
                 using (var connection = new SqlConnection(_connection))
                 {
                     await connection.OpenAsync(cancellationToken);
 
                     var command = connection.CreateCommand();
-                    command.CommandText = "select count(id) from countries";
+                    command.CommandText = $"select count(id) from holidays where holidaydate >= '{startDate.ToSqlDate()}' and holidaydate <= '{endDate.ToSqlDate()}'";
+
+                    var x = Convert.ToInt32(await command.ExecuteScalarAsync(cancellationToken)) > 0 ? HealthCheckResult.Healthy() : HealthCheckResult.Unhealthy();
 
                     return Convert.ToInt32(await command.ExecuteScalarAsync(cancellationToken)) > 0 ? HealthCheckResult.Healthy() : HealthCheckResult.Unhealthy();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return HealthCheckResult.Unhealthy();
             }

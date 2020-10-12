@@ -66,6 +66,7 @@ namespace Bigai.Holidays.Core.Domain.Mappers.Holidays
 
         #endregion
 
+        #region ToDomain
 
         internal static List<List<Holiday>> ToHolidayList(this List<RuleHoliday> rulesHolidays, INotificationHandler notificationHandler, int year, IUserLogged userLogged)
         {
@@ -98,6 +99,10 @@ namespace Bigai.Holidays.Core.Domain.Mappers.Holidays
 
             return list;
         }
+
+        #endregion
+
+        #region Private Methods
 
         private static List<Holiday> GetHolidaysFromRules(INotificationHandler notificationHandler, List<RuleHoliday> rulesHolidays, int start, int end, int year, IUserLogged userLogged)
         {
@@ -392,5 +397,7 @@ namespace Bigai.Holidays.Core.Domain.Mappers.Holidays
                 holidayDate = date;
             }
         }
+
+        #endregion
     }
 }

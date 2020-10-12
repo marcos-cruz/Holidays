@@ -16,37 +16,20 @@ namespace Bigai.Holidays.Core.Domain.Interfaces.Services.States
         /// </summary>
         /// <param name="state">Instance of <see cref="State"/> to be added.</param>
         /// <returns>Returns an instance of <see cref="CommandResult"/> containing the operation status code  and the <see cref="State"/> added to the database.</returns>
-        CommandResult Add(State state);
-
-        /// <summary>
-        /// Add a <see cref="State"/> in database.
-        /// </summary>
-        /// <param name="state">Instance of <see cref="State"/> to be added.</param>
-        /// <returns>Returns an instance of <see cref="CommandResult"/> containing the operation status code  and the <see cref="State"/> added to the database.</returns>
         Task<CommandResult> AddAsync(State state);
 
         /// <summary>
         /// Add a list of <see cref="State"/> in database.
         /// </summary>
         /// <param name="listOfStates">List of <see cref="State"/> to be added.</param>
-        CommandResult AddRange(List<State> listOfStates);
-
-        /// <summary>
-        /// Add a list of <see cref="State"/> in database.
-        /// </summary>
-        /// <param name="listOfStates">List of <see cref="State"/> to be added.</param>
-        Task<CommandResult> AddRangeAsync(List<State> listOfStates);
+        /// <param name="validateRepository">Determines whether the list should be validated. Default <c>true</c>.</param>
+        Task<CommandResult> AddRangeAsync(List<State> listOfStates, bool validateRepository = true);
 
         /// <summary>
         /// Add a list of <see cref="State"/> lists in database.
         /// </summary>
         /// <param name="listOfListStates">List of <see cref="State"/> lists to be added.</param>
-        CommandResult AddRange(List<List<State>> listOfListStates);
-
-        /// <summary>
-        /// Add a list of <see cref="State"/> lists in database.
-        /// </summary>
-        /// <param name="listOfListStates">List of <see cref="State"/> lists to be added.</param>
-        Task<CommandResult> AddRangeAsync(List<List<State>> listOfListStates);
+        /// <param name="validateRepository">Determines whether the list should be validated. Default <c>true</c>.</param>
+        Task<CommandResult> AddRangeAsync(List<List<State>> listOfListStates, bool validateRepository = true);
     }
 }

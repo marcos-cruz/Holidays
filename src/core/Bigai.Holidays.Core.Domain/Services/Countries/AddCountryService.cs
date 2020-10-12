@@ -22,6 +22,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
         #region Private Variables
 
         private readonly AddCountryValidator _addCountryValidator;
+        private readonly AddCountryValidator _addCountryValidatorRepository;
 
         #endregion
 
@@ -35,44 +36,13 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
         public AddCountryService(INotificationHandler notificationHandler, IUnitOfWorkCore unitOfWork, IUserLogged userLogged) : base(notificationHandler, unitOfWork, userLogged)
         {
             _commandName = "Adicionar país";
-            _addCountryValidator = new AddCountryValidator(CountryRepository);
+            _addCountryValidator = new AddCountryValidator();
+            _addCountryValidatorRepository = new AddCountryValidator(CountryRepository);
         }
 
         #endregion
 
         #region Public Methods
-
-        public CommandResult Add(Country country)
-        {
-            CommandResult commandResult;
-            Stopwatch watch = Stopwatch.StartNew();
-
-            try
-            {
-                if (!CanAdd(country))
-                {
-                    commandResult = CommandResult.BadRequest("Registro não pode ser salvo, existem erros.");
-                }
-                else
-                {
-                    country = CountryRepository.Add(country);
-                    commandResult = Commit(_commandName, country.Action);
-                    if (commandResult.Success)
-                    {
-                        commandResult.Data = country;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-            }
-
-            watch.Stop();
-            commandResult.ElapsedTime = watch.ElapsedMilliseconds;
-
-            return commandResult;
-        }
 
         public async Task<CommandResult> AddAsync(Country country)
         {
@@ -81,7 +51,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
 
             try
             {
-                if (!CanAdd(country))
+                if (!await CanAddAsync(country, true))
                 {
                     commandResult = CommandResult.BadRequest("Registro não pode ser salvo, existem erros.");
                 }
@@ -106,7 +76,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
             return commandResult;
         }
 
-        public CommandResult AddRange(List<Country> listOfCountries)
+        public async Task<CommandResult> AddRangeAsync(List<Country> listOfCountries, bool validateRepository = true)
         {
             CommandResult commandResult;
             Stopwatch watch = Stopwatch.StartNew();
@@ -120,48 +90,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
                 }
                 else
                 {
-                    if (!CanAdd(listOfCountries))
-                    {
-                        commandResult = CommandResult.BadRequest("Nenhum registro salvo, existem erros.");
-                    }
-                    else
-                    {
-                        CountryRepository.AddRange(listOfCountries);
-                        commandResult = Commit(_commandName, ActionType.Register);
-                        if (commandResult.Success)
-                        {
-                            commandResult.Message = $"Ação concluída com sucesso. Salvos { recordsToSave } registros de um total de { recordsToSave }";
-                            commandResult.Data = listOfCountries;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-            }
-
-            watch.Stop();
-            commandResult.ElapsedTime = watch.ElapsedMilliseconds;
-
-            return commandResult;
-        }
-
-        public async Task<CommandResult> AddRangeAsync(List<Country> listOfCountries)
-        {
-            CommandResult commandResult;
-            Stopwatch watch = Stopwatch.StartNew();
-
-            try
-            {
-                int recordsToSave = Count(listOfCountries);
-                if (recordsToSave == 0)
-                {
-                    commandResult = CommandResult.BadRequest("Nenhum registro salvo, a lista está vazia.");
-                }
-                else
-                {
-                    if (!CanAdd(listOfCountries))
+                    if (!await CanAddAsync(listOfCountries, validateRepository))
                     {
                         commandResult = CommandResult.BadRequest("Nenhum registro salvo, existem erros.");
                     }
@@ -188,7 +117,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
             return commandResult;
         }
 
-        public CommandResult AddRange(List<List<Country>> listOfListCountries)
+        public async Task<CommandResult> AddRangeAsync(List<List<Country>> listOfListCountries, bool validateRepository = true)
         {
             CommandResult commandResult;
             Stopwatch watch = Stopwatch.StartNew();
@@ -202,71 +131,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
                 }
                 else
                 {
-                    if (!CanAdd(listOfListCountries))
-                    {
-                        commandResult = CommandResult.BadRequest("Nenhum registro salvo, existem erros.");
-                    }
-                    else
-                    {
-                        int recordsSaved = 0;
-                        CommandResult result = CommandResult.Ok("");
-
-                        for (int i = 0, j = listOfListCountries.Count; i < j; i++)
-                        {
-                            var list = listOfListCountries[i];
-
-                            CountryRepository.AddRange(list);
-                            result = Commit(_commandName, ActionType.Register);
-
-                            if (result.Success)
-                            {
-                                recordsSaved += list.Count;
-                            }
-                            else
-                            {
-                                i = j;
-                            }
-                        }
-
-                        commandResult = result;
-                        if (commandResult.Success && recordsSaved == recordsToSave)
-                        {
-                            commandResult.Message = $"Ação concluída com sucesso. Salvos { recordsSaved } registros de um total de { recordsToSave }";
-                            commandResult.Data = listOfListCountries;
-                        }
-                        else if (!commandResult.Success)
-                        {
-                            commandResult.Message = $"Ação não foi concluída. Salvos { recordsSaved } registros de um total de { recordsToSave }";
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-            }
-
-            watch.Stop();
-            commandResult.ElapsedTime = watch.ElapsedMilliseconds;
-
-            return commandResult;
-        }
-
-        public async Task<CommandResult> AddRangeAsync(List<List<Country>> listOfListCountries)
-        {
-            CommandResult commandResult;
-            Stopwatch watch = Stopwatch.StartNew();
-
-            try
-            {
-                int recordsToSave = Count(listOfListCountries);
-                if (recordsToSave == 0)
-                {
-                    commandResult = CommandResult.BadRequest("Nenhum registro salvo, a lista está vazia.");
-                }
-                else
-                {
-                    if (!CanAdd(listOfListCountries))
+                    if (!await CanAddAsync(listOfListCountries, validateRepository))
                     {
                         commandResult = CommandResult.BadRequest("Nenhum registro salvo, existem erros.");
                     }
@@ -320,18 +185,20 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
 
         #region Private Methods
 
-        private bool CanAdd(Country country)
+        private async Task<bool> CanAddAsync(Country country, bool validateRepository)
         {
-            return InstanceNotNull(country) && IsValid(_addCountryValidator, country);
+            var validator = validateRepository == true ? _addCountryValidatorRepository : _addCountryValidator;
+
+            return InstanceNotNull(country) && (await IsValidAsync(validator, country));
         }
 
-        private bool CanAdd(List<Country> countries)
+        private async Task<bool> CanAddAsync(List<Country> countries, bool validateRepository)
         {
             bool canAdd = true;
 
             for (int i = 0, j = countries.Count; i < j; i++)
             {
-                bool result = CanAdd(countries[i]);
+                bool result = await CanAddAsync(countries[i], validateRepository);
                 if (!result && canAdd)
                 {
                     canAdd = result;
@@ -341,13 +208,13 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
             return canAdd;
         }
 
-        private bool CanAdd(List<List<Country>> listOfCountries)
+        private async Task<bool> CanAddAsync(List<List<Country>> listOfCountries, bool validateRepository)
         {
             bool canAdd = true;
 
             for (int i = 0, j = listOfCountries.Count; i < j; i++)
             {
-                bool result = CanAdd(listOfCountries[i]);
+                bool result = await CanAddAsync(listOfCountries[i], validateRepository);
                 if (!result && canAdd)
                 {
                     canAdd = result;

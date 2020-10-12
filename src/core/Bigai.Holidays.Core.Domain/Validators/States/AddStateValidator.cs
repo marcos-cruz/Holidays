@@ -3,6 +3,7 @@ using Bigai.Holidays.Core.Domain.Interfaces.Repositories.States;
 using Bigai.Holidays.Core.Domain.Models.States;
 using FluentValidation;
 using System;
+using System.Threading.Tasks;
 
 namespace Bigai.Holidays.Core.Domain.Validators.States
 {
@@ -23,8 +24,16 @@ namespace Bigai.Holidays.Core.Domain.Validators.States
         /// <summary>
         /// Determines whether the record meets the business rules for adding a new record.
         /// </summary>
+        public AddStateValidator() : base()
+        {
+        }
+
+        /// <summary>
+        /// Determines whether the record meets the business rules for adding a new record.
+        /// </summary>
         /// <param name="countryRepository">Context for accessing the repository.</param>
-        public AddStateValidator(ICountryRepository countryRepository, IStateRepository stateRepository)
+        /// <param name="stateRepository">Context for accessing the repository.</param>
+        public AddStateValidator(ICountryRepository countryRepository, IStateRepository stateRepository) : base()
         {
             _countryRepository = countryRepository ?? throw new ArgumentNullException(nameof(countryRepository));
             _stateRepository = stateRepository ?? throw new ArgumentNullException(nameof(stateRepository));
@@ -39,24 +48,30 @@ namespace Bigai.Holidays.Core.Domain.Validators.States
 
         private void ValidateCountryId()
         {
-            RuleFor(state => state.CountryId)
-                .Must(CountryMustExist).WithMessage("País não existe.");
+            RuleFor(state => state.CountryId).MustAsync(async (state, countryId, cancellation) =>
+            {
+                bool exist = await CountryMustExistAsync(state);
+                return exist;
+            }).WithMessage("País não existe.");
         }
 
-        private bool CountryMustExist(State state, Guid countryId)
+        private async Task<bool> CountryMustExistAsync(State state)
         {
-            return CountryMustExist(state, _countryRepository);
+            return await CountryMustExistAsync(state, _countryRepository);
         }
 
         private void ValidateStateIsoCode()
         {
-            RuleFor(country => country.StateIsoCode)
-                .Must(StateIsoCodeMustBeUnique).WithMessage("{PropertyValue} já existe.");
+            RuleFor(country => country.StateIsoCode).MustAsync(async (country, stateIsoCode, cancellation) =>
+            {
+                bool unique = await StateIsoCodeMustBeUniqueAsync(country);
+                return unique;
+            }).WithMessage("{PropertyValue} já existe.");
         }
 
-        private bool StateIsoCodeMustBeUnique(State state, string stateIsoCode)
+        private async Task<bool> StateIsoCodeMustBeUniqueAsync(State state)
         {
-            return StateIsoCodeMustBeUnique(state, _stateRepository);
+            return await StateIsoCodeMustBeUniqueAsync(state, _stateRepository);
         }
 
         #endregion

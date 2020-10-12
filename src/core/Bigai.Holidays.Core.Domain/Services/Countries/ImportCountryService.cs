@@ -44,64 +44,6 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
 
         #region Public Methods
 
-        public CommandResult Import(string filename)
-        {
-            CommandResult commandResult;
-            Stopwatch watch = Stopwatch.StartNew();
-            _file = filename.GetFileNameFromPath();
-
-            try
-            {
-                if (!FileExist(filename))
-                {
-                    NotifyError(_file, $"{filename} não existe.");
-                    commandResult = CommandResult.BadRequest($"{ _file } não foi localizado.");
-                }
-                else
-                {
-                    string[,] content = ImportCsvFile(filename);
-
-                    if (content == null)
-                    {
-                        NotifyError(_file, $"{filename} está vazio.");
-                        commandResult = CommandResult.BadRequest($"{ _file } não tem registros.");
-                    }
-                    else
-                    {
-                        int items = content.GetLength(0);
-                        int columns = content.GetLength(1);
-
-                        if (items == 0 || columns != _columns)
-                        {
-                            NotifyError(_file, $"Formato inválido. Forneça um arquivo no formato CSV com { _columns } colunas.");
-                            commandResult = CommandResult.BadRequest($"Importação do arquivo { _file } não foi concluída, existem erros.");
-                        }
-                        else
-                        {
-                            List<List<Country>> list = content.ToListOfCountryList(GetUserLogged());
-                            commandResult = _addCountryService.AddRange(list);
-                            if (commandResult.Success)
-                            {
-                                commandResult.Message = commandResult.Message.Replace("Ação concluída", $"{_file} importado");
-                                commandResult.Data = null;
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                commandResult = CommandResult.InternalServerError($"Ocorreu um erro ao salvar.");
-            }
-
-            CsvHelper.DeleteFile(filename);
-
-            watch.Stop();
-            commandResult.ElapsedTime = watch.ElapsedMilliseconds;
-
-            return commandResult;
-        }
-
         public async Task<CommandResult> ImportAsync(string filename)
         {
             CommandResult commandResult;
@@ -136,8 +78,9 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
                         }
                         else
                         {
+                            bool validateRepository = await MustBeValidateAsync();
                             List<List<Country>> list = await content.ToListOfCountryListAsync(GetUserLogged());
-                            commandResult = _addCountryService.AddRange(list);
+                            commandResult = await _addCountryService.AddRangeAsync(list, validateRepository);
                             if (commandResult.Success)
                             {
                                 commandResult.Message = commandResult.Message.Replace("Ação concluída", $"{_file} importado");
@@ -158,6 +101,15 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
             commandResult.ElapsedTime = watch.ElapsedMilliseconds;
 
             return commandResult;
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private async Task<bool> MustBeValidateAsync()
+        {
+            return (await CountryRepository.GetCountAsync(c => c.Id != Guid.Empty)) > 0;
         }
 
         #endregion

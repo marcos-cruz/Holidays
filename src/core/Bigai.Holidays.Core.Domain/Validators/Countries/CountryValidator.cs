@@ -7,6 +7,7 @@ using Bigai.Holidays.Shared.Infra.CrossCutting.Helpers;
 using FluentValidation;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Bigai.Holidays.Core.Domain.Validators.Countries
 {
@@ -198,9 +199,9 @@ namespace Bigai.Holidays.Core.Domain.Validators.Countries
             return !duplicate;
         }
 
-        protected bool AlphaIsoCode2MustBeUnique(Country country, ICountryRepository countryRepository)
+        protected async Task<bool> AlphaIsoCode2MustBeUniqueAsync(Country country, ICountryRepository countryRepository)
         {
-            Country record = countryRepository.Find(c => c.CountryIsoCode2 == country.CountryIsoCode2).FirstOrDefault();
+            Country record = (await countryRepository.FindAsync(c => c.CountryIsoCode2 == country.CountryIsoCode2)).FirstOrDefault();
 
             if (country.Action != ActionType.Register && record.Id == country.Id)
             {
@@ -210,9 +211,9 @@ namespace Bigai.Holidays.Core.Domain.Validators.Countries
             return record == null;
         }
 
-        protected bool AlphaIsoCode3MustBeUnique(Country country, ICountryRepository countryRepository)
+        protected async Task<bool> AlphaIsoCode3MustBeUniqueAsync(Country country, ICountryRepository countryRepository)
         {
-            Country record = countryRepository.Find(c => c.CountryIsoCode3 == country.CountryIsoCode3).FirstOrDefault();
+            Country record = (await countryRepository.FindAsync(c => c.CountryIsoCode3 == country.CountryIsoCode3)).FirstOrDefault();
 
             if (country.Action != ActionType.Register && record.Id == country.Id)
             {

@@ -8,6 +8,7 @@ using Bigai.Holidays.Shared.Infra.CrossCutting.Helpers;
 using FluentValidation;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Bigai.Holidays.Core.Domain.Validators.States
 {
@@ -78,9 +79,9 @@ namespace Bigai.Holidays.Core.Domain.Validators.States
             return BeState(state.CountryIsoCode, stateIsoCode);
         }
 
-        protected bool CountryMustExist(State state, ICountryRepository countryRepository)
+        protected async Task<bool> CountryMustExistAsync(State state, ICountryRepository countryRepository)
         {
-            Country record = countryRepository.GetById(state.CountryId);
+            Country record = await countryRepository.GetByIdAsync(state.CountryId);
 
             if (record != null && state.CountryIsoCode != record.CountryIsoCode3)
             {
@@ -90,9 +91,9 @@ namespace Bigai.Holidays.Core.Domain.Validators.States
             return record != null;
         }
 
-        protected bool StateIsoCodeMustBeUnique(State state, IStateRepository stateRepository)
+        protected async Task<bool> StateIsoCodeMustBeUniqueAsync(State state, IStateRepository stateRepository)
         {
-            State record = stateRepository.Find(c => c.CountryIsoCode == state.CountryIsoCode && c.StateIsoCode == state.StateIsoCode).FirstOrDefault();
+            State record = (await stateRepository.FindAsync(c => c.CountryIsoCode == state.CountryIsoCode && c.StateIsoCode == state.StateIsoCode)).FirstOrDefault();
 
             if (state.Action != ActionType.Register && record.Id == state.Id)
             {

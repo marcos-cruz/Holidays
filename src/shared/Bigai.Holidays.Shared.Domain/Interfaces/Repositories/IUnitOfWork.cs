@@ -12,12 +12,6 @@ namespace Bigai.Holidays.Shared.Domain.Interfaces.Repositories
         /// Save all changes in this context to database.
         /// </summary>
         /// <returns><c>true</c> if the changes was written in database, otherwise <c>false</c>.</returns>
-        bool Commit();
-
-        /// <summary>
-        /// Save all changes in this context to database.
-        /// </summary>
-        /// <returns><c>true</c> if the changes was written in database, otherwise <c>false</c>.</returns>
         Task<bool> CommitAsync();
     }
 }

@@ -92,7 +92,7 @@
         </member>
         <member name="M:Bigai.Holidays.Core.Services.Api.Configurations.Health.SqlServerHealthCheck.CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext,System.Threading.CancellationToken)">
             <summary>
-            Perform a query to check how many countries are registered in the Countries table.
+            Perform a query to check how many holidays are registered in the Holidays table in current year.
             </summary>
             <param name="context">Represent the context information associated.</param>
             <param name="cancellationToken">Notification that operations should be canceled.</param>

@@ -143,6 +143,7 @@ namespace Bigai.Holidays.Core.Services.Api.Configurations
                     new JProperty("data", new JObject(pair.Value.Data.Select(p => new JProperty(p.Key, p.Value))))))))));
             return httpContext.Response.WriteAsync(json.ToString(Formatting.Indented));
         }
+        
         /// <summary>
         /// Disables model state validation so that you can standardize error messages.
         /// </summary>
