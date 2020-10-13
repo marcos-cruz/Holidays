@@ -34,24 +34,24 @@ namespace Bigai.Holidays.Core.Domain.Enums
         /// <param name="name">Name of the status.</param>
         private HolidayType(int key, string name) : base(key, name) { }
 
-        private sealed class HolidayLocal : HolidayType
-        {
-            public HolidayLocal() : base(0, "Local") { }
-        }
-        
         private sealed class HolidayNational : HolidayType
         {
-            public HolidayNational() : base(1, "National") { }
-        }
-        
-        private sealed class HolidayObservance : HolidayType
-        {
-            public HolidayObservance() : base(2, "Observance") { }
+            public HolidayNational() : base(0, "National") { }
         }
 
         private sealed class HolidayRegional : HolidayType
         {
-            public HolidayRegional() : base(3, "Regional") { }
+            public HolidayRegional() : base(1, "Regional") { }
+        }
+        
+        private sealed class HolidayLocal : HolidayType
+        {
+            public HolidayLocal() : base(2, "Local") { }
+        }
+        
+        private sealed class HolidayObservance : HolidayType
+        {
+            public HolidayObservance() : base(3, "Observance") { }
         }
     }
 

@@ -189,7 +189,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
         {
             var validator = validateRepository == true ? _addRuleHolidayValidatorRepository : _addRuleHolidayValidator;
 
-            return InstanceNotNull(ruleHoliday) && (await IsValidAsync(validator, ruleHoliday));
+            return InstanceNotNull(ruleHoliday) && (await IsValidEntityAsync(validator, ruleHoliday));
         }
 
         private async Task<bool> CanAddAsync(List<RuleHoliday> rulesHolidays, bool validateRepository)

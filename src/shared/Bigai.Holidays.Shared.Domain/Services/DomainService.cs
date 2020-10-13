@@ -5,9 +5,10 @@ using Bigai.Holidays.Shared.Domain.Interfaces.Repositories;
 using Bigai.Holidays.Shared.Domain.Interfaces.Services;
 using Bigai.Holidays.Shared.Domain.Models;
 using Bigai.Holidays.Shared.Domain.Notifications;
-using Bigai.Holidays.Shared.Domain.Validators;
+using Bigai.Holidays.Shared.Domain.Requests;
 using Bigai.Holidays.Shared.Infra.CrossCutting.Helpers;
 using Bigai.Holidays.Shared.Infra.CrossCutting.Interfaces;
+using FluentValidation;
 using FluentValidation.Results;
 using System;
 using System.IO;
@@ -158,15 +159,34 @@ namespace Bigai.Holidays.Shared.Domain.Services
         /// <typeparam name="TEntity">Entity type.</typeparam>
         /// <param name="validator">Validator with business rules to be tested at the entity.</param>
         /// <param name="entity">Instance of entity to be validated.</param>
-        /// <returns><c>true</c> if the entity is valida, otherwise <c>false</c>.</returns>
-        protected async Task<bool> IsValidAsync<TValidator, TEntity>(TValidator validator, TEntity entity) where TValidator : EntityValidatorError<TEntity> where TEntity : Entity
+        /// <returns><c>true</c> if the entity is valid, otherwise <c>false</c>.</returns>
+        protected async Task<bool> IsValidEntityAsync<TValidator, TEntity>(TValidator validator, TEntity entity) where TValidator : AbstractValidator<TEntity> where TEntity : Entity
         {
             ValidationResult validationResult = await validator.ValidateAsync(entity);
 
             if (!validationResult.IsValid)
             {
                 NotifyError(validationResult);
-                validationResult.Errors.Clear();
+            }
+
+            return validationResult.IsValid;
+        }
+
+        /// <summary>
+        /// Determines whether an object's instance is valid.
+        /// </summary>
+        /// <typeparam name="TValidator">Validator type.</typeparam>
+        /// <typeparam name="TRequest">Request type.</typeparam>
+        /// <param name="validator">Validator with business rules to be tested at the request.</param>
+        /// <param name="request">Instance of request to be validated.</param>
+        /// <returns><c>true</c> if the request is valid, otherwise <c>false</c>.</returns>
+        protected async Task<bool> IsValidRequestAsync<TValidator, TRequest>(TValidator validator, TRequest request) where TValidator : AbstractValidator<TRequest> where TRequest : Request
+        {
+            ValidationResult validationResult = await validator.ValidateAsync(request);
+
+            if (!validationResult.IsValid)
+            {
+                NotifyError(validationResult);
             }
 
             return validationResult.IsValid;

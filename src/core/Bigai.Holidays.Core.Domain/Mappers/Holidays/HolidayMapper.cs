@@ -21,7 +21,7 @@ namespace Bigai.Holidays.Core.Domain.Mappers.Holidays
         /// </summary>
         /// <param name="holidays">List to mapping.</param>
         /// <returns>List of <see cref="HolidayResponse"/>. In case of error <c>null</c>.</returns>
-        internal static IEnumerable<HolidayResponse> ToResponse(this IEnumerable<Holiday> holidays)
+        internal static IEnumerable<HolidayResponse> ToResponse(this IEnumerable<Holiday> holidays, string stateCode = "")
         {
             if (holidays == null || holidays.Count() == 0)
             {
@@ -32,7 +32,7 @@ namespace Bigai.Holidays.Core.Domain.Mappers.Holidays
 
             foreach (var holiday in holidays)
             {
-                list.Add(holiday.ToResponse());
+                list.Add(holiday.ToResponse(stateCode));
             }
 
             return list;
@@ -43,7 +43,7 @@ namespace Bigai.Holidays.Core.Domain.Mappers.Holidays
         /// </summary>
         /// <param name="holiday">Instance to mapping.</param>
         /// <returns><see cref="HolidayResponse"/>. In case of error <c>null</c>.</returns>
-        internal static HolidayResponse ToResponse(this Holiday holiday)
+        internal static HolidayResponse ToResponse(this Holiday holiday, string stateCode = "")
         {
             if (holiday == null)
             {
@@ -59,7 +59,7 @@ namespace Bigai.Holidays.Core.Domain.Mappers.Holidays
                 NativeDescription = holiday.NativeDescription,
                 AlternativeDescription = holiday.AlternativeDescription,
                 Country = holiday.CountryCode,
-                State = holiday.StateCode,
+                State = holiday.StateCode.HasValue() ? holiday.StateCode : stateCode,
                 CityCode = holiday.CityCode
             };
         }

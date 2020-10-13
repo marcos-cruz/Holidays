@@ -189,7 +189,7 @@ namespace Bigai.Holidays.Core.Domain.Services.States
         {
             var validator = validateRepository == true ? _addStateValidatorRepository : _addStateValidator;
 
-            return InstanceNotNull(state) && (await IsValidAsync(validator, state));
+            return InstanceNotNull(state) && (await IsValidEntityAsync(validator, state));
         }
 
         private async Task<bool> CanAddAsync(List<State> states, bool validateRepository)

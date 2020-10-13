@@ -16,7 +16,7 @@ namespace Bigai.Holidays.Core.Domain.Interfaces.Services.Holidays
         /// </summary>
         /// <param name="countryIsoCode">Country code consisting of 3 letters.</param>
         /// <param name="year">Year for holidays filter.</param>
-        /// <returns>Returns an instance of XPTO containing the operation status code.</returns>
+        /// <returns>Returns an instance of <see cref="CommandResult"/> containing the operation status code and the <see cref="Holiday"/> added to the database.</returns>
         Task<CommandResult> AddAsync(string countryIsoCode, int year);
 
         /// <summary>

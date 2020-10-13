@@ -16,14 +16,24 @@ namespace Bigai.Holidays.Core.Domain.Interfaces.Repositories.Holidays
         /// <param name="countryIsoCode">Country code consisting of 3 letters.</param>
         /// <param name="year">Year for holidays filter.</param>
         /// <returns></returns>
-        Task<IEnumerable<Holiday>> GetHolidaysAsync(string countryIsoCode, int year);
+        Task<IEnumerable<Holiday>> GetHolidaysByCountryAsync(string countryIsoCode, int year);
 
         /// <summary>
-        /// Gets an lists of <see cref="Holiday"/> by country and year.
+        /// Get a list of a country's holidays in a specific month.
         /// </summary>
         /// <param name="countryIsoCode">Country code consisting of 3 letters.</param>
         /// <param name="year">Year for holidays filter.</param>
-        /// <returns></returns>
-        IEnumerable<Holiday> GetHolidays(string countryIsoCode, int year);
+        /// <param name="year">Month for holidays filter.</param>
+        /// <returns>List of a country's holidays in a specific month.</returns>
+        Task<IEnumerable<Holiday>> GetHolidaysByMonthAsync(string countryIsoCode, int year, int month);
+
+        /// <summary>
+        /// Get a list of a states's holidays in a specific year.
+        /// </summary>
+        /// <param name="countryIsoCode">Country code consisting of 3 letters.</param>
+        /// <param name="stateIsoCode">State code according to ISO-3166.</param>
+        /// <param name="year">Month for holidays filter.</param>
+        /// <returns>List of state holidays in the year.</returns>
+        Task<IEnumerable<Holiday>> GetHolidaysByStateAsync(string countryIsoCode, string stateIsoCode, int year);
     }
 }

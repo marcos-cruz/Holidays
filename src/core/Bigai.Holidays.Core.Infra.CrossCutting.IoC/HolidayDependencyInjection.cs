@@ -1,7 +1,9 @@
-﻿using Bigai.Holidays.Core.Domain.Interfaces.Repositories;
+﻿using Bigai.Holidays.Core.Domain.Interfaces.Queries.Holidays;
+using Bigai.Holidays.Core.Domain.Interfaces.Repositories;
 using Bigai.Holidays.Core.Domain.Interfaces.Services.Countries;
 using Bigai.Holidays.Core.Domain.Interfaces.Services.Holidays;
 using Bigai.Holidays.Core.Domain.Interfaces.Services.States;
+using Bigai.Holidays.Core.Domain.Queries.Holidays;
 using Bigai.Holidays.Core.Domain.Services.Countries;
 using Bigai.Holidays.Core.Domain.Services.Holidays;
 using Bigai.Holidays.Core.Domain.Services.States;
@@ -39,10 +41,13 @@ namespace Bigai.Holidays.Core.Infra.CrossCutting.IoC
             services.AddScoped<IAddStateService, AddStateService>();
             services.AddScoped<IImportStateService, ImportStateService>();
 
+            services.AddScoped<IAddHolidayService, AddHolidayService>();
             services.AddScoped<IAddRuleHolidayService, AddRuleHolidayService>();
             services.AddScoped<IImportRuleHolidayService, ImportRuleHolidayService>();
 
-            services.AddScoped<IQueryHolidayService, QueryHolidayService>();
+            services.AddScoped<IQueryHolidaysByCountry, QueryHolidaysByCountry>();
+            services.AddScoped<IQueryHolidaysByMonth, QueryHolidaysByMonth>();
+            services.AddScoped<IQueryHolidaysByState, QueryHolidaysByState>();
         }
 
         private static void RepositoryDependencyInjection(IServiceCollection services)

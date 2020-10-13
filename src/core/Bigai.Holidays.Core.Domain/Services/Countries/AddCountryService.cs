@@ -189,7 +189,7 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
         {
             var validator = validateRepository == true ? _addCountryValidatorRepository : _addCountryValidator;
 
-            return InstanceNotNull(country) && (await IsValidAsync(validator, country));
+            return InstanceNotNull(country) && (await IsValidEntityAsync(validator, country));
         }
 
         private async Task<bool> CanAddAsync(List<Country> countries, bool validateRepository)
