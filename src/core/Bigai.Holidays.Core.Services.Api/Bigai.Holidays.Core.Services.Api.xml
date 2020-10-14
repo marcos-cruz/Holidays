@@ -296,11 +296,11 @@
             To access the configuration file.
             </summary>
         </member>
-        <member name="M:Bigai.Holidays.Core.Services.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+        <member name="M:Bigai.Holidays.Core.Services.Api.Startup.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
             <summary>
             Return a instance of <see cref="T:Bigai.Holidays.Core.Services.Api.Startup"/>
             </summary>
-            <param name="configuration">To access the configuration file.</param>
+            <param name="hostingEnvironment">To access the configuration file.</param>
         </member>
         <member name="M:Bigai.Holidays.Core.Services.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>

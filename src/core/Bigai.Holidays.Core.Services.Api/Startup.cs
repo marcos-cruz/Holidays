@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace Bigai.Holidays.Core.Services.Api
 {
@@ -28,10 +29,21 @@ namespace Bigai.Holidays.Core.Services.Api
         /// <summary>
         /// Return a instance of <see cref="Startup"/>
         /// </summary>
-        /// <param name="configuration">To access the configuration file.</param>
-        public Startup(IConfiguration configuration)
+        /// <param name="hostingEnvironment">To access the configuration file.</param>
+        public Startup(IWebHostEnvironment hostingEnvironment)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(hostingEnvironment.ContentRootPath)
+                .AddJsonFile("appsettings.json", true, true)
+                .AddJsonFile($"appsettings.{ hostingEnvironment.EnvironmentName}.json", true, true)
+                .AddEnvironmentVariables();
+
+            if (hostingEnvironment.IsProduction())
+            {
+                builder.AddUserSecrets<Startup>();
+            }
+
+            Configuration = builder.Build();
         }
 
         #endregion
