@@ -17,29 +17,26 @@ using System.Threading.Tasks;
 
 namespace Bigai.Holidays.Core.Domain.Queries.Holidays
 {
-    /// <summary>
-    /// <see cref="QueryHolidaysByMonth"/> implements a contract for searching a country's holidays for a specific month.
-    /// </summary>
-    public class QueryHolidaysByMonth : QueryBaseService, IQueryHolidaysByMonth
+    public class QueryHolidaysByDate : QueryBaseService, IQueryHolidaysByDate
     {
         #region Private Variables
 
-        private readonly GetHolidaysByMonthRequestValidator _getHolidaysByMonthRequestValidator;
+        private readonly GetHolidaysByDateRequestValidator _getHolidaysByDateRequestValidator;
 
         #endregion
 
         #region Constructor
 
-        public QueryHolidaysByMonth(INotificationHandler notificationHandler, IUnitOfWorkCore unitOfWork, IUserLogged userLogged, IAddHolidayService addHolidayService) : base(notificationHandler, unitOfWork, userLogged, addHolidayService)
+        public QueryHolidaysByDate(INotificationHandler notificationHandler, IUnitOfWorkCore unitOfWork, IUserLogged userLogged, IAddHolidayService addHolidayService) : base(notificationHandler, unitOfWork, userLogged, addHolidayService)
         {
-            _getHolidaysByMonthRequestValidator = new GetHolidaysByMonthRequestValidator(unitOfWork.CountryRepository, unitOfWork.StateRepository);
+            _getHolidaysByDateRequestValidator = new GetHolidaysByDateRequestValidator(unitOfWork.CountryRepository, unitOfWork.StateRepository);
         }
 
         #endregion
 
         #region Public Methods
 
-        public async Task<CommandResult> GetHolidaysByMonthAsync(GetHolidaysByMonthRequest request)
+        public async Task<CommandResult> GetHolidaysByDateAsync(GetHolidaysByDateRequest request)
         {
             _commandName = request.GetType().Name;
             CommandResult commandResult;
@@ -47,13 +44,13 @@ namespace Bigai.Holidays.Core.Domain.Queries.Holidays
 
             try
             {
-                if (!await CanGetHolidaysByMonthAsync(request))
+                if (!await CanGetHolidaysByDateAsync(request))
                 {
                     commandResult = CommandResult.BadRequest("Não foi possível realizar a consulta.");
                 }
                 else
                 {
-                    var holidays = await GetHolidaysByMonthAsync(request.CountryIsoCode, request.Year, request.Month);
+                    var holidays = await GetHolidaysByDateAsync(request.CountryIsoCode, request.HolidayDate);
                     if (holidays != null && holidays.Count() > 0)
                     {
                         commandResult = CommandResult.Ok($"{holidays.Count()} feriados encontrados.");
@@ -61,7 +58,7 @@ namespace Bigai.Holidays.Core.Domain.Queries.Holidays
                     }
                     else
                     {
-                        commandResult = CommandResult.BadRequest($"Não existe feriado cadastrado para {request.CountryIsoCode} em {request.Year}/{request.Month}.");
+                        commandResult = CommandResult.BadRequest($"Não existe feriado cadastrado para {request.CountryIsoCode} em {request.HolidayDate}.");
                     }
                 }
             }
@@ -80,19 +77,19 @@ namespace Bigai.Holidays.Core.Domain.Queries.Holidays
 
         #region Private Methods
 
-        private async Task<bool> CanGetHolidaysByMonthAsync(GetHolidaysByMonthRequest request)
+        private async Task<bool> CanGetHolidaysByDateAsync(GetHolidaysByDateRequest request)
         {
-            return InstanceNotNull(request) && (await IsValidRequestAsync(_getHolidaysByMonthRequestValidator, request));
+            return InstanceNotNull(request) && (await IsValidRequestAsync(_getHolidaysByDateRequestValidator, request));
         }
 
-        private async Task<IEnumerable<Holiday>> GetHolidaysByMonthAsync(string countryIsoCode, int year, int month)
+        private async Task<IEnumerable<Holiday>> GetHolidaysByDateAsync(string countryIsoCode, DateTime holidayDate)
         {
-            if (!await HolidaysAlreadyExist(countryIsoCode, year))
+            if (!await HolidaysAlreadyExist(countryIsoCode, holidayDate.Year))
             {
-                await CreateHoliday(countryIsoCode, year);
+                await CreateHoliday(countryIsoCode, holidayDate.Year);
             }
 
-            return await HolidayRepository.GetHolidaysByMonthAsync(countryIsoCode, year, month);
+            return await HolidayRepository.GetHolidaysByDateAsync(countryIsoCode, holidayDate);
         }
 
         #endregion

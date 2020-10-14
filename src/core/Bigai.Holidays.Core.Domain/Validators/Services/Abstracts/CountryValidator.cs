@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Bigai.Holidays.Core.Domain.Validators.Countries
+namespace Bigai.Holidays.Core.Domain.Validators.Services.Abstracts
 {
     /// <summary>
     /// This class provides support for common <see cref="Country"/> validations.

@@ -2,15 +2,15 @@
 using Bigai.Holidays.Core.Domain.Interfaces.Repositories.States;
 using Bigai.Holidays.Core.Domain.Models.Countries;
 using Bigai.Holidays.Core.Domain.Models.States;
-using Bigai.Holidays.Shared.Domain.Requests;
+using Bigai.Holidays.Core.Domain.Requests.Holidays.Abstracts;
 using FluentValidation;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Bigai.Holidays.Core.Domain.Validators.Abstracts
+namespace Bigai.Holidays.Core.Domain.Validators.Requests.Abstracts
 {
-    public abstract class RequestValidator<T> : AbstractValidator<T> where T : Request
+    public abstract class RequestValidator<T> : AbstractValidator<T> where T : HolidaysRequest
     {
         #region Private Variable
 
@@ -25,9 +25,27 @@ namespace Bigai.Holidays.Core.Domain.Validators.Abstracts
         {
             _countryRepository = countryRepository ?? throw new ArgumentNullException(nameof(countryRepository));
             _stateRepository = stateRepository ?? throw new ArgumentNullException(nameof(stateRepository));
+
+            ValidateCountryIsoCode();
         }
 
         #endregion
+
+        #region Validations
+
+        private void ValidateCountryIsoCode()
+        {
+            RuleFor(request => request.CountryIsoCode).MustAsync(async (request, countryIsoCode, cancellation) =>
+            {
+                bool exist = await CountryMustExistAsync(request);
+                return exist;
+            }).WithMessage("Não existe país {PropertyValue}.");
+        }
+
+        private async Task<bool> CountryMustExistAsync(HolidaysRequest request)
+        {
+            return await CountryMustExistAsync(request.CountryIsoCode);
+        }
 
         protected async Task<bool> CountryMustExistAsync(string countryIsoCode3)
         {
@@ -42,5 +60,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.Abstracts
 
             return state != null;
         }
+
+        #endregion
     }
 }

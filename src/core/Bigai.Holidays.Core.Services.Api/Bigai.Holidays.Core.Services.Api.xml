@@ -207,7 +207,7 @@
             Allows you to perform operations with holidays.
             </summary>
         </member>
-        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.HolidaysController.#ctor(Bigai.Holidays.Shared.Domain.Interfaces.Notifications.INotificationHandler,Bigai.Holidays.Core.Domain.Interfaces.Queries.Holidays.IQueryHolidaysByCountry,Bigai.Holidays.Core.Domain.Interfaces.Queries.Holidays.IQueryHolidaysByMonth,Bigai.Holidays.Core.Domain.Interfaces.Queries.Holidays.IQueryHolidaysByState)">
+        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.HolidaysController.#ctor(Bigai.Holidays.Shared.Domain.Interfaces.Notifications.INotificationHandler,Bigai.Holidays.Core.Domain.Interfaces.Queries.Holidays.IQueryHolidaysByCountry,Bigai.Holidays.Core.Domain.Interfaces.Queries.Holidays.IQueryHolidaysByMonth,Bigai.Holidays.Core.Domain.Interfaces.Queries.Holidays.IQueryHolidaysByState,Bigai.Holidays.Core.Domain.Interfaces.Queries.Holidays.IQueryHolidaysByDate)">
             <summary>
             Return a instance of <see cref="T:Bigai.Holidays.Core.Services.Api.Controllers.V1.HolidaysController"/>.
             </summary>
@@ -215,8 +215,9 @@
             <param name="queryHolidaysByCountry">To query holidays in database.</param>
             <param name="queryHolidaysByMonth">To query holidays in database.</param>
             <param name="queryHolidaysByState">To query holidays in database.</param>
+            <param name="queryHolidaysByDate">To query holidays in database.</param>
         </member>
-        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.HolidaysController.GetAllHolidaysByCountry(System.Guid,System.String,System.Int32)">
+        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.HolidaysController.GetHolidaysByCountry(System.Guid,System.String,System.Int32)">
             <summary>
             Gets a list of all holidays for a specific country and year.
             </summary>
@@ -225,7 +226,7 @@
             <param name="year">Year to query holidays.</param>
             <returns>Returns a CommandResponse containing the result of executing the command.</returns>
         </member>
-        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.HolidaysController.GetAllHolidaysByState(System.Guid,System.String,System.String,System.Int32)">
+        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.HolidaysController.GetHolidaysByState(System.Guid,System.String,System.String,System.Int32)">
             <summary>
             Gets a list of all national and state holidays for a specific state and year.
             </summary>
@@ -235,7 +236,7 @@
             <param name="year">Year to query holidays.</param>
             <returns>Returns a CommandResponse containing the result of executing the command.</returns>
         </member>
-        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.HolidaysController.GetAllHolidaysByMonth(System.Guid,System.String,System.Int32,System.Int32)">
+        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.HolidaysController.GetHolidaysByMonth(System.Guid,System.String,System.Int32,System.Int32)">
             <summary>
             Get a list of all holidays of the month for a specific country.
             </summary>
@@ -243,6 +244,15 @@
             <param name="countryIsoCode">Country code according to ISO-3166.</param>
             <param name="year">Year to query holidays.</param>
             <param name="month">Month to query holidays.</param>
+            <returns>Returns a CommandResponse containing the result of executing the command.</returns>
+        </member>
+        <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.HolidaysController.GetHolidaysByDate(System.Guid,System.String,System.String)">
+            <summary>
+            Get a list of all holidays by date for a specific country.
+            </summary>
+            <param name="token">Authorization key.</param>
+            <param name="countryIsoCode">Country code according to ISO-3166.</param>
+            <param name="date">Query date in dd-mm-yyyy format.</param>
             <returns>Returns a CommandResponse containing the result of executing the command.</returns>
         </member>
         <member name="M:Bigai.Holidays.Core.Services.Api.Controllers.V1.ImportsController.#ctor(Bigai.Holidays.Shared.Domain.Interfaces.Notifications.INotificationHandler,Bigai.Holidays.Core.Domain.Interfaces.Services.Countries.IImportCountryService,Bigai.Holidays.Core.Domain.Interfaces.Services.States.IImportStateService,Bigai.Holidays.Core.Domain.Interfaces.Services.Holidays.IImportRuleHolidayService)">

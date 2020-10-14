@@ -1,16 +1,17 @@
 ﻿using Bigai.Holidays.Core.Domain.Interfaces.Repositories.Countries;
 using Bigai.Holidays.Core.Domain.Interfaces.Repositories.States;
 using Bigai.Holidays.Core.Domain.Models.States;
+using Bigai.Holidays.Core.Domain.Validators.Services.Abstracts;
 using FluentValidation;
 using System;
 using System.Threading.Tasks;
 
-namespace Bigai.Holidays.Core.Domain.Validators.States
+namespace Bigai.Holidays.Core.Domain.Validators.Services.States
 {
     /// <summary>
-    /// <see cref="AddStateValidator"/> represents a set of business rules to add a state to the database.
+    /// <see cref="AddStateServiceValidator"/> represents a set of business rules to add a state to the database.
     /// </summary>
-    public class AddStateValidator : StateValidator
+    public class AddStateServiceValidator : StateValidator
     {
         #region Private Variable
 
@@ -24,7 +25,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.States
         /// <summary>
         /// Determines whether the record meets the business rules for adding a new record.
         /// </summary>
-        public AddStateValidator() : base()
+        public AddStateServiceValidator() : base()
         {
         }
 
@@ -33,7 +34,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.States
         /// </summary>
         /// <param name="countryRepository">Context for accessing the repository.</param>
         /// <param name="stateRepository">Context for accessing the repository.</param>
-        public AddStateValidator(ICountryRepository countryRepository, IStateRepository stateRepository) : base()
+        public AddStateServiceValidator(ICountryRepository countryRepository, IStateRepository stateRepository) : base()
         {
             _countryRepository = countryRepository ?? throw new ArgumentNullException(nameof(countryRepository));
             _stateRepository = stateRepository ?? throw new ArgumentNullException(nameof(stateRepository));

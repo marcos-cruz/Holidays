@@ -5,7 +5,7 @@ using Bigai.Holidays.Core.Domain.Mappers.Holidays;
 using Bigai.Holidays.Core.Domain.Models.Holidays;
 using Bigai.Holidays.Core.Domain.Queries.Abstracts;
 using Bigai.Holidays.Core.Domain.Requests.Holidays;
-using Bigai.Holidays.Core.Domain.Validators.Holidays;
+using Bigai.Holidays.Core.Domain.Validators.Requests.Holidays;
 using Bigai.Holidays.Shared.Domain.Commands;
 using Bigai.Holidays.Shared.Domain.Interfaces.Notifications;
 using Bigai.Holidays.Shared.Infra.CrossCutting.Interfaces;

@@ -46,6 +46,7 @@ namespace Bigai.Holidays.Core.Infra.CrossCutting.IoC
             services.AddScoped<IImportRuleHolidayService, ImportRuleHolidayService>();
 
             services.AddScoped<IQueryHolidaysByCountry, QueryHolidaysByCountry>();
+            services.AddScoped<IQueryHolidaysByDate, QueryHolidaysByDate>();
             services.AddScoped<IQueryHolidaysByMonth, QueryHolidaysByMonth>();
             services.AddScoped<IQueryHolidaysByState, QueryHolidaysByState>();
         }

@@ -1,4 +1,6 @@
-﻿namespace Bigai.Holidays.Shared.Infra.CrossCutting.Helpers
+﻿using System;
+
+namespace Bigai.Holidays.Shared.Infra.CrossCutting.Helpers
 {
     /// <summary>
     /// <see cref="DateHelper"/> extension methods that help with date validation.
@@ -13,6 +15,39 @@
         public static bool IsYear(this int year)
         {
             return (year >= 1900 && year <= 2300);
+        }
+
+        /// <summary>
+        /// Converts a value in dd-mm-yyyy format to a date
+        /// </summary>
+        /// <param name="value">Value to to converted to date.</param>
+        /// <returns>Value converted to data.In case of error <c>null</c>.</returns>
+        public static DateTime? ToDate(this string value)
+        {
+            DateTime? date = null;
+
+            if (!value.HasValue())
+            {
+                return null;
+            }
+
+            value = value.Replace("-", "");
+            if (value.Length != 8)
+            {
+                return null;
+            }
+
+            int day = int.Parse(value.Substring(0, 2));
+            int month = int.Parse(value.Substring(2, 2));
+            int year = int.Parse(value.Substring(3));
+
+            try
+            {
+                date = new DateTime(year, month, day);
+            }
+            catch (Exception) { }
+
+            return date;
         }
     }
 }

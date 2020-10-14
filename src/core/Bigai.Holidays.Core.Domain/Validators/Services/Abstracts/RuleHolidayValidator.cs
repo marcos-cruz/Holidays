@@ -10,7 +10,7 @@ using FluentValidation;
 using System;
 using System.Threading.Tasks;
 
-namespace Bigai.Holidays.Core.Domain.Validators.Holidays
+namespace Bigai.Holidays.Core.Domain.Validators.Services.Abstracts
 {
     /// <summary>
     /// This class provides support for common <see cref="RuleHoliday"/> validations.

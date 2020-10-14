@@ -2,18 +2,19 @@
 using Bigai.Holidays.Core.Domain.Interfaces.Repositories.Holidays;
 using Bigai.Holidays.Core.Domain.Interfaces.Repositories.States;
 using Bigai.Holidays.Core.Domain.Models.Holidays;
+using Bigai.Holidays.Core.Domain.Validators.Services.Abstracts;
 using Bigai.Holidays.Shared.Domain.Enums.Entities;
 using FluentValidation;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Bigai.Holidays.Core.Domain.Validators.Holidays
+namespace Bigai.Holidays.Core.Domain.Validators.Services.Holidays
 {
     /// <summary>
-    /// <see cref="AddHolidayValidator"/> represents a set of business rules to add a holiday to the database.
+    /// <see cref="AddHolidayServiceValidator"/> represents a set of business rules to add a holiday to the database.
     /// </summary>
-    public class AddHolidayValidator : HolidayValidator
+    public class AddHolidayServiceValidator : HolidayValidator
     {
         #region Private Variable
 
@@ -28,7 +29,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
         /// <summary>
         /// Determines whether the record meets the business rules for adding a new record.
         /// </summary>
-        public AddHolidayValidator() : base()
+        public AddHolidayServiceValidator() : base()
         {
         }
 
@@ -38,7 +39,7 @@ namespace Bigai.Holidays.Core.Domain.Validators.Holidays
         /// <param name="countryRepository">Context for accessing the repository.</param>
         /// <param name="stateRepository">Context for accessing the repository.</param>
         /// <param name="holidayRepository">Context for accessing the repository.</param>
-        public AddHolidayValidator(ICountryRepository countryRepository, IStateRepository stateRepository, IHolidayRepository holidayRepository) : base()
+        public AddHolidayServiceValidator(ICountryRepository countryRepository, IStateRepository stateRepository, IHolidayRepository holidayRepository) : base()
         {
             _countryRepository = countryRepository ?? throw new ArgumentNullException(nameof(countryRepository));
             _stateRepository = stateRepository ?? throw new ArgumentNullException(nameof(stateRepository));

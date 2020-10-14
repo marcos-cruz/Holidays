@@ -142,7 +142,7 @@ namespace Bigai.Holidays.Core.Services.Api.Controllers.Abstracts
             List<ModelError> errors = modelState.Values.SelectMany(e => e.Errors).ToList();
             List<string> keys = modelState.Keys.ToList();
 
-            if (errors.Count == keys.Count)
+            if (errors.Count <= keys.Count)
             {
                 for (int i = 0, j = errors.Count(); i < j; i++)
                 {

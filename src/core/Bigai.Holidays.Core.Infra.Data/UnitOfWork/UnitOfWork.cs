@@ -99,10 +99,6 @@ namespace Bigai.Holidays.Core.Infra.Data.UnitOfWork
 
         #endregion
 
-        //
-        // TODO: Implementar status do banco.
-        //
-
         #region Dispose
 
         /// <summary>

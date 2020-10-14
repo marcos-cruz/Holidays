@@ -33,6 +33,19 @@ namespace Bigai.Holidays.Core.Infra.Data.Repositories.Holidays
             catch (Exception ex) { throw ex; }
         }
 
+        public async Task<IEnumerable<Holiday>> GetHolidaysByDateAsync(string countryIsoCode, DateTime holidayDate)
+        {
+            try
+            {
+                return await DbContext.Holidays
+                    .Where(h => h.CountryCode == countryIsoCode && h.HolidayDate == holidayDate)
+                    .AsNoTracking()
+                    .OrderBy(h => h.HolidayType)
+                    .ToListAsync();
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
         public async Task<IEnumerable<Holiday>> GetHolidaysByMonthAsync(string countryIsoCode, int year, int month)
         {
             int day = DateTime.DaysInMonth(year, month);

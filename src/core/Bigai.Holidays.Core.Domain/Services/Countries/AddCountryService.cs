@@ -2,7 +2,7 @@
 using Bigai.Holidays.Core.Domain.Interfaces.Services.Countries;
 using Bigai.Holidays.Core.Domain.Models.Countries;
 using Bigai.Holidays.Core.Domain.Services.Abstracts;
-using Bigai.Holidays.Core.Domain.Validators.Countries;
+using Bigai.Holidays.Core.Domain.Validators.Services.Countries;
 using Bigai.Holidays.Shared.Domain.Commands;
 using Bigai.Holidays.Shared.Domain.Enums.Entities;
 using Bigai.Holidays.Shared.Domain.Interfaces.Notifications;
@@ -21,8 +21,8 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
     {
         #region Private Variables
 
-        private readonly AddCountryValidator _addCountryValidator;
-        private readonly AddCountryValidator _addCountryValidatorRepository;
+        private readonly AddCountryServiceValidator _addCountryValidator;
+        private readonly AddCountryServiceValidator _addCountryValidatorRepository;
 
         #endregion
 
@@ -36,8 +36,8 @@ namespace Bigai.Holidays.Core.Domain.Services.Countries
         public AddCountryService(INotificationHandler notificationHandler, IUnitOfWorkCore unitOfWork, IUserLogged userLogged) : base(notificationHandler, unitOfWork, userLogged)
         {
             _commandName = "Adicionar país";
-            _addCountryValidator = new AddCountryValidator();
-            _addCountryValidatorRepository = new AddCountryValidator(CountryRepository);
+            _addCountryValidator = new AddCountryServiceValidator();
+            _addCountryValidatorRepository = new AddCountryServiceValidator(CountryRepository);
         }
 
         #endregion

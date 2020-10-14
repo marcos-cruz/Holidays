@@ -2,7 +2,7 @@
 using Bigai.Holidays.Core.Domain.Interfaces.Services.States;
 using Bigai.Holidays.Core.Domain.Models.States;
 using Bigai.Holidays.Core.Domain.Services.Abstracts;
-using Bigai.Holidays.Core.Domain.Validators.States;
+using Bigai.Holidays.Core.Domain.Validators.Services.States;
 using Bigai.Holidays.Shared.Domain.Commands;
 using Bigai.Holidays.Shared.Domain.Enums.Entities;
 using Bigai.Holidays.Shared.Domain.Interfaces.Notifications;
@@ -21,8 +21,8 @@ namespace Bigai.Holidays.Core.Domain.Services.States
     {
         #region Private Variables
 
-        private readonly AddStateValidator _addStateValidator;
-        private readonly AddStateValidator _addStateValidatorRepository;
+        private readonly AddStateServiceValidator _addStateValidator;
+        private readonly AddStateServiceValidator _addStateValidatorRepository;
 
         #endregion
 
@@ -36,8 +36,8 @@ namespace Bigai.Holidays.Core.Domain.Services.States
         public AddStateService(INotificationHandler notificationHandler, IUnitOfWorkCore unitOfWork, IUserLogged userLogged) : base(notificationHandler, unitOfWork, userLogged)
         {
             _commandName = "Adicionar estado";
-            _addStateValidator = new AddStateValidator();
-            _addStateValidatorRepository = new AddStateValidator(CountryRepository, StateRepository);
+            _addStateValidator = new AddStateServiceValidator();
+            _addStateValidatorRepository = new AddStateServiceValidator(CountryRepository, StateRepository);
         }
 
         #endregion

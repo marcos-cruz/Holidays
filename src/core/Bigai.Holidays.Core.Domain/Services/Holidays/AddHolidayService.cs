@@ -3,7 +3,7 @@ using Bigai.Holidays.Core.Domain.Interfaces.Services.Holidays;
 using Bigai.Holidays.Core.Domain.Mappers.Holidays;
 using Bigai.Holidays.Core.Domain.Models.Holidays;
 using Bigai.Holidays.Core.Domain.Services.Abstracts;
-using Bigai.Holidays.Core.Domain.Validators.Holidays;
+using Bigai.Holidays.Core.Domain.Validators.Services.Holidays;
 using Bigai.Holidays.Shared.Domain.Commands;
 using Bigai.Holidays.Shared.Domain.Enums.Entities;
 using Bigai.Holidays.Shared.Domain.Interfaces.Notifications;
@@ -23,8 +23,8 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
     {
         #region Private Variables
 
-        private readonly AddHolidayValidator _addHolidayValidator;
-        private readonly AddHolidayValidator _addHolidayValidatorRepository;
+        private readonly AddHolidayServiceValidator _addHolidayValidator;
+        private readonly AddHolidayServiceValidator _addHolidayValidatorRepository;
 
         #endregion
 
@@ -38,8 +38,8 @@ namespace Bigai.Holidays.Core.Domain.Services.Holidays
         public AddHolidayService(INotificationHandler notificationHandler, IUnitOfWorkCore unitOfWork, IUserLogged userLogged) : base(notificationHandler, unitOfWork, userLogged)
         {
             _commandName = "Adicionar feriados";
-            _addHolidayValidator = new AddHolidayValidator();
-            _addHolidayValidatorRepository = new AddHolidayValidator(CountryRepository, StateRepository, HolidayRepository);
+            _addHolidayValidator = new AddHolidayServiceValidator();
+            _addHolidayValidatorRepository = new AddHolidayServiceValidator(CountryRepository, StateRepository, HolidayRepository);
         }
 
         #endregion

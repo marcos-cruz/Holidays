@@ -10,7 +10,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Bigai.Holidays.Core.Domain.Validators.States
+namespace Bigai.Holidays.Core.Domain.Validators.Services.Abstracts
 {
     /// <summary>
     /// This class provides support for common <see cref="State"/> validations.
